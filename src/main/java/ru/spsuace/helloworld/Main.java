@@ -2,6 +2,9 @@ package ru.spsuace.helloworld;
 
 public class Main {
 
+    /**
+     * The main method in program
+     */
     public static void main(String[] args) {
         System.out.println(hello());
     }
