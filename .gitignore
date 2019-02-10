@@ -1,0 +1,5 @@
+# Compiled class file
+*.class
+
+# Mobile Tools for Java (J2ME)
+.idea/
