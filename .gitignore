@@ -1,7 +1,7 @@
 # Compiled class file
-*.class
 
 # Mobile Tools for Java (J2ME)
 .idea/
 .gradle/
+out/
 spsuace-hello-world.iml
