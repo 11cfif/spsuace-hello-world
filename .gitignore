@@ -3,3 +3,5 @@
 
 # Mobile Tools for Java (J2ME)
 .idea/
+.gradle/
+spsuace-hello-world.iml
