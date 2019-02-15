@@ -18,6 +18,20 @@ public class DoubleTask {
     public static String equation(int a, int b, int c) {
         double x1 = 0;
         double x2 = 0;
+        double discriminant = 0;
+
+        discriminant = Math.pow(b, 2) - 4 * a * c;
+
+        x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+
+        if(x1 < x2)
+        {
+            double temp = x2;
+            x2 = x1;
+            x1 = temp;
+        }
+
         return x1 + ", " + x2;
     }
 
@@ -25,7 +39,13 @@ public class DoubleTask {
      * Нужно посчитать расстояние, между двумя точками (x1, y1) и (x2, y2)
      * Пример: (0, 0, 3, 4) -> 5.0
      */
-    public static float length(double x1, double y1, double x2, double y2) {
-        return 0;
+    public static float length(double x1, double y1, double x2, double y2)
+    {
+        float length = (float)Math.sqrt
+                (
+                        Math.pow((x2 - x1),2) + (Math.pow((y2 - y1), 2))
+                );
+
+        return length;
     }
 }
