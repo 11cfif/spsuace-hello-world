@@ -13,26 +13,55 @@ public class IntegerTask {
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
-    public static int sum(int n) {
-        return 0;
+    public static int sum(int n)
+    {
+        int sum = 0;
+        for(int i =1;i<=n;i++)
+        {
+            sum+=i;
+        }
+        return sum;
     }
-
     /**
      * Гусеница поднимается по стене длиной height на высоту top за день, ночью гусеница сползает на bottom.
      * Сколько дней понадобится гусенице, чтобы доползти до потолка. Если она этого никогда не сможет сделать,
      * Верните число Integer.MAX_VALUE;
      * Пример: (10, 3, 2) -> 8
      */
-    public static int snake(int height, int top, int bottom) {
-        return 0;
+    public static int snake(int height, int top, int bottom)
+    {
+        int days=0;
+        if(top>=height)
+        {
+            return 1;
+        }else if(top <= bottom)
+        {
+            return Integer.MAX_VALUE;
+        }
+
+        if((double)(height-top)/(top-bottom)%1>0)
+        {
+            days = (height - top) / (top - bottom) + 2;
+        }else
+        {
+            days = (height - top) / (top - bottom) + 1;
+        }
+
+
+
+        return days;
     }
 
     /**
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
      * Пример: (454355, 3) -> 3
      */
-    public static int kDecimal(int n, int order) {
-        return 0;
+    public static int kDecimal(int n, int order)
+    {
+        int answer=0;
+
+        answer=Math.abs((int)(n % Math.pow(10,order)) /(int) Math.pow(10,order-1));
+        return answer;
     }
 
 
@@ -40,7 +69,13 @@ public class IntegerTask {
      * Выведите факториал от числа n
      * Пример: (5) -> 120
      */
-    public static long factorial(byte n) {
-        return 0;
+    public static long factorial(byte n)
+    {
+        long factorial = 1;
+        for(int i =1;i<=n;i++)
+        {
+            factorial*=i;
+        }
+        return factorial;
     }
 }
