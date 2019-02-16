@@ -22,7 +22,7 @@ public class DoubleTask {
         double temp = 0;
         x1 = (-b + discriminant) / (2 * a);
         x2 = (-b - discriminant) / (2 * a);
-        if(x1 < x2) {
+        if (x1 < x2) {
             temp = x2;
             x2 = x1;
             x1 = temp;
@@ -36,6 +36,6 @@ public class DoubleTask {
      */
     public static float length(double x1, double y1, double x2, double y2) {
 
-        return (float)Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
+        return (float) Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
     }
 }
