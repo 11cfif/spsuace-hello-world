@@ -18,7 +18,7 @@ public class DoubleTask {
     public static String equation(int a, int b, int c) {
         double x1 = 0;
         double x2 = 0;
-        double discriminant = Math.sqrt( b * b - 4 * a * c);
+        double discriminant = Math.sqrt(b * b - 4 * a * c);
         double temp = 0;
         x1 = (-b + discriminant) / (2 * a);
         x2 = (-b - discriminant) / (2 * a);

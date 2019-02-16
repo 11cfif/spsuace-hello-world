@@ -28,9 +28,9 @@ public class IntegerTask {
      */
     public static int snake(int height, int top, int bottom) {
 
-        if(top >= height){
+        if (top >= height){
             return 1; }
-        else if(top <= bottom) {
+        else if (top <= bottom) {
             return Integer.MAX_VALUE; }
 
         /**(height - top) преобразовывается в double
@@ -38,7 +38,7 @@ public class IntegerTask {
          */
         int lastdays=1;
         double days = (double)(height - top) / (top - bottom);
-        if(days % 1 > 0) {
+        if (days % 1 > 0) {
             lastdays = 2;
         }
 
@@ -51,7 +51,7 @@ public class IntegerTask {
      */
     public static int kDecimal(int n, int order) {
 
-        return Math.abs((int)(n % Math.pow(10, order)) /(int) Math.pow(10, order-1));
+        return Math.abs((int)(n % Math.pow(10, order)) / (int) Math.pow(10, order - 1));
     }
 
 
