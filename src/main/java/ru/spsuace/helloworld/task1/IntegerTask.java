@@ -9,12 +9,30 @@ package ru.spsuace.helloworld.task1;
  */
 public class IntegerTask {
 
+    public static void main(String[]args){
+
+        System.out.println(sum(5)); //Проверка первого задания
+
+        System.out.println(snake(1, 3, 4)); //Проверка второго задания
+
+        System.out.println(kDecimal(454355, 4)); //Проверка третьего задания
+
+        System.out.println(factorial((byte) 5)); //Проверка четвертого задания
+
+    }
     /**
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
+
     public static int sum(int n) {
-        return 0;
+
+        int sum = 0;
+        for (int i = 1; i < n + 1; i++) {
+            sum += i;
+        }
+
+        return sum;
     }
 
     /**
@@ -24,7 +42,28 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+
+        int i = 0; //Начала отсчета
+        int day = 0; //Количество дней
+
+        if (top >= height) {
+            return 1;
+        }
+
+        if (top <= bottom) {
+            return Integer.MAX_VALUE;
+        }
+
+        while (i < height) {
+
+            if (day > 0) {
+                i -= bottom; //Ночь
+            }
+
+            i += top; //День
+            day++;
+        }
+        return day;
     }
 
     /**
@@ -32,7 +71,22 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return 0;
+        //int N = String.valueOf(Math.abs(n)).length(); //Количество разрядов в числе
+        int result = 0;
+
+        for (int i = 1; i <= order; i++) {
+
+           // result = Math.abs((n % (int)Math. pow(10, i))/(int)Math. pow(10, i - 1));
+
+            //Первоначальный вариант
+            result = Math.abs(n % (int) Math.pow(10, i));
+            n -= result;
+            //System.out.println(n + " " + result );
+            result /= (int) Math.pow(10, i - 1);
+
+        }
+
+        return result;
     }
 
 
@@ -41,6 +95,11 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+
+        long result = 1;
+        for (int i = 1; i <= n; i++){
+            result *= i;
+        }
+        return result;
     }
 }
