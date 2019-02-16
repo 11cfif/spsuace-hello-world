@@ -13,11 +13,10 @@ public class IntegerTask {
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
-    public static int sum(int n)
-    {
+    public static int sum(int n) {
         int num = 0;
 
-        for (int i = 1; i <= n; i++){
+        for (int i = 1; i <= n; i++) {
             num += i;
         }
 
@@ -47,7 +46,7 @@ public class IntegerTask {
             days++;
             position += top;
 
-            if(position >= height){
+            if (position >= height) {
                 break;
             }
 

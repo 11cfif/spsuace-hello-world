@@ -25,7 +25,7 @@ public class DoubleTask {
         x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
         x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
 
-        if (x1 < x2){
+        if (x1 < x2) {
             double temp = x2;
             x2 = x1;
             x1 = temp;
