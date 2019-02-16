@@ -45,21 +45,16 @@ public class IntegerTask {
 
         int i = 0; //Начала отсчета
         int day = 0; //Количество дней
-
         if (top >= height) {
             return 1;
         }
-
         if (top <= bottom) {
             return Integer.MAX_VALUE;
         }
-
         while (i < height) {
-
             if (day > 0) {
                 i -= bottom; //Ночь
             }
-
             i += top; //День
             day++;
         }
@@ -71,22 +66,11 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        //int N = String.valueOf(Math.abs(n)).length(); //Количество разрядов в числе
+
         int result = 0;
-
-        for (int i = 1; i <= order; i++) {
-
-           // result = Math.abs((n % (int)Math. pow(10, i))/(int)Math. pow(10, i - 1));
-
-            //Первоначальный вариант
-            result = Math.abs(n % (int) Math.pow(10, i));
-            n -= result;
-            //System.out.println(n + " " + result );
-            result /= (int) Math.pow(10, i - 1);
-
-        }
-
+        result = Math.abs((n % (int)Math. pow(10, order))/(int)Math. pow(10, order - 1));
         return result;
+
     }
 
 
