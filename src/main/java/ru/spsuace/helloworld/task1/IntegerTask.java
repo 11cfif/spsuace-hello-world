@@ -8,18 +8,6 @@ package ru.spsuace.helloworld.task1;
  * Для просмотра подробной документации по выбранному методу нажмите Ctrl + q
  */
 public class IntegerTask {
-
-    public static void main(String[]args){
-
-        System.out.println(sum(5)); //Проверка первого задания
-
-        System.out.println(snake(1, 3, 4)); //Проверка второго задания
-
-        System.out.println(kDecimal(454355, 4)); //Проверка третьего задания
-
-        System.out.println(factorial((byte) 5)); //Проверка четвертого задания
-
-    }
     /**
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
