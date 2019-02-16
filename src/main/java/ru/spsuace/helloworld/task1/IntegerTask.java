@@ -28,10 +28,11 @@ public class IntegerTask {
      */
     public static int snake(int height, int top, int bottom) {
 
-        if (top >= height){
-            return 1; }
-        else if (top <= bottom) {
-            return Integer.MAX_VALUE; }
+        if (top >= height) {
+            return 1;
+        } else if (top <= bottom) {
+            return Integer.MAX_VALUE;
+        }
 
         /**(height - top) преобразовывается в double
         *после чего делится на (top - bottom)
