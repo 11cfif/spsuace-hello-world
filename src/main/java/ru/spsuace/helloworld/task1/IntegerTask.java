@@ -16,7 +16,11 @@ public class IntegerTask {
     public static int sum(int n)
     {
         int num = 0;
-        for (int i = 1; i <= n; i++){num += i;}
+
+        for (int i = 1; i <= n; i++){
+            num += i;
+        }
+
         return num;
     }
 
@@ -28,39 +32,36 @@ public class IntegerTask {
      */
     public static int snake(int height, int top, int bottom) {
 
-        if(top >= height)
+        if (top >= height) {
             return 1;
-        else if(bottom >= top)
+        }
+        else if (bottom >= top) {
             return Integer.MAX_VALUE;
-        else
-        {
-            int position = 0;
-            int days = 0;
+        }
 
-            while (height > position)
-            {
-                position += top;
+        int position = 0;
+        int days = 0;
 
-                if(position >= height)
-                {
-                    days++;
-                    continue;
-                }
+        while (height > position) {
 
-                position -= bottom;
-                days++;
+            days++;
+            position += top;
+
+            if(position >= height){
+                break;
             }
 
-            return days;
+            position -= bottom;
         }
+
+        return days;
     }
 
     /**
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
      * Пример: (454355, 3) -> 3
      */
-    public static int kDecimal(int n, int order)
-    {
+    public static int kDecimal(int n, int order) {
         return Math.abs((int)(n / Math.pow(10, order - 1) % 10));
     }
 
@@ -73,7 +74,9 @@ public class IntegerTask {
 
         long factorial = 1;
 
-        for(int i =1; i <= n; i++) {factorial *= i;}
+        for (int i = 1; i <= n; i++) {
+            factorial *= i;
+        }
 
         return factorial;
     }
