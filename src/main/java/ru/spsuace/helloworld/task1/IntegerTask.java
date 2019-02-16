@@ -13,12 +13,10 @@ public class IntegerTask {
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
-    public static int sum(int n)
-    {
+    public static int sum(int n) {
         int sum = 0;
-        for(int i =1;i<=n;i++)
-        {
-            sum+=i;
+        for(int i = 1; i <= n; i++) {
+            sum += i;
         }
         return sum;
     }
@@ -28,40 +26,32 @@ public class IntegerTask {
      * Верните число Integer.MAX_VALUE;
      * Пример: (10, 3, 2) -> 8
      */
-    public static int snake(int height, int top, int bottom)
-    {
-        int days=0;
-        if(top>=height)
-        {
-            return 1;
-        }else if(top <= bottom)
-        {
-            return Integer.MAX_VALUE;
+    public static int snake(int height, int top, int bottom) {
+
+        if(top >= height){
+            return 1; }
+        else if(top <= bottom) {
+            return Integer.MAX_VALUE; }
+
+        /**(height - top) преобразовывается в double
+        *после чего делится на (top - bottom)
+         */
+        int lastdays=1;
+        double days = (double)(height - top) / (top - bottom);
+        if(days % 1 > 0) {
+            lastdays = 2;
         }
 
-        if((double)(height-top)/(top-bottom)%1>0)
-        {
-            days = (height - top) / (top - bottom) + 2;
-        }else
-        {
-            days = (height - top) / (top - bottom) + 1;
-        }
-
-
-
-        return days;
+        return (int)days + lastdays;
     }
 
     /**
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
      * Пример: (454355, 3) -> 3
      */
-    public static int kDecimal(int n, int order)
-    {
-        int answer=0;
+    public static int kDecimal(int n, int order) {
 
-        answer=Math.abs((int)(n % Math.pow(10,order)) /(int) Math.pow(10,order-1));
-        return answer;
+        return Math.abs((int)(n % Math.pow(10, order)) /(int) Math.pow(10, order-1));
     }
 
 
@@ -69,12 +59,10 @@ public class IntegerTask {
      * Выведите факториал от числа n
      * Пример: (5) -> 120
      */
-    public static long factorial(byte n)
-    {
+    public static long factorial(byte n) {
         long factorial = 1;
-        for(int i =1;i<=n;i++)
-        {
-            factorial*=i;
+        for(int i = 1; i <= n; i++) {
+            factorial *= i;
         }
         return factorial;
     }
