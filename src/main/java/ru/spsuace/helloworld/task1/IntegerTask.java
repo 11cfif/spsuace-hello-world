@@ -38,9 +38,8 @@ public class IntegerTask {
                 n++;
                 if (gus >= height) {
                     break;
-                } else {
-                    gus -= bottom;
                 }
+                gus -= bottom;
             }
             return n;
         }
@@ -55,10 +54,10 @@ public class IntegerTask {
         if (n < 0) {
             n *= -1;
         }
-        for (int i = 1; i < order + 1; i++) {
-            ans = n % 10;
+        for (int i = 1; i < order; i++) {
             n /= 10;
         }
+        ans = n % 10;
         return ans;
     }
 
