@@ -55,9 +55,7 @@ public class IntegerTask {
      */
     public static int kDecimal(int n, int order) {
 
-        int result = 0;
-        result = Math.abs((n % (int)Math. pow(10, order))/(int)Math. pow(10, order - 1));
-        return result;
+        return Math.abs((n % (int) Math.pow(10, order)) / (int) Math.pow(10, order - 1));
 
     }
 
