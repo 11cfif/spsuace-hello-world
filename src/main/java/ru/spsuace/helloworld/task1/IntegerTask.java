@@ -14,7 +14,9 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        if (n == 0) return 0;
+        if (n == 0) {
+            return 0;
+        }
         return n + sum(n - 1);
     }
 
@@ -37,7 +39,9 @@ public class IntegerTask {
             days++;
             point += top;
             //climbed?
-            if (point >= height) break;
+            if (point >= height) {
+                break;
+            }
             //nighttime
             point -= bottom;
         }
@@ -58,7 +62,9 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        if (n == 0) return 1;
+        if (n == 0) {
+            return 1;
+        }
         return n * factorial((byte) (n - 1));
     }
 }
