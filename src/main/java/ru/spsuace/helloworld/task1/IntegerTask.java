@@ -14,11 +14,11 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        int S = 0;
+        int s = 0;
         for (int i = 0; i <= n; i++) {
-            S += i;
+            s += i;
         }
-        return S;
+        return s;
     }
 
     /**
@@ -36,12 +36,12 @@ public class IntegerTask {
             return 1;
         }
 
-        int Snak = 0;
+        int snak = 0;
         for (int i = 0; ; i++) {
-            Snak += i * top - i * bottom;
+            snak += i * top - i * bottom;
 
-            if (Snak >= height) {
-                return Snak;
+            if (snak >= height) {
+                return snak;
             }
         }
     }
@@ -64,10 +64,10 @@ public class IntegerTask {
             return 1;
         }
 
-        long F = 1;
+        long f = 1;
         for (int i = 1; i <= n; i++) {
-            F *= i;
+            f *= i;
         }
-        return F;
+        return f;
     }
 }
