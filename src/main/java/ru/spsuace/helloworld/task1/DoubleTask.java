@@ -24,8 +24,7 @@ public class DoubleTask {
         x2 = (-b + Math.sqrt(disc)) / (2 * a);
 
         if (x1 < x2) {
-            double temp;
-            temp = x2;
+            double temp = x2;
             x2 = x1;
             x1 = temp;
         }
@@ -37,6 +36,6 @@ public class DoubleTask {
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
-        return (float) Math.pow(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2), 0.5);
+        return (float) Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
     }
 }
