@@ -16,12 +16,11 @@ public class DoubleTask {
      * Пример: (1, 5, 4) -> "-1.0, -4.0"
      */
     public static String equation(int a, int b, int c) {
-        double x1, x2, dis, temp;
-        dis = Math.pow(b, 2) - 4 * a * c;
-        x1 = (-b - Math.sqrt(dis)) / (2 * a);
-        x2 = (-b + Math.sqrt(dis)) / (2 * a);
+       double dis = Math.pow(b, 2) - 4 * a * c;
+        double x1 = (-b - Math.sqrt(dis)) / (2 * a);
+        double x2 = (-b + Math.sqrt(dis)) / (2 * a);
         if (x1 < x2) {
-            temp = x1;
+            double temp = x1;
             x1 = x2;
             x2 = temp;
         }
@@ -33,9 +32,8 @@ public class DoubleTask {
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
-        double x, y;
-        x = x1 - x2;
-        y = y1 - y2;
+        double x = x1 - x2;
+        double y = y1 - y2;
         return (float) Math.sqrt((Math.pow(x, 2) + Math.pow(y, 2)));
     }
 }
