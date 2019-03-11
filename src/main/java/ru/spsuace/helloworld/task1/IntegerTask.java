@@ -14,7 +14,10 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        int summa = 0;
+        for (int i = 1; i <= n; i++)
+            summa += i;
+        return summa;
     }
 
     /**
@@ -24,23 +27,48 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        if (top >= height) {
+            return 1;
+        } else if (top <= bottom) {
+            return Integer.MAX_VALUE;
+        }
+
+        /**(height - top) преобразовывается в double
+         *после чего делится на (top - bottom)
+         */
+        int lastdays = 1;
+        double days = (double) (height - top) / (top - bottom);
+        if (days % 1 > 0) {
+            lastdays = 2;
+        }
+
+        return (int) days + lastdays;
     }
 
     /**
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
      * Пример: (454355, 3) -> 3
      */
-    public static int kDecimal(int n, int order) {
-        return 0;
-    }
 
+
+    /**
+     * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
+     * Пример: (454355, 3) -> 3
+     */
+    public static int kDecimal(int n, int order) {
+        int result = Math.abs((n % (int) Math.pow(10, order)) / (int) Math.pow(10, order - 1));
+        return result;
+    }
 
     /**
      * Выведите факториал от числа n
      * Пример: (5) -> 120
      */
+
     public static long factorial(byte n) {
-        return 0;
+        long fact = 1;
+        for (int i = 2; i <= n; i++)
+            fact *= i;
+        return fact;
     }
 }
