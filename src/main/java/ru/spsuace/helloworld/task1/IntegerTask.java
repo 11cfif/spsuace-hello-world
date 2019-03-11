@@ -36,8 +36,7 @@ public class IntegerTask {
             double pos = height - top; //высота, пройденная до последнего подъема
             time = (int) (Math.ceil(pos / hp) + 1); // время подъема
 
-        }
-        if (hp <= 0) {
+        } else if (hp <= 0) {
             time = Integer.MAX_VALUE;
         }
         if ((height - top) == 0) {
