@@ -15,8 +15,9 @@ public class IntegerTask {
      */
     public static int sum(int n) {
         int summa = 0;
-        for (int i = 1; i <= n; i++)
+        for (int i = 1; i <= n; i++){
             summa += i;
+        }
         return summa;
     }
 
@@ -49,15 +50,8 @@ public class IntegerTask {
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
      * Пример: (454355, 3) -> 3
      */
-
-
-    /**
-     * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
-     * Пример: (454355, 3) -> 3
-     */
     public static int kDecimal(int n, int order) {
-        int result = Math.abs((n % (int) Math.pow(10, order)) / (int) Math.pow(10, order - 1));
-        return result;
+        return Math.abs((n % (int) Math.pow(10, order)) / (int) Math.pow(10, order - 1));
     }
 
     /**
@@ -67,8 +61,9 @@ public class IntegerTask {
 
     public static long factorial(byte n) {
         long fact = 1;
-        for (int i = 2; i <= n; i++)
+        for (int i = 2; i <= n; i++){
             fact *= i;
+        }
         return fact;
     }
 }
