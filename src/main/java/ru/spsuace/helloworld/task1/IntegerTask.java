@@ -14,7 +14,7 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        return (n*(n+1)/2);
     }
 
     /**
@@ -32,6 +32,8 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
+        //double k;
+        //k=(((n%(Math.pow(10,order)))-(n%(Math.pow(10,(order-1)))))/Math.pow(10,order-1));
         return 0;
     }
 
@@ -42,5 +44,10 @@ public class IntegerTask {
      */
     public static long factorial(byte n) {
         return 0;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(sum(5));
+        System.out.println(kDecimal(454355,3));
     }
 }
