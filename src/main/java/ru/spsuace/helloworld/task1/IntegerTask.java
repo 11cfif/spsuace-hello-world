@@ -14,7 +14,11 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        int S = 0;
+        for(int i=1;i<=n;i++){
+            S += i;
+        }
+        return S;
     }
 
     /**
@@ -24,7 +28,19 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        int days = Integer.MAX_VALUE;
+        if (height<=top){
+            days=1;
+        }
+        if (top>bottom){
+            days=1;
+            int current_height=top;
+            while(current_height<height){
+               current_height+=top-bottom;
+               days++;
+            }
+        }
+        return days;
     }
 
     /**
@@ -32,7 +48,11 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return 0;
+        int t=n;
+        for (int i=1;i<order;i++){
+           t = t/10;
+        }
+        return Math.abs(t % 10);
     }
 
 
@@ -41,6 +61,10 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+       if (n==0) {
+           return 1;
+       } else {
+           return n * factorial((byte) (n-1));
+       }
     }
 }
