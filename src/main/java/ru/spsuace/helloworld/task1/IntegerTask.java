@@ -9,12 +9,26 @@ package ru.spsuace.helloworld.task1;
  */
 public class IntegerTask {
 
+    public static void main(String[] args) {
+        System.out.println(sum(5));
+
+        System.out.println(snake(10,3,2));
+
+        System.out.println(kDecimal(454355,4));
+
+        System.out.println(factorial(5));
+    }
     /**
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        int s = 0;
+        while (n>0){
+            s=s+n;
+            n--;
+        }
+        return s;
     }
 
     /**
@@ -24,7 +38,9 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        if (bottom >= top)
+            return Integer.MAX_VALUE;
+        return height/(top-bottom)+height%(top-bottom);
     }
 
     /**
@@ -32,7 +48,8 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return 0;
+        return n/(int)Math.pow(10, order-1)%10;
+
     }
 
 
@@ -40,7 +57,12 @@ public class IntegerTask {
      * Выведите факториал от числа n
      * Пример: (5) -> 120
      */
-    public static long factorial(byte n) {
-        return 0;
+    public static long factorial(int n) {
+        int s = 1;
+        while (n>0){
+            s=s*n;
+            n--;
+        }
+        return s;
     }
 }
