@@ -1,5 +1,7 @@
 package ru.spsuace.helloworld.task1;
 
+import static java.lang.Math.abs;
+import static java.lang.Math.pow;
 
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
@@ -14,7 +16,10 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        //return IntStream.range(1,n+1).sum();
+        if (n == 1) return 1;
+        if (n == 0) return 0;
+        return n + sum(n - 1);
     }
 
     /**
@@ -24,7 +29,18 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+
+        int day = 1;
+        int position = 0;
+        if (height == top) return 1;
+        if (top <= bottom) return Integer.MAX_VALUE;
+        while (height > position) {
+            position += top;
+            if (position >= height) break;
+            position -= bottom;
+            day++;
+        }
+        return day;
     }
 
     /**
@@ -32,7 +48,7 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return 0;
+        return (int) (abs(n) % pow(10,order) / pow(10,order-1));
     }
 
 
@@ -41,6 +57,7 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+        if (n==0||n==1) return 1;
+        return n*factorial((byte) (n-1));
     }
 }
