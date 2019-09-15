@@ -9,12 +9,24 @@ package ru.spsuace.helloworld.task1;
  */
 public class IntegerTask {
 
+    public static void main(String[] args) {
+
+        System.out.println(sum(6));
+        System.out.println(snake(10,3,2));
+        System.out.println(factorial((byte)5));
+    }
+
     /**
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+
+        if (n != 1) {
+            return n + sum(n - 1);
+        }else{
+            return 1;
+        }
     }
 
     /**
@@ -24,7 +36,11 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        if (bottom >= top){
+            return Integer.MAX_VALUE;
+        }
+
+        return height / (top - bottom);
     }
 
     /**
@@ -41,6 +57,12 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+
+        if (n != 1){
+            return n * factorial((byte)(n-1));
+        }else{
+            return 1;
+        }
+
     }
 }
