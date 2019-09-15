@@ -18,19 +18,15 @@ public class DoubleTask {
         double x1 = 0;
         double x2 = 0;
 
-        double D = b * b - 4 * a * c;
-        if (D > 0) {
-            x1 = (-b + Math.sqrt(D)) / 2 / a;
-            x2 = (-b - Math.sqrt(D)) / 2 / a;
+        double d = b * b - 4 * a * c;
+        if (d > 0) {
+            x1 = (-b + Math.sqrt(d)) / 2 / a;
+            x2 = (-b - Math.sqrt(d)) / 2 / a;
             if (x1 < x2) {
                 double buffer = x2;
                 x2 = x1;
                 x1 = buffer;
             }
-
-        } else if (D == 0) {
-            x1 = -b / 2 / a;
-            x2 = x1;
         } else {
             x1 = Double.MAX_VALUE;
             x2 = -1 * Double.MAX_VALUE;
