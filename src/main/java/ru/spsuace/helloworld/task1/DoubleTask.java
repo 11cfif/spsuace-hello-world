@@ -9,13 +9,6 @@ import ru.spsuace.helloworld.Main;
  * Для просмотра подробной документации по выбранному методу нажмите Ctrl + q
  */
 public class DoubleTask {
-
-    public static void main(String[] args) {
-
-        System.out.println(equation(1,5,4));
-        System.out.println(length(0,0,3,4));
-
-    }
     /**
      * Вывести два корня квадратного уравнения через запятую: a * x ^ 2 + b * x + c = 0;
      * Вывод менять не нужно, надо только посчитать x1 и x2, где x1 > x2
@@ -24,16 +17,16 @@ public class DoubleTask {
     public static String equation(int a, int b, int c) {
         double x1;
         double x2;
-        double D = Math.pow(b,2)-(4*a*c);
-        if (D>=0){
-            x1 = (-b - Math.sqrt(D)) / (2 * a);
-            x2 = (-b + Math.sqrt(D)) / (2 * a);
+        double d = Math.pow(b, 2) - (4 * a * c);
+        if (d >= 0) {
+            x1 = (-b - Math.sqrt(d)) / (2 * a);
+            x2 = (-b + Math.sqrt(d)) / (2 * a);
         }
-        else{
+        else {
             return "Нет корней";
         }
 
-        return Math.max(x1,x2) + ", " + Math.min(x1,x2);
+        return Math.max(x1, x2) + ", " + Math.min(x1, x2);
     }
 
     /**
@@ -41,6 +34,6 @@ public class DoubleTask {
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
-        return (float)Math.sqrt(Math.pow(Math.abs(x1-x2),2)+Math.pow(Math.abs(y1-y2),2));
+        return (float)Math.sqrt(Math.pow(Math.abs(x1 - x2), 2) + Math.pow(Math.abs(y1 - y2), 2));
     }
 }
