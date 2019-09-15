@@ -1,8 +1,6 @@
 package ru.spsuace.helloworld.task1;
 
 
-import com.sun.javafx.runtime.async.AbstractRemoteResource;
-
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
  * Math.sqrt(1.44)

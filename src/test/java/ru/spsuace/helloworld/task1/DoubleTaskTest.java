@@ -15,6 +15,7 @@ public class DoubleTaskTest {
         assertX(parse(DoubleTask.equation(-3, -5, 2)), 0.333333333333, -2);
         assertX(parse(DoubleTask.equation(2, 3, -4)), 0.850781059358, -2.350781059358);
         assertX(parse(DoubleTask.equation(2, -3, -4)), 2.350781059358, -0.850781059358);
+        assertX(parse(DoubleTask.equation(2, -1, 4)), Double.MAX_VALUE, -1*Double.MAX_VALUE);
     }
 
     private double[] parse(String str) {
