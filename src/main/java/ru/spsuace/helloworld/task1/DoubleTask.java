@@ -16,12 +16,13 @@ public class DoubleTask {
      * Пример: (1, 5, 4) -> "-1.0, -4.0"
      */
     public static String equation(int a, int b, int c) {
-        double x1 = ( - b + Math.sqrt((Math.pow(b, 2) - 4 * a * c ))) /(2 * a);
-        double x2 = ( - b - Math.sqrt((Math.pow(b, 2) - 4 * a * c ))) /(2 * a);
-        if (x2 > x1){
-            x1 = ( - b - Math.sqrt((Math.pow(b, 2) - 4 * a * c ))) /(2 * a);
-            x2 = ( - b + Math.sqrt((Math.pow(b, 2) - 4 * a * c ))) /(2 * a);}
-        return x1 + ", " + x2;
+        double x1 = (-b + Math.sqrt((Math.pow(b, 2) - 4 * a * c))) / (2 * a);
+        double x2 = (-b - Math.sqrt((Math.pow(b, 2) - 4 * a * c))) / (2 * a);
+        if (x2 > x1) {
+               x1 = (-b - Math.sqrt((Math.pow(b, 2) - 4 * a * c))) / (2 * a);
+               x2 = (-b + Math.sqrt((Math.pow(b, 2) - 4 * a * c))) / (2 * a);
+        }
+               return x1 + ", " + x2;
     }
 
     /**

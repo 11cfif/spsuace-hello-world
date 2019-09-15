@@ -24,9 +24,11 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int res;
-        if (bottom >= top & height != top) {
+        int res ;
+        if (bottom >= top && height != top && top < height) {
             res = Integer.MAX_VALUE;
+        } else if(top >=height){
+            res = 1;
         } else {
             res = (int) (Math.ceil((double) (height - top) / (top - bottom)) + 1);
         }
@@ -54,5 +56,5 @@ public class IntegerTask {
         return res;
     }
 
-
 }
+
