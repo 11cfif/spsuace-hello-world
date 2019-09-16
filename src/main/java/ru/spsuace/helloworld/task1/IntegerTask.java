@@ -1,6 +1,5 @@
 package ru.spsuace.helloworld.task1;
 
-
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
  * Math.sqrt(1.44)
@@ -9,12 +8,8 @@ package ru.spsuace.helloworld.task1;
  */
 public class IntegerTask {
 
-    /**
-     * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
-     * Пример: (5) -> 15
-     */
     public static int sum(int n) {
-        return 0;
+        return (n*(n+1)/2);
     }
 
     /**
@@ -24,7 +19,17 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        int i=0;
+        if (top>bottom) {
+        while (height>top) {
+            height=height-(top-bottom);
+            i++;
+        }
+        return i+1;
+        }
+        else {
+            return Integer.MAX_VALUE;
+        }
     }
 
     /**
@@ -32,7 +37,16 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return 0;
+        int i=0;
+        int j=0;
+        while (n != 0) {
+            i = n % 10;
+            n /= 10;
+            j++;
+            if (j==order) {
+                break; }
+        }
+        return i;
     }
 
 
@@ -40,7 +54,14 @@ public class IntegerTask {
      * Выведите факториал от числа n
      * Пример: (5) -> 120
      */
-    public static long factorial(byte n) {
-        return 0;
+    public static long factorial(int n) {
+        if (n == 0) return 1;
+        return n * factorial(n-1);
+    }
+    public static void main(String[] args) {
+        System.out.println(sum(5));
+        System.out.println(factorial(6));
+        System.out.println(kDecimal(987654321, 7));
+        System.out.println(snake(10, 3, 4));
     }
 }
