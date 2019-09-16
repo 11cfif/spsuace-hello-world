@@ -29,13 +29,16 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        if (top == height)
+        if (top >= height) {
             return 1;
-        if (bottom >= top)
+        }
+        if (bottom >= top) {
             return Integer.MAX_VALUE;
+        }
         int day = (height - top) / (top - bottom) + 1;
-        if (height % (top - bottom) != 0)
+        if (height % (top - bottom) != 0) {
             day++;
+        }
         return  day;
     }
 
@@ -44,7 +47,8 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return Math.abs(n / (int)Math.pow(10, order - 1) % 10);
+        char[] digitsAsChars = String.valueOf(n).toCharArray();
+        return Character.digit(digitsAsChars[digitsAsChars.length - order], 10);
     }
 
 
