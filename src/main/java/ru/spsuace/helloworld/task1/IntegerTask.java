@@ -9,7 +9,7 @@ package ru.spsuace.helloworld.task1;
 public class IntegerTask {
 
     public static int sum(int n) {
-        return (n*(n+1)/2);
+        return (n * (n+1) / 2);
     }
 
     /**
@@ -19,17 +19,21 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int i=0;
+        int i = 0;
+        if (height == top) {
+            return 1;
+        }
         if (top>bottom) {
         while (height>top) {
-            height=height-(top-bottom);
+            height = height - ( top - bottom );
             i++;
         }
-        return i+1;
+        return i + 1;
         }
         else {
             return Integer.MAX_VALUE;
         }
+
     }
 
     /**
@@ -37,13 +41,16 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        int i=0;
-        int j=0;
+        int i = 0;
+        int j = 0;
+        if ( n < 0 ) {
+            n = Math.abs(n);
+        }
         while (n != 0) {
             i = n % 10;
             n /= 10;
             j++;
-            if (j==order) {
+            if (j == order) {
                 break; }
         }
         return i;
@@ -62,6 +69,6 @@ public class IntegerTask {
         System.out.println(sum(5));
         System.out.println(factorial(6));
         System.out.println(kDecimal(987654321, 7));
-        System.out.println(snake(10, 3, 4));
+        System.out.println(snake(10, 10, 199));
     }
 }
