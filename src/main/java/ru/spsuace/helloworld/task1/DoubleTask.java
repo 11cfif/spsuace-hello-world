@@ -22,7 +22,13 @@ public class DoubleTask {
             x1 =  ((-1) * b + Math.sqrt(d)) / (2 * a);
             x2 =  ((-1) * b - Math.sqrt(d)) / (2 * a);
 
-        return x1 + ", " + x2;
+            if (x1 < x2) {
+                double t;
+                t = x1;
+                x1 = x2;
+                x2 = t;
+            }
+            return x1 + ", " + x2;
     }
 
     /**
@@ -36,6 +42,6 @@ public class DoubleTask {
     }
     public static void main(String[] args) {
         System.out.println(length(0, 0, 3, 4));
-        System.out.println(equation(2, -3, -4));
+        System.out.println(equation(-3, -5, 2));
     }
 }
