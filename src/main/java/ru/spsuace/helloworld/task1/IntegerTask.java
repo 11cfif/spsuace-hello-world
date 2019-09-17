@@ -23,9 +23,9 @@ public class IntegerTask {
         if (height == top) {
             return 1;
         }
-        if (top>bottom) {
-        while (height>top) {
-            height = height - ( top - bottom );
+        if (top > bottom) {
+        while (height > top) {
+             height = height - ( top - bottom );
             i++;
         }
         return i + 1;
@@ -65,10 +65,12 @@ public class IntegerTask {
         if (n == 0) return 1;
         return n * factorial(n-1);
     }
+
+
     public static void main(String[] args) {
         System.out.println(sum(5));
-        System.out.println(factorial(6));
-        System.out.println(kDecimal(987654321, 7));
+        System.out.println(factorial(4));
+        System.out.println(kDecimal(1234, 2));
         System.out.println(snake(10, 10, 199));
     }
 }
