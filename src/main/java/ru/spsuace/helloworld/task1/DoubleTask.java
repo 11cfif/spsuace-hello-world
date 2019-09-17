@@ -19,16 +19,16 @@ public class DoubleTask {
     public static String equation(int a, int b, int c) {
         double x1 = 0;
         double x2 = 0;
-        double Dis = 0;
+        double dis = 0;
 
-        Dis = Math.sqrt(Math.pow(b, 2) - 4 * a * c);
+        dis = Math.sqrt(Math.pow(b, 2) - 4 * a * c);
 
-        if (Dis >= 0){
+        if (dis >= 0){
 
-            x1 = (-b - Dis) / (2 * a);
-            x2 = (-b + Dis) / (2 * a);
+            x1 = (-b - dis) / (2 * a);
+            x2 = (-b + dis) / (2 * a);
 
-        }else if (Dis < 0){
+        } else if (dis < 0) {
 
             return "Корней нет";
 
