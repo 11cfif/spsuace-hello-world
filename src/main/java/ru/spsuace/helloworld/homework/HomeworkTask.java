@@ -9,7 +9,9 @@ public class HomeworkTask {
      * Для того, что бы получить значение по Y для точки X, надо просто написать function.applyAsDouble(t)
      * Считаем, что функция определена на всем пространстве от a до b
      */
-    public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
+    public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta)
+    {
+        //test
         return 0;
     }
 
