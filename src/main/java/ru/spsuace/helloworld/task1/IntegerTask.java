@@ -41,8 +41,7 @@ public class IntegerTask {
             now += top;
             if (max >= now) {
                 return Integer.MAX_VALUE;
-            }
-            else {
+            } else {
                 max = now;
             }
         } while (now < height);
@@ -67,7 +66,7 @@ public class IntegerTask {
     public static long factorial(byte n) {
         long result = 1;
         for (int i = 1; i <= n; i++) {
-            result *= (byte) (i);
+            result *= i;
         }
         return result;
     }
