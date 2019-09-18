@@ -10,7 +10,12 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        return 0;
+        int n = (int) ((b - a) / delta);
+        double sum = function.applyAsDouble(a) + function.applyAsDouble(b);
+        for (int i = 1; i < n; i++) {
+            sum += 2 * function.applyAsDouble(a + delta * i);
+        }
+        return sum * delta / 2;
     }
 
     /**
@@ -18,7 +23,20 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        return 0;
+        long t = a;
+        int maxIndex = 1;
+        int currentIndex = 1;
+        int maxDigit = (int) t % 10;
+        while (t > 0) {
+            t = t / 10;
+            currentIndex++;
+            int currentDigit = (int) t % 10;
+            if (currentDigit > maxDigit) {
+                maxIndex = currentIndex;
+                maxDigit = currentDigit;
+            }
+        }
+        return (byte) (currentIndex - maxIndex);
     }
 
 
