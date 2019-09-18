@@ -16,10 +16,7 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        //return IntStream.range(1,n+1).sum();
-        if (n == 1) return 1;
-        if (n == 0) return 0;
-        return n + sum(n - 1);
+        return n * (n + 1) / 2;
     }
 
     /**
@@ -32,11 +29,17 @@ public class IntegerTask {
 
         int day = 1;
         int position = 0;
-        if (height == top) return 1;
-        if (top <= bottom) return Integer.MAX_VALUE;
+        if (height <= top) {
+            return 1;
+        }
+        if (top <= bottom) {
+            return Integer.MAX_VALUE;
+        }
         while (height > position) {
             position += top;
-            if (position >= height) break;
+            if (position >= height) {
+                break;
+            }
             position -= bottom;
             day++;
         }
@@ -48,7 +51,7 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return (int) (abs(n) % pow(10,order) / pow(10,order-1));
+        return (int) (abs(n) % pow(10, order) / pow(10, order - 1));
     }
 
 
@@ -57,7 +60,9 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        if (n==0||n==1) return 1;
-        return n*factorial((byte) (n-1));
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        return n * factorial((byte) (n - 1));
     }
 }
