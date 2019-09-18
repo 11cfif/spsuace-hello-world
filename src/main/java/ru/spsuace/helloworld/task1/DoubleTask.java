@@ -13,7 +13,6 @@ public class DoubleTask {
      * Вывод менять не нужно, надо только посчитать x1 и x2, где x1 > x2
      * Пример: (1, 5, 4) -> "-1.0, -4.0"
      */
-    int a=1, b=5, c = 4;
     public static String equation(int a, int b, int c) {
         double d;
         d = Math.pow(b, 2) - 4 * a * c;
@@ -35,7 +34,6 @@ public class DoubleTask {
      * Нужно посчитать расстояние, между двумя точками (x1, y1) и (x2, y2)
      * Пример: (0, 0, 3, 4) -> 5.0
      */
-    double x1 = 0, y1 = 0, x2 = 3, y2 = 4;
     public static float length(double x1, double y1, double x2, double y2) {
         return (float) Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
     }
