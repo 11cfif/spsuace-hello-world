@@ -33,8 +33,17 @@ public class HomeworkTaskTest {
     public void lineFunction() {
         assertEquals( 10, HomeworkTask.lineFunction(0, 0, 3, 3, 10),  1e-2);
         assertEquals( 0, HomeworkTask.lineFunction(0, 0 , 2, 3, 0), 1e-2);
-        assertEquals( 1, HomeworkTask.lineFunction(0, 0, -2, 2, 3), 1e-2);
+        assertEquals( -3, HomeworkTask.lineFunction(0, 0, -2, 2, 3), 1e-2);
         assertEquals( 1, HomeworkTask.lineFunction(1, 1, 23, 1, 3), 1e-2);
-        assertEquals( 18, HomeworkTask.lineFunction(25, 28, -1, -2, 3), 1e-2);
+        assertEquals( 2.61538461538, HomeworkTask.lineFunction(25, 28, -1, -2, 3), 1e-2);
+    }
+
+    @Test
+    public void square() {
+        assertEquals( 4, HomeworkTask.square(0, 0, 2, 0, 2, 2, 0, 2),  1e-2);
+        assertEquals( 3, HomeworkTask.square(0, 0, 3, 0, 1, 1, 0, 3),  1e-2);
+        assertEquals( 6, HomeworkTask.square(0, 0, -4, -2, 0, -4, -1, -2),  1e-2);
+        assertEquals( 12, HomeworkTask.square(-3, -5, 3, 1, -3, 1, -1, -1),  1e-2);
+        assertEquals( 3, HomeworkTask.square(0, 0, -3, 0, -1, -1, 0, -3),  1e-2);
     }
 }

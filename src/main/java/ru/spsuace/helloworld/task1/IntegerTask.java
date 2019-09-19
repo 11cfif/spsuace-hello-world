@@ -47,8 +47,7 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        char[] digitsAsChars = String.valueOf(n).toCharArray();
-        return Character.digit(digitsAsChars[digitsAsChars.length - order], 10);
+        return Math.abs(n / (int)Math.pow(10, order - 1) % 10);
     }
 
 
@@ -57,11 +56,9 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        long s = 1;
-        while (n > 0) {
-            s = s * n;
-            n--;
+        if (n == 1 || n == 0){
+            return 1;
         }
-        return s;
+        return n * factorial((byte) (n-1));
     }
 }
