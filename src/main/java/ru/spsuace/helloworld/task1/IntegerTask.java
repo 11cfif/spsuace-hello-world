@@ -25,7 +25,7 @@ public class IntegerTask {
      */
     public static int snake(int height, int top, int bottom) {
         int i = 1;
-        if (height == top) {
+        if (height <= top) {
             return 1;
         } else {
             if (top != bottom && top > bottom) {
