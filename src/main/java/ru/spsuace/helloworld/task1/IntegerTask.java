@@ -14,7 +14,9 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
 
-    public static int sum(int n) { return (n * (n + 1) / 2); }
+    public static int sum(int n) {
+        return (n * (n + 1) / 2);
+    }
 
     /**
      * Гусеница поднимается по стене длиной height на высоту top за день, ночью гусеница сползает на bottom.
@@ -25,11 +27,17 @@ public class IntegerTask {
     public static int snake(int height, int top, int bottom) {
         int day = 1;
         int way = 0;
-        if (height == top) return 1;
-        if (top <= bottom) return Integer.MAX_VALUE;
+        if (height == top) {
+            return 1;
+        }
+        if (top <= bottom) {
+            return Integer.MAX_VALUE;
+        }
         do {
             way += top;
-            if (way >= height) break;
+            if (way >= height) {
+                break;
+            }
             way -= bottom;
             day++;
         } while (height >= way);
@@ -50,7 +58,9 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        if (n == 0 || n == 1) return 1;
+        if (n == 0 || n == 1) {
+            return 1;
+        }
         long answer = 1;
         for (int i = 1; i <= n; i++) {
             answer *= i;
