@@ -23,17 +23,17 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        /**int day = 1;
+        int day = 1;
         int way = 0;
-        if (top - bottom <= 0) return Integer.MAX_VALUE;
-        if (height > way) {
+        if (height == top) return 1;
+        if (top <= bottom) return Integer.MAX_VALUE;
+        do {
             way += top;
-        }
-        else {
+            if (way >= height) break;
             way -= bottom;
             day++;
-        }*/
-        return 0;
+        } while (height >= way);
+        return day;
     }
 
     /**
@@ -41,11 +41,7 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        /**n = Math.abs(n);
-        order = 1;
-        n %= 10;*/
-
-        return order;
+        return (int) (Math.abs(n) % Math.pow(10, order) / Math.pow(10, order - 1));
     }
 
 
