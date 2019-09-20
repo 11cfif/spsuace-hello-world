@@ -35,7 +35,6 @@ public class HomeworkTaskTest {
         assertEquals( 0, HomeworkTask.lineFunction(0, 0 , 2, 3, 0), 1e-2);
         assertEquals( -3, HomeworkTask.lineFunction(0, 0, -2, 2, 3), 1e-2);
         assertEquals( 1, HomeworkTask.lineFunction(1, 1, 23, 1, 3), 1e-2);
-        assertEquals(
-                2.61538462, HomeworkTask.lineFunction(25, 28, -1, -2, 3), 1e-2);
+        assertEquals( 2.61538462, HomeworkTask.lineFunction(25, 28, -1, -2, 3), 1e-2);
     }
 }
