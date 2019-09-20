@@ -10,25 +10,14 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
+        double integral = 0;
         double s;
-        double d;
-        double xb;
-        double xe;
-        double x;
-        String t;
-        s = 0;
-        d = (b - a) / delta;
-        xb = a;
-        t = String.valueOf(function);
-        String(function) = "with (Math) {" + function + "}";
-        for(int i = 0; i < delta; i++){
-            xe = xb + d;
-            x = (xb + xe) / 2;
-            s = s + d * eval(function);
-            xb = xe;
-        }
-        t = " Интеграл от " + t  + "  = " + s;
-        return t;
+        do {
+            s = function.applyAsDouble(a) * delta;
+            integral += s;
+            a += delta;
+        } while (a < b);
+        return integral;
     }
 
     /**
@@ -36,21 +25,20 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        int i = 0;
-        byte max = 0;
-        int number = 0;
+        long number = a;
+        int i = 1;
+        int index = 0;
+        long max = 0;
         do {
-            i++;
-            if (a % 10 >= max)
-            {
-                max = (byte) (a % 10);
-                number = i;
-        }
-            a /= 10;
-        }
-        while (a > 0);
-        //number = i - number + 1;
-        return (byte) i;
+            a = number % 10;
+            number /= 10;
+            i ++;
+            if (a >= max) {
+                max = a;
+                index = i;
+            }
+        } while (number != 0);
+        return (byte) (i - index + 1);
     }
 
 
@@ -59,7 +47,7 @@ public class HomeworkTask {
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        return 0;
+        return (double) (-((y1 - y2) * x3 + (x1 * y2 - x2 * y1))) / (x2 - x1);
     }
 
     /**
