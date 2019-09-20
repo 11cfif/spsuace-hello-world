@@ -20,7 +20,7 @@ public class DoubleTask {
         double x2 = 0;
         double d = 0;
         d = (Math.pow(b, 2)) - 4 * a * c;
-        if (d > 0){
+        if (d > 0) {
             x1 = ((-b + Math.sqrt(d)) / (2 * a));
             x2 = ((-b - Math.sqrt(d)) / (2 * a));
             if (x1 < x2) {
@@ -28,14 +28,12 @@ public class DoubleTask {
                 x2 = x1;
                 x1 = replacement;
             }
-        }
-        else if (d == 0) {
+        } else if (d == 0) {
             x1 = -b / (2 * a);
             x2 = x1;
-        }
-        else {
-            x1 = Double.MAX_VALUE;
-            x2 = -1 * Double.MAX_VALUE;
+        } else {
+            x1 = Double.MIN_VALUE;
+            x2 = -1 * Double.MIN_VALUE;
         }
         return x1 + ", " + x2;
     }
@@ -45,5 +43,6 @@ public class DoubleTask {
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
-        return (float) Math.sqrt(Math.pow((x2 - x1), 2.0) + Math.pow((y2 - y1), 2.0)); }
+        return (float) Math.sqrt(Math.pow((x2 - x1), 2.0) + Math.pow((y2 - y1), 2.0));
+    }
 }

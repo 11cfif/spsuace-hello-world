@@ -10,7 +10,25 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        return 0;
+        double s;
+        double d;
+        double xb;
+        double xe;
+        double x;
+        String t;
+        s = 0;
+        d = (b - a) / delta;
+        xb = a;
+        t = String.valueOf(function);
+        String(function) = "with (Math) {" + function + "}";
+        for(int i = 0; i < delta; i++){
+            xe = xb + d;
+            x = (xb + xe) / 2;
+            s = s + d * eval(function);
+            xb = xe;
+        }
+        t = " Интеграл от " + t  + "  = " + s;
+        return t;
     }
 
     /**
@@ -18,7 +36,21 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        return 0;
+        int i = 0;
+        byte max = 0;
+        int number = 0;
+        do {
+            i++;
+            if (a % 10 >= max)
+            {
+                max = (byte) (a % 10);
+                number = i;
+        }
+            a /= 10;
+        }
+        while (a > 0);
+        //number = i - number + 1;
+        return (byte) i;
     }
 
 
