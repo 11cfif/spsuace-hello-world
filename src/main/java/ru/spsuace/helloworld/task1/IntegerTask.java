@@ -27,7 +27,7 @@ public class IntegerTask {
     public static int snake(int height, int top, int bottom) {
         int day = 1;
         int way = 0;
-        if (height == top) {
+        if (height <= top) {
             return 1;
         }
         if (top <= bottom) {
@@ -40,7 +40,7 @@ public class IntegerTask {
             }
             way -= bottom;
             day++;
-        } while (height >= way);
+        } while (height > way);
         return day;
     }
 
