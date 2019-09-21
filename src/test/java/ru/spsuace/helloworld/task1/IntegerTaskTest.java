@@ -11,7 +11,7 @@ public class IntegerTaskTest {
         assertEquals(0, IntegerTask.sum(0));
         assertEquals(15, IntegerTask.sum(5));
         assertEquals(55, IntegerTask.sum(10));
-        assertEquals(500500, IntegerTask.sum(1000));
+        assertEquals(50005000, IntegerTask.sum(10000));
     }
 
     @Test
@@ -22,6 +22,7 @@ public class IntegerTaskTest {
         assertEquals(1, IntegerTask.snake(10, 10, 199));
         assertEquals(46, IntegerTask.snake(100, 10, 8));
         assertEquals(13, IntegerTask.snake(100, 10, 2));
+        assertEquals(1, IntegerTask.snake(10, 100, 101));
 
     }
 
