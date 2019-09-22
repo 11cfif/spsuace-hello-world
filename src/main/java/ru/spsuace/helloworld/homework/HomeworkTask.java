@@ -25,19 +25,19 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        long number = a;
+        long number;
         int score = 1;
         int index = 0;
         long max = 0;
         do {
-            a = number % 10;
-            number /= 10;
+            number = a % 10;
+            a /= 10;
             score++;
-            if (a >= max) {
-                max = a;
+            if (number >= max) {
+                max = number;
                 index = score;
             }
-        } while (number != 0);
+        } while (a != 0);
         return (byte) (score - index + 1);
     }
 
