@@ -2,7 +2,7 @@ package ru.spsuace.helloworld.task1;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class IntegerTaskTest {
 
@@ -38,13 +38,12 @@ public class IntegerTaskTest {
 
     @Test
     public void factorial() {
-        assertEquals(1, IntegerTask.factorial((byte)0));
-        assertEquals(1, IntegerTask.factorial((byte)1));
-        assertEquals(2, IntegerTask.factorial((byte)2));
-        assertEquals(120, IntegerTask.factorial((byte)5));
-        assertEquals(3_628_800, IntegerTask.factorial((byte)10));
-        assertEquals(479_001_600, IntegerTask.factorial((byte)12));
-        assertEquals(2_432_902_008_176_640_000L, IntegerTask.factorial((byte)20));
-
+        assertEquals(1, IntegerTask.factorial((byte) 0));
+        assertEquals(1, IntegerTask.factorial((byte) 1));
+        assertEquals(2, IntegerTask.factorial((byte) 2));
+        assertEquals(120, IntegerTask.factorial((byte) 5));
+        assertEquals(3_628_800, IntegerTask.factorial((byte) 10));
+        assertEquals(479_001_600, IntegerTask.factorial((byte) 12));
+        assertEquals(2_432_902_008_176_640_000L, IntegerTask.factorial((byte) 20));
     }
 }
