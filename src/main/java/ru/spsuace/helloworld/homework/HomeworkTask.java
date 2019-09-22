@@ -26,19 +26,19 @@ public class HomeworkTask {
      */
     public static byte maxNumber(long a) {
         long number = a;
-        int i = 1;
+        int score = 1;
         int index = 0;
         long max = 0;
         do {
             a = number % 10;
             number /= 10;
-            i ++;
+            score++;
             if (a >= max) {
                 max = a;
-                index = i;
+                index = score;
             }
         } while (number != 0);
-        return (byte) (i - index + 1);
+        return (byte) (score - index + 1);
     }
 
 
