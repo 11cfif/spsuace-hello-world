@@ -10,11 +10,6 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        if (a > b) {
-            double k = b;
-            b = a;
-            a = k;
-        }
         double sum = 0;
         for (int i = 0; i < (b - a) / delta; i++) {
             sum += delta * (0.5 * (function.applyAsDouble(a + i * delta) + function.applyAsDouble(a + (i + 1) * delta)));
@@ -32,21 +27,22 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        long a1;
-        int kolNumber = 0;
+        long number;
+        long copyNumberA=a;
+        int amountNumber = 0;
         int indexMaxNumber = 0;
         long maxNum = 0;
-        while (a != 0) {
-            a1 = a % 10;
-            a /= 10;
-            kolNumber++;
-            if (a1 >= maxNum) {
-                maxNum = a1;
-                indexMaxNumber = kolNumber;
+        while (copyNumberA != 0) {
+            number = copyNumberA % 10;
+            copyNumberA /= 10;
+            amountNumber++;
+            if (number >= maxNum) {
+                maxNum = number;
+                indexMaxNumber = amountNumber;
             }
         }
         ;
-        return (byte) (kolNumber - indexMaxNumber + 1);
+        return (byte) (amountNumber - indexMaxNumber + 1);
     }
 
 
@@ -64,7 +60,8 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        return (Math.abs(x1 * y2 + x2 * y3 + x3 * y4 + x4 * y1 - x2 * y1 - x3 * y2 - x4 * y3 - x1 * y4)) / 2;
+        //Формула площади Гаусса(для любого самонепересекающегося многоугольника, вид для 4-угольника)
+        return Math.abs((x1 * y2 - x2 * y1) + (x2 * y3 - x3 * y2) + (x3 * y4 - x4 * y3) + (x4 * y1 - x1 * y4))/2;
     }
 
 
