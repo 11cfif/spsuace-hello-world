@@ -1,6 +1,8 @@
 package ru.spsuace.helloworld.task1;
 
 
+import ru.spsuace.helloworld.Main;
+
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
  * Math.sqrt(1.44)
@@ -14,7 +16,7 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        return (n * (n + 1) / 2);
     }
 
     /**
@@ -24,7 +26,23 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        int FOR_ONE_DAY = 0;
+        int DAYS = 1;
+        if (height <= top) {
+            return 1;
+        }
+        if (top <= bottom) {
+            return Integer.MAX_VALUE;
+        }
+        while (height > FOR_ONE_DAY) {
+            FOR_ONE_DAY += top;
+            if (FOR_ONE_DAY >= height) {
+                break;
+            }
+            FOR_ONE_DAY -= bottom;
+            DAYS++;
+        }
+        return DAYS;
     }
 
     /**
@@ -32,7 +50,9 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return 0;
+        double x = Math.abs(n) % Math.pow(10, order);
+        double z = x / Math.pow(10, order - 1);
+        return (int) z;
     }
 
 
@@ -41,6 +61,13 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+        long result = 1;
+        if (n == 0) {
+            return 1;
+        }
+        for (int i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
     }
 }
