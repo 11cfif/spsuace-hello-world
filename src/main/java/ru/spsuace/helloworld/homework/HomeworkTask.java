@@ -11,9 +11,8 @@ public class HomeworkTask {
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
         double s = 0;
-        while (a <= b) {
-            s += function.applyAsDouble(a) * delta;
-            a += delta;
+        for (double i = a; i <= b; i += delta) {
+            s += function.applyAsDouble(i) * delta;
         }
         return s;
     }
@@ -23,20 +22,20 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        byte length = (byte) Math.ceil(Math.log10(a));
-        byte max = 0;
-        byte i = 1;
-        byte index = 1;
-
+        long length = (long) Math.ceil(Math.log10(a));
+        long max = 0;
+        int i = 1;
+        int index = 1;
+        long m;
         while (i <= length) {
-            if (max <  a / (long) Math.pow(10, (long) (length) - i) % 10) {
-                max = (byte) (a / (long) Math.pow(10, (long) (length) - i) % 10);
+            m = a / (long) Math.pow(10, length - i) % 10;
+            if (max <  m) {
+                max =  m;
                 index = i;
             }
-            a = a - (a / (long) Math.pow(10, (long) (length) - i) % 10) * (long) Math.pow(10, (long) (length - i));
             i++;
         }
-        return index;
+        return (byte) index;
     }
 
 
@@ -54,21 +53,21 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        double a = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));      //Стороны
-        double b = Math.sqrt(Math.pow((x3 - x2), 2) + Math.pow((y3 - y2), 2));
-        double c = Math.sqrt(Math.pow((x4 - x3), 2) + Math.pow((y4 - y3), 2));
-        double d = Math.sqrt(Math.pow((x1 - x4), 2) + Math.pow((y1 - y4), 2));
-        double k1 = Math.sqrt(Math.pow((x3 - x1), 2)+Math.pow((y3 - y1), 2));       //Диагональ AC
+        double sideAB = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));      //Стороны
+        double sideBC = Math.sqrt(Math.pow((x3 - x2), 2) + Math.pow((y3 - y2), 2));
+        double sideCD = Math.sqrt(Math.pow((x4 - x3), 2) + Math.pow((y4 - y3), 2));
+        double sideAD = Math.sqrt(Math.pow((x1 - x4), 2) + Math.pow((y1 - y4), 2));
+        double sideAC = Math.sqrt(Math.pow((x3 - x1), 2) + Math.pow((y3 - y1), 2));     //Диагональ AC
 
-        double p1 = (a + b + k1) / 2;
-        double s1 = Math.sqrt(p1 * (p1 - a) * (p1 - b) * (p1 - k1));                //ABC
-        double p2 = (k1 + d + c) / 2;
-        double s2 = Math.sqrt(p2 * (p2 - k1) * (p2 - d) * (p2 - c));                //ACD
+        double p1 = (sideAB + sideBC + sideAC) / 2;
+        double areaABC = Math.sqrt(p1 * (p1 - sideAB) * (p1 - sideBC) * (p1 - sideAC));                //ABC
+        double p2 = (sideAC + sideAD + sideCD) / 2;
+        double areaACD = Math.sqrt(p2 * (p2 - sideAC) * (p2 - sideAD) * (p2 - sideCD));                //ACD
 
-        if (a < k1 && d > k1 || d < k1 && a > k1) {                                 //Проверка на выпуклость
-            return s1 - s2;
+        if (sideAB < sideAC && sideAD > sideAC || sideAD < sideAC && sideAB > sideAC) {                 //Проверка на выпуклость
+            return areaABC - areaACD;
         } else {
-            return s1 + s2;
+            return areaABC + areaACD;
         }
     }
 
