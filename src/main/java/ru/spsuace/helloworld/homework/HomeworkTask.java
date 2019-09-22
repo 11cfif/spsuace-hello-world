@@ -11,12 +11,13 @@ public class HomeworkTask {
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
         double integral = 0;
+        double cloneA = a;
         double s;
         do {
-            s = function.applyAsDouble(a) * delta;
+            s = function.applyAsDouble(cloneA) * delta;
             integral += s;
-            a += delta;
-        } while (a < b);
+            cloneA += delta;
+        } while (cloneA < b);
         return integral;
     }
 
