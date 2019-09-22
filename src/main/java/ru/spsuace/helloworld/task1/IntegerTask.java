@@ -19,7 +19,7 @@ public class IntegerTask {
             summa = summa + i;
         }
         return summa;
-        }
+    }
 
 
     /**
@@ -37,12 +37,12 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        int y = Math.abs(n);
-        int t = (int)  Math.pow(10, order);
-        int a = y % t;
-        int r = (int) Math.pow(10, order-1);
+        int AbsN = Math.abs(n);
+        int Pow1 = (int)  Math.pow(10, order);
+        int Ostatok1 = AbsN % Pow1;
+        int Pow2 = (int) Math.pow(10, order-1);
 
-        return a / r ;
+        return Ostatok1 / Pow2 ;
     }
 
 
