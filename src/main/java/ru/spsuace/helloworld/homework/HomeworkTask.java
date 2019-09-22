@@ -11,8 +11,8 @@ public class HomeworkTask {
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
         double s = 0;
-        for (double i = a; i <= b; i += delta) {
-            s += function.applyAsDouble(i) * delta;
+        for (double position = a; position <= b; position += delta) {
+            s += function.applyAsDouble(position) * delta;
         }
         return s;
     }
@@ -26,11 +26,11 @@ public class HomeworkTask {
         long max = 0;
         int i = 1;
         int index = 1;
-        long m;
+        long numberInPosition;
         while (i <= length) {
-            m = a / (long) Math.pow(10, length - i) % 10;
-            if (max <  m) {
-                max =  m;
+            numberInPosition = a / (long) Math.pow(10, length - i) % 10;
+            if (max <  numberInPosition) {
+                max =  numberInPosition;
                 index = i;
             }
             i++;
@@ -53,22 +53,18 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        double sideAB = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));      //Стороны
+        double sideAB = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));             //Стороны
         double sideBC = Math.sqrt(Math.pow((x3 - x2), 2) + Math.pow((y3 - y2), 2));
         double sideCD = Math.sqrt(Math.pow((x4 - x3), 2) + Math.pow((y4 - y3), 2));
         double sideAD = Math.sqrt(Math.pow((x1 - x4), 2) + Math.pow((y1 - y4), 2));
-        double sideAC = Math.sqrt(Math.pow((x3 - x1), 2) + Math.pow((y3 - y1), 2));     //Диагональ AC
+        double diagonalAC = Math.sqrt(Math.pow((x3 - x1), 2) + Math.pow((y3 - y1), 2));         //Диагональ AC
 
-        double p1 = (sideAB + sideBC + sideAC) / 2;
-        double areaABC = Math.sqrt(p1 * (p1 - sideAB) * (p1 - sideBC) * (p1 - sideAC));                //ABC
-        double p2 = (sideAC + sideAD + sideCD) / 2;
-        double areaACD = Math.sqrt(p2 * (p2 - sideAC) * (p2 - sideAD) * (p2 - sideCD));                //ACD
+        double p1 = (sideAB + sideBC + diagonalAC) / 2;
+        double areaABC = Math.sqrt(p1 * (p1 - sideAB) * (p1 - sideBC) * (p1 - diagonalAC));     //ABC
+        double p2 = (diagonalAC + sideAD + sideCD) / 2;
+        double areaACD = Math.sqrt(p2 * (p2 - diagonalAC) * (p2 - sideAD) * (p2 - sideCD));     //ACD
 
-        if (sideAB < sideAC && sideAD > sideAC || sideAD < sideAC && sideAB > sideAC) {                 //Проверка на выпуклость
-            return areaABC - areaACD;
-        } else {
-            return areaABC + areaACD;
-        }
+        return areaABC + areaACD;
     }
 
 }
