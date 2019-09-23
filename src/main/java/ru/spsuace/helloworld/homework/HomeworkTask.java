@@ -28,13 +28,14 @@ public class HomeworkTask {
      */
     public static byte maxNumber(long a) {
         long number;
-        long copyNumberA=a;
+        long truncationNumberA = a;
         int amountNumber = 0;
         int indexMaxNumber = 0;
         long maxNum = 0;
-        while (copyNumberA != 0) {
-            number = copyNumberA % 10;
-            copyNumberA /= 10;
+        while (truncationNumberA != 0) {
+            number = truncationNumberA % 10;
+            truncationNumberA /= 10;
+            System.out.println(truncationNumberA);
             amountNumber++;
             if (number >= maxNum) {
                 maxNum = number;
@@ -61,9 +62,8 @@ public class HomeworkTask {
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
         //Формула площади Гаусса(для любого самонепересекающегося многоугольника, вид для 4-угольника)
-        return Math.abs((x1 * y2 - x2 * y1) + (x2 * y3 - x3 * y2) + (x3 * y4 - x4 * y3) + (x4 * y1 - x1 * y4))/2;
+        return Math.abs((double) (x1 * y2 - x2 * y1) + (x2 * y3 - x3 * y2) + (x3 * y4 - x4 * y3) + (x4 * y1 - x1 * y4)) / 2;
     }
-
 
 }
 

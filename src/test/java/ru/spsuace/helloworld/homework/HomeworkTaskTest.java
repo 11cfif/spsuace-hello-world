@@ -45,5 +45,6 @@ public class HomeworkTaskTest {
         assertEquals( 68, HomeworkTask.square(8,0,10,8,2,10,0,2),1e-2);
         assertEquals( 18, HomeworkTask.square(2,6,2,9,8,5,8,2),1e-2);
         assertEquals( 112, HomeworkTask.square(-7,-3,-1,8,8,4,1,-6),1e-2);
+        assertEquals( 17.5, HomeworkTask.square(1, 4, 3, 2, 8, 11, 6, 10), 1e-2);
     }
 }
