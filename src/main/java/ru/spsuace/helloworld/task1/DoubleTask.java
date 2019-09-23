@@ -19,17 +19,15 @@ public class DoubleTask {
     public static String equation(int a, int b, int c) {
         double x1 = 0;
         double x2 = 0;
-        double x3 = 0;
-        double D = Math.pow(b, 2) - 4 * a * c;
-        if (D > 0) {
-            x1 = (-b + Math.sqrt(D)) / (2 * a);
-            x2 = (-b - Math.sqrt(D)) / (2 * a);
+        double discriminant = Math.pow(b, 2) - 4 * a * c;
+        if (discriminant > 0) {
+            x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+            x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
         }
-        if (D == 0) {
-            x1 = (-b) / (2 * a);
+        if (discriminant == 0) {
+            x1 = -b / (2 * a);
             x2 = x1;
-        }
-        if (x1 < x2) {
+        } else if (x1 < x2) {
             return x2 + ", " + x1;
         }
         return x1 + ", " + x2;
