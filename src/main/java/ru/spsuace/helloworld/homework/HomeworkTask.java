@@ -1,4 +1,4 @@
-package ru.spsuace.helloworld.homework;
+﻿package ru.spsuace.helloworld.homework;
 
 import java.util.function.ToDoubleFunction;
 
@@ -10,7 +10,17 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        return 0;
+
+        int n = 0;
+        double f = 0;
+        double m = 0;
+        n = (int) ((b - a)/delta);
+
+        for (int i = 0; i <= n; i++) {
+            f = f + function.applyAsDouble(a + delta * i) ;
+        }
+        f = f * delta ;
+        return f;
     }
 
     /**
@@ -18,7 +28,25 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        return 0;
+        long f = 0;
+        long max_top = 0;
+        String dc = Long.toString(a);
+        a = Math.abs(a);
+
+        for (int i = 0; ; i++) {
+            f = a % 10;
+            a = a / 10;
+            if (max_top < f) {
+                max_top = f;
+            }
+            if (a == 0) {
+                break;
+            }
+        }
+        String ef = Long.toString(max_top);
+        byte t  = (byte)(dc.indexOf(ef) + 1);
+        //dc.indexOf(ef)
+        return t;
     }
 
 
@@ -27,7 +55,13 @@ public class HomeworkTask {
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        return 0;
+
+        double a, b, y3;
+        a = (double)(y2-y1)/(x2-x1);
+        b = y1 - a * x1;
+        y3 = a * x3 + b;
+
+        return y3;
     }
 
     /**
