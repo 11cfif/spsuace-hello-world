@@ -10,11 +10,11 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-
+        double funcParameter = a;
         double result = 0;
-        while (a <= b) {
-            result += function.applyAsDouble(a) * delta;
-            a += delta;
+        while (funcParameter <= b) {
+            result += function.applyAsDouble(funcParameter) * delta;
+            funcParameter += delta;
         }
         return result;
     }
@@ -24,16 +24,17 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
+        long remainder = a;
         long result = a;
         int counterAll = 0;
         int counterMax = 0;
         long maxValue = 0;
         while (result != 0) {
-            a = result % 10;
+            remainder = result % 10;
             result = result / 10;
             counterAll += 1;
-            if (a >= maxValue) {
-                maxValue = a;
+            if (remainder >= maxValue) {
+                maxValue = remainder;
                 counterMax = counterAll;
             }
         }
@@ -52,6 +53,21 @@ public class HomeworkTask {
      * четырехуголька ABCD.
      * Это дополнительное задание, необязательное для выполнения
      */
-    public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) { return 0; }
+    public static double lengthBetweenTwoPoints (int x1, int y1, int x2, int y2) {
+        return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+    }
+
+    public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
+        double lengthAB = lengthBetweenTwoPoints(x1, y1, x2, y2);
+        double lengthBC = lengthBetweenTwoPoints(x2, y2, x3, y3);
+        double lengthCD = lengthBetweenTwoPoints(x3, y3, x4, y4);
+        double lengthDA = lengthBetweenTwoPoints(x1, y1, x4, y4);
+        double lengthAC = lengthBetweenTwoPoints(x1, y1, x3, y3);
+        double smallPerimetrABC = (lengthAB + lengthBC + lengthAC) / 2;
+        double smallPerimetrACD = (lengthAC + lengthCD + lengthDA) / 2;
+        double spaceTriangleABC = Math.sqrt(smallPerimetrABC * (smallPerimetrABC - lengthAB) * (smallPerimetrABC - lengthBC) * (smallPerimetrABC - lengthAC));
+        double spaceTriangleACD = Math.sqrt(smallPerimetrACD * (smallPerimetrACD - lengthCD) * (smallPerimetrACD - lengthDA) * (smallPerimetrACD - lengthAC));
+        return spaceTriangleABC + spaceTriangleACD;
+    }
 
 }
