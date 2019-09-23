@@ -35,7 +35,6 @@ public class HomeworkTask {
         while (truncationNumberA != 0) {
             number = truncationNumberA % 10;
             truncationNumberA /= 10;
-            System.out.println(truncationNumberA);
             amountNumber++;
             if (number >= maxNum) {
                 maxNum = number;
