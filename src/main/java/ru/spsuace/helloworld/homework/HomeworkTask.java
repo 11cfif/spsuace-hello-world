@@ -43,7 +43,7 @@ public class HomeworkTask {
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        return (y2 - y1) * (x3 - x1) / (x2 - x1) + y1;
+        return (double) ((y2 - y1) * (x3 - x1)) / (x2 - x1) + y1;
     }
 
     /**
@@ -54,5 +54,4 @@ public class HomeworkTask {
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
         return 0;
     }
-
 }
