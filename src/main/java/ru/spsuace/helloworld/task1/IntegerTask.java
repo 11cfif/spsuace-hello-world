@@ -31,17 +31,17 @@ public class IntegerTask {
     public static int snake(int height, int top, int bottom) {
         int position = 0;
         int day = 0;
-        int maxposition = 0;
+        int maxPosition = 0;
         do {
             if (day > 0) {
                 position = position - bottom;
             }
             day++;
             position = position + top;
-            if (position <= maxposition) {
+            if (position <= maxPosition) {
                 return Integer.MAX_VALUE;
             } else {
-                maxposition = position;
+                maxPosition = position;
             }
         } while (height > position);
         return day;
