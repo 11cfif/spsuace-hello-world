@@ -1,7 +1,5 @@
 package ru.spsuace.helloworld.task1;
 
-import static java.lang.Math.abs;
-import static java.lang.Math.pow;
 
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
@@ -51,7 +49,7 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return (int) (abs(n) % pow(10, order) / pow(10, order - 1));
+        return (int) (Math.abs(n) % Math.pow(10, order) / Math.pow(10, order - 1));
     }
 
 
