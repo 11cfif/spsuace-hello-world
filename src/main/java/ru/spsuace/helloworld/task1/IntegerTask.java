@@ -29,11 +29,23 @@ public class IntegerTask {
      */
     public static int snake(int height, int top, int bottom) {
         if (bottom >= top) {
-            return Integer.MAX_VALUE;
+            if (height <= top) {
+                return 1;
+            } else {
+                return Integer.MAX_VALUE;
+            }
         } else {
-            return height / (top - bottom) - bottom;
+            int days = 0;
+            int nowHeight = 0;
+            while (true) {
+                days++;
+                nowHeight += top;
+                if (nowHeight < height) {
+                    nowHeight -= bottom;
+                } else break;
+            }
+            return days;
         }
-
     }
 
     /**
@@ -41,9 +53,9 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        int res = n / ((int) Math.pow(10, order-1));
+        int res = n / ((int) Math.pow(10, order - 1));
         res = res % 10;
-        return res;
+        return Math.abs(res);
     }
 
 
@@ -51,7 +63,7 @@ public class IntegerTask {
      * Выведите факториал от числа n
      * Пример: (5) -> 120
      */
-    public static long factorial(int n) {
+    public static long factorial(byte n) {
         long res = 1;
         for (int i = 1; i <= n; i++) {
             res *= i;
