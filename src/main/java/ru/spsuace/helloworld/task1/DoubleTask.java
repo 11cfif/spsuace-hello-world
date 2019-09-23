@@ -1,13 +1,8 @@
 package ru.spsuace.helloworld.task1;
 
 import ru.spsuace.helloworld.Main;
+import java.lang.Math;
 
-/**
- * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
- * Math.sqrt(1.44)
- * Чтобы увидеть все методы класса Math, достаточно написать Math. и среда вам сама покажет возможные методы.
- * Для просмотра подробной документации по выбранному методу нажмите Ctrl + q
- */
 public class DoubleTask {
 
     /**
@@ -16,16 +11,23 @@ public class DoubleTask {
      * Пример: (1, 5, 4) -> "-1.0, -4.0"
      */
     public static String equation(int a, int b, int c) {
-        double x1 = 0;
-        double x2 = 0;
+        double d = b * b - 4 * a * c;
+        if (d < 0) {
+            return "error";
+        }
+        double dd = Math.sqrt(d);
+        double x1 = (-b + dd) / (2 * a);
+        double x2 = (-b - dd) / (2 * a);
+        if (x1 < x2) {
+            return x2 + ", " + x1;
+        }
         return x1 + ", " + x2;
     }
-
     /**
      * Нужно посчитать расстояние, между двумя точками (x1, y1) и (x2, y2)
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
-        return 0;
+        return (float) Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
     }
 }

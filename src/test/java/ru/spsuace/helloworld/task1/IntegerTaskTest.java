@@ -22,7 +22,6 @@ public class IntegerTaskTest {
         assertEquals(1, IntegerTask.snake(10, 10, 199));
         assertEquals(46, IntegerTask.snake(100, 10, 8));
         assertEquals(13, IntegerTask.snake(100, 10, 2));
-
     }
 
     @Test
