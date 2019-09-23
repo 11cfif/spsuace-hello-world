@@ -29,7 +29,22 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        int position = 0;
+        int day = 0;
+        int maxposition = 0;
+        do {
+            if (day > 0) {
+                position = position - bottom;
+            }
+            day++;
+            position = position + top;
+            if (position <= maxposition) {
+                return Integer.MAX_VALUE;
+            } else {
+                maxposition = position;
+            }
+        } while (height > position);
+        return day;
     }
 
     /**
@@ -38,7 +53,7 @@ public class IntegerTask {
      */
     public static int kDecimal(int n, int order) {
         int absN = Math.abs(n);
-        int remainder = absN % (int)  Math.pow(10, order);
+        int remainder = absN % (int) Math.pow(10, order);
         int pow = (int) Math.pow(10, order-1);
 
         return remainder / pow ;
