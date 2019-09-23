@@ -26,23 +26,23 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int FOR_ONE_DAY = 0;
-        int DAYS = 1;
+        int forOneDay = 0;
+        int days = 1;
         if (height <= top) {
             return 1;
         }
         if (top <= bottom) {
             return Integer.MAX_VALUE;
         }
-        while (height > FOR_ONE_DAY) {
-            FOR_ONE_DAY += top;
-            if (FOR_ONE_DAY >= height) {
+        do {
+            forOneDay += top;
+            if (forOneDay >= height) {
                 break;
             }
-            FOR_ONE_DAY -= bottom;
-            DAYS++;
-        }
-        return DAYS;
+            forOneDay -= bottom;
+            days++;
+        } while (height > forOneDay);
+        return days;
     }
 
     /**

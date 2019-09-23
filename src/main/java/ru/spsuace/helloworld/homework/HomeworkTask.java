@@ -11,8 +11,7 @@ public class HomeworkTask {
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
         double result = 0;
-        int n = (int) ((b - a) / delta);
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < ((b - a) / delta); i++) {
             result += function.applyAsDouble(a + delta * i);
         }
         result *= delta;
@@ -26,7 +25,7 @@ public class HomeworkTask {
     public static byte maxNumber(long a) {
         long x;
         int i = 1;
-        int maxi = 0;
+        int maxIndex = 0;
         long num = 0;
         long number = a;
         do {
@@ -35,10 +34,10 @@ public class HomeworkTask {
             i++;
             if (x >= num) {
                 num = x;
-                maxi = i;
+                maxIndex = i;
             }
         } while (number != 0);
-        return (byte) (i - maxi + 1);
+        return (byte) (i - maxIndex + 1);
     }
 
 
