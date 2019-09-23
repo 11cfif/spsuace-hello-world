@@ -1,6 +1,8 @@
 package ru.spsuace.helloworld.task1;
 
 
+import org.jetbrains.annotations.Contract;
+
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
  * Math.sqrt(1.44)
@@ -14,7 +16,12 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        int s = 0;
+        while (n > 0) {
+            s = s + n;
+            n--;
+        }
+        return s;
     }
 
     /**
@@ -23,8 +30,19 @@ public class IntegerTask {
      * Верните число Integer.MAX_VALUE;
      * Пример: (10, 3, 2) -> 8
      */
+
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        if (top >= height) {
+            return 1;
+        }
+        if (bottom >= top) {
+            return Integer.MAX_VALUE;
+        }
+        int day = (height - top) / (top - bottom) + 1;
+        if (height % (top - bottom) != 0) {
+            day++;
+        }
+        return day;
     }
 
     /**
@@ -32,7 +50,7 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return 0;
+        return Math.abs(n / (int) Math.pow(10, order - 1) % 10);
     }
 
 
@@ -41,6 +59,9 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+        if (n == 1 || n == 0) {
+            return 1;
+        }
+        return n * factorial((byte) (n - 1));
     }
 }

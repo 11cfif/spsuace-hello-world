@@ -1,5 +1,6 @@
 package ru.spsuace.helloworld.task1;
 
+import org.jetbrains.annotations.NotNull;
 import ru.spsuace.helloworld.Main;
 
 /**
@@ -15,10 +16,20 @@ public class DoubleTask {
      * Вывод менять не нужно, надо только посчитать x1 и x2, где x1 > x2
      * Пример: (1, 5, 4) -> "-1.0, -4.0"
      */
+
     public static String equation(int a, int b, int c) {
         double x1 = 0;
         double x2 = 0;
-        return x1 + ", " + x2;
+        double d = Math.pow(b, 2) - (4 * a * c);
+        if (d >= 0) {
+            x1 = (-b - Math.sqrt(d)) / (2 * a);
+            x2 = (-b + Math.sqrt(d)) / (2 * a);
+        }
+        else {
+            return "Нет корней";
+        }
+
+        return Math.max(x1, x2) + ", " + Math.min(x1, x2);
     }
 
     /**
@@ -26,6 +37,6 @@ public class DoubleTask {
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
-        return 0;
+        return (float) Math.sqrt(Math.pow(Math.abs(x1 - x2), 2) + Math.pow(Math.abs(y1 - y2), 2));
     }
 }
