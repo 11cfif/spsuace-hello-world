@@ -11,7 +11,7 @@ public class HomeworkTask {
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
         double space = 0;
-        for (int step = 1; step < (b-a) / delta; step++) {
+        for (int step = 1; step < (b - a) / delta; step++) {
             space += delta * function.applyAsDouble(((a + (delta * step)) + (a + (delta * (step + 1)))) / 2);
         }
         return space;
@@ -47,8 +47,7 @@ public class HomeworkTask {
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
         double a = (double) (y1 - y2) / (x1 - x2);
         double b = (double) y1 - a * x1;
-        double res = a * x3 + b;
-        return res;
+        return a * x3 + b;
     }
 
     /**
@@ -57,7 +56,8 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        return 0;
+        return Math.abs((double) ((x1 * y2) + (x2 * y3) + (x3 * y4) + (x4 * y1)
+                - (x2 * y1) - (x3 * y2) - (x4 * y3) - (x1 * y4))) / 2;
     }
 
 }
