@@ -32,13 +32,13 @@ public class HomeworkTask {
         long num = a;
         byte j = 1;
         byte index = j;
-        int b = Long.toString(a).toCharArray().length;
+        int lengthOfNumber = Long.toString(a).toCharArray().length;
         do {
-            if (((num /= Math.pow(10, b -= 1)) >= max) && (num != max)) {
+            if (((num /= Math.pow(10, lengthOfNumber -= 1)) >= max) && (num != max)) {
                 max = num;
                 index = j;
             }
-            numberNew %= Math.pow(10, b);
+            numberNew %= Math.pow(10, lengthOfNumber);
             num = numberNew;
             j++;
         } while (num != 0);
