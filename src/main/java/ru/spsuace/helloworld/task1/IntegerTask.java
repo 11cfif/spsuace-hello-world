@@ -14,10 +14,7 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        int sum = 0;
-        for(int i=1;i<=n; i++)
-            sum+=i;
-        return sum;
+        return 0;
     }
 
     /**
@@ -44,11 +41,6 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        long res = 1;
-        for (int i = 1; i <= n; i++) {
-            res *= i;
-        }
-        return res;
+        return 0;
     }
-
 }
