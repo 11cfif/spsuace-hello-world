@@ -23,21 +23,21 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        long number;
-        int score = 1;
+        long numberToCompare;
+        int counter = 1;
         int maxIndex = 0;
-        long max = 0;
-        long num = a;
+        long maxNumber = 0;
+        long insteadOfA = a;
         do {
-            number = num % 10;
-            num /= 10;
-            score++;
-            if (number >= max) {
-                max = number;
-                maxIndex = score;
+            numberToCompare = insteadOfA % 10;
+            insteadOfA /= 10;
+            counter++;
+            if (numberToCompare >= maxNumber) {
+                maxNumber = numberToCompare;
+                maxIndex = counter;
             }
-        } while (num != 0);
-        return (byte) (score - maxIndex + 1);
+        } while (insteadOfA != 0);
+        return (byte) (counter - maxIndex + 1);
     }
 
 
