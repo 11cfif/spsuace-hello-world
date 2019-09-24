@@ -10,13 +10,14 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        double I = 0;
-        double i = a + delta/2;
+        double Integral = 0;
+        double i = a + delta / 2;
         while (i < b) {
-            I = function.applyAsDouble(i - delta / 2) + 4 * function.applyAsDouble(i) + function.applyAsDouble(i + delta / 2) + I;
+            Integral = function.applyAsDouble(i - delta / 2) + 4 * function.applyAsDouble(i)
+                    + function.applyAsDouble(i + delta / 2) + Integral;
             i = i + delta;
         }
-        return delta/6 * (I);
+        return delta / 6 * (Integral);
     }
 
     /**
@@ -24,17 +25,19 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        long b=0;
-        byte numb = 0, maxnumb=0;
-        while (a != 0) {
+        long maxFigure = 0;
+        long orig = a;
+        byte numb = 0;
+        byte maxNumb = 0;
+        while (orig != 0) {
             numb = (byte) (numb + 1);
-            if ((a % 10) >= b) {
-                b = (a % 10);
-                maxnumb=numb;
+            if ((orig % 10) >= maxFigure) {
+                maxFigure = (orig % 10);
+                maxNumb = numb;
             }
-            a = a / 10;
+            orig = orig / 10;
         }
-        return (byte) (numb-maxnumb+1);
+        return (byte) (numb - maxNumb + 1);
     }
 
 
@@ -52,11 +55,11 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        double i = (double) (x1 * y2 + x2 * y3 + x3 * y4 + x4 * y1 - x2 * y1 - x3 * y2 - x4 * y3 - x1 * y4) / 2;
-        if (i < 0) {
-            i = -i;
+        double squareGauss = (double) (x1 * y2 + x2 * y3 + x3 * y4 + x4 * y1 - x2 * y1 - x3 * y2 - x4 * y3 - x1 * y4) / 2;
+        if (squareGauss < 0) {
+            squareGauss = -squareGauss;
         }
-        return i;
+        return squareGauss;
     }
 
 }
