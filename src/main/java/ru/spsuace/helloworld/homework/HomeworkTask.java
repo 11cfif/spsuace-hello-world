@@ -18,9 +18,24 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        return 0;
-    }
 
+        byte maxLocation = 0;
+        long maxNum = 0;
+        byte length = (byte) Math.ceil((double) Math.log10(a));
+        if (length == 0) {
+            return 1;
+        }
+        for (byte location = 1; location <= length; location++) {
+
+            long beforeLocation = (long) (Math.abs(a) % Math.pow(10, length - location + 1));
+            long afterLocation = (long) Math.pow(10, length - location);
+            if (maxNum < (beforeLocation / afterLocation)) {
+                maxNum = beforeLocation / afterLocation;
+                maxLocation = location;
+            }
+        }
+        return maxLocation;
+    }
 
     /**
      * Даны две точки в пространстве (x1, y1) и (x2, y2). Вам нужно найти Y координату третьей точки (x3, y3),
