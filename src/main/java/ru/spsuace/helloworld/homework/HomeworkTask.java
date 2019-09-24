@@ -10,14 +10,14 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        double Integral = 0;
-        double i = a + delta / 2;
-        while (i < b) {
-            Integral = function.applyAsDouble(i - delta / 2) + 4 * function.applyAsDouble(i)
-                    + function.applyAsDouble(i + delta / 2) + Integral;
-            i = i + delta;
+        double integral = 0;
+        double x = a + delta / 2;
+        while (x < b) {
+            integral = function.applyAsDouble( x - delta / 2) + 4 * function.applyAsDouble(x)
+                    + function.applyAsDouble(x + delta / 2) + integral;
+            x = x + delta;
         }
-        return delta / 6 * (Integral);
+        return delta / 6 * (integral);
     }
 
     /**
@@ -26,18 +26,18 @@ public class HomeworkTask {
      */
     public static byte maxNumber(long a) {
         long maxFigure = 0;
-        long orig = a;
-        byte numb = 0;
-        byte maxNumb = 0;
-        while (orig != 0) {
-            numb = (byte) (numb + 1);
-            if ((orig % 10) >= maxFigure) {
-                maxFigure = (orig % 10);
-                maxNumb = numb;
+        long original = a;
+        int totalNumb = 0;
+        int maxNumb = 0;
+        while (original != 0) {
+            totalNumb = (totalNumb + 1);
+            if ((original % 10) >= maxFigure) {
+                maxFigure = (original % 10);
+                maxNumb = totalNumb;
             }
-            orig = orig / 10;
+            original = original / 10;
         }
-        return (byte) (numb - maxNumb + 1);
+        return (byte) (totalNumb - maxNumb + 1);
     }
 
 
