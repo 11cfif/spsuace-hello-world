@@ -25,32 +25,46 @@ public class IntegerTask {
      */
     public static int snake(int height, int top, int bottom) {
         int result;
-        if (bottom >= top && top < height) {
-            result = Integer.MAX_VALUE;
-        } else { if (top >= height) {
+        if (top >= height) {
             result = 1;
-        } else
+        } else if (bottom >= top && top < height) {
+            result = Integer.MAX_VALUE;
+        } else {
             result = (int) (Math.ceil((double) (height - top) / (top - bottom)) + 1);
         }
         return result;
     }
+
+
 
     /**
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return (int) Math.abs(((n % (Math.pow(10, order))) - (n % (Math.pow(10, (order - 1))))) / Math.pow(10, order - 1));
+        double a = Math.pow(10, (order - 1));
+        double b = Math.pow(10, order);
+        return (int) Math.abs(((n % b) - (n % a)) / a);
     }
+
 
     /**
      * Выведите факториал от числа n
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        if (n==0||n==1) return 1;
-        return n*factorial((byte) (n-1));
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        return n * factorial((byte) (n - 1));
     }
 }
+
+
+
+
+
+
+
 
 

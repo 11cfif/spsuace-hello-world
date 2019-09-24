@@ -23,9 +23,7 @@ public class DoubleTask {
             x1 = (-b - Math.sqrt(d)) / (2 * a);
             x2 = (-b + Math.sqrt(d)) / (2 * a);
         }
-        else {
-            return "Нет корней";
-        }
+        else { return "Нет корней"; }
         return Math.max(x1, x2) + ", " + Math.min(x1, x2);
     }
 
@@ -34,6 +32,6 @@ public class DoubleTask {
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
-        return(float) Math.sqrt (Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+        return (float) Math.sqrt (Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
     }
 }
