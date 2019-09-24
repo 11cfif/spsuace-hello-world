@@ -10,12 +10,6 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        if (b < a) {
-            double cash = a;
-            a = b;
-            b = cash;
-        }
-
         double sum = 0;
         for (double i = a; i < b; i += delta) {
             sum += function.applyAsDouble(i) * delta;
@@ -33,7 +27,7 @@ public class HomeworkTask {
         int number;
         int invertResult = 1;
         int i;
-        for(i = 1; ; i++) {
+        for (i = 1; ; i++) {
             number = (int) copyA % 10;
             if (number >= maxNumber) {
                 maxNumber = number;
@@ -70,28 +64,27 @@ public class HomeworkTask {
         coords.add(new Coord(x4, y4));
 
         Collections.sort(coords, new Coord(0,0));
-        int sign = 1;
         if ((coords.get(0).X > coords.get(1).X) && (coords.get(2).X < coords.get(3).X)){
             Coord cash = coords.get(0);
             coords.set(0, coords.get(1));
             coords.set(1, cash);
-            sign *= -1;
         }
 
+        double d1 = Math.sqrt((Math.pow(coords.get(0).X - coords.get(3).X, 2) + Math.pow(coords.get(0).Y - coords.get(3).Y, 2)));
+        double d2 = Math.sqrt((Math.pow(coords.get(1).X - coords.get(2).X, 2) + Math.pow(coords.get(1).Y - coords.get(2).Y, 2)));
 
-        ToDoubleFunction<Double> top = x -> (x - coords.get(0).X) * (coords.get(1).Y - coords.get(0).Y) / (coords.get(1).X - coords.get(0).X) + coords.get(0).Y;
-        ToDoubleFunction<Double> bottom = x -> (x - coords.get(2).X) * (coords.get(3).Y - coords.get(2).Y) / (coords.get(3).X - coords.get(2).X) + coords.get(2).Y;
+        if (d1 == 0 || d2 == 0)
+        {
+            return 0;
+        }
 
-        ToDoubleFunction<Double> left = x -> (x - coords.get(0).X) * (coords.get(2).Y - coords.get(0).Y) / (coords.get(2).X - coords.get(0).X) + coords.get(0).Y;
-        ToDoubleFunction<Double> right = x -> (x - coords.get(1).X) * (coords.get(3).Y - coords.get(1).Y) / (coords.get(3).X - coords.get(1).X) + coords.get(1).Y;
+        Coord d1Vector = new Coord (coords.get(3).X - coords.get(0).X, coords.get(3).Y - coords.get(0).Y);
+        Coord d2Vector = new Coord (coords.get(2).X - coords.get(1).X, coords.get(2).Y - coords.get(1).Y);
 
-        double sBottom = calcIntegral(coords.get(0).X, coords.get(1).X, top, 1e-3);
-        double sTop = calcIntegral(coords.get(2).X, coords.get(3).X, bottom, 1e-3);
+        double cosA = (d1Vector.X * d2Vector.X + d1Vector.Y * d2Vector.Y) / d1 / d2 ;
+        double sinA = Math.sqrt(1 - cosA * cosA);
 
-        double sLeft = calcIntegral(coords.get(0).X, coords.get(2).X, left, 1e-3);
-        double sRight = calcIntegral(coords.get(1).X, coords.get(3).X, right, 1e-3);
-
-        return (sTop - sBottom) + Math.abs(sRight - sLeft);
+        return  d1 * d2 * sinA / 2;
     }
 
 }
