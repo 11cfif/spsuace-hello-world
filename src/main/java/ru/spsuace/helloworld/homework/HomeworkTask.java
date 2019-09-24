@@ -27,16 +27,16 @@ public class HomeworkTask {
         int maxIndex = 1;
         int currentIndex = 1;
         int maxDigit = (int) t % 10;
-        while (t > 0) {
+        while (t > 10) {
             t = t / 10;
             currentIndex++;
             int currentDigit = (int) t % 10;
-            if (currentDigit > maxDigit) {
+            if (currentDigit >= maxDigit) {
                 maxIndex = currentIndex;
                 maxDigit = currentDigit;
             }
         }
-        return (byte) (currentIndex - maxIndex);
+        return (byte) (currentIndex - maxIndex + 1);
     }
 
 
@@ -45,7 +45,9 @@ public class HomeworkTask {
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        return 0;
+        double y3;
+        y3 = (double) ( x3 - x1 ) / ( x2 - x1 ) * ( y2 - y1 ) + y1;
+        return y3;
     }
 
     /**
@@ -54,7 +56,19 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        return 0;
+        double distAB = distance(x1, y1, x2, y2);
+        double distAC = distance(x1, y1, x3, y3);
+        double distBC = distance(x3, y3, x2, y2);
+        double distAD = distance(x1, y1, x4, y4);
+        double distCD = distance(x3, y3, x4, y4);
+        double p1 = (distAB + distAC + distBC) / 2;
+        double p2 = (distAC + distCD + distAD) / 2;
+        double areaABC = Math.sqrt(p1 * (p1 - distAB) * (p1 - distAC) * (p1 - distBC));
+        double areaACD = Math.sqrt(p2 * (p2 - distAC) * (p2 - distAD) * (p2 - distCD));
+        return areaABC + areaACD;
     }
 
+    private static double distance(int x1 , int y1, int x2, int y2) {
+        return  Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    }
 }
