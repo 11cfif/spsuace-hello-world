@@ -11,7 +11,7 @@ public class IntegerTask {
 
     public static int sum(int n) {
         int sum = 0;
-        for (int i = 1; i <=n; i++) {
+        for (int i = 1; i <= n; i++) {
             sum = sum + i;
         }
         return sum;
@@ -26,13 +26,11 @@ public class IntegerTask {
     public static int snake(int height, int top, int bottom) {
         int days = 1;
         int way = 0;
+        if (height <= top) {
+            return 1;
+        }
         if (bottom >= top) {
-            if (bottom <= height) {
                 return Integer.MAX_VALUE;
-            }
-            else {
-                return 1;
-            }
         }
         do {
             way += top;
@@ -50,11 +48,9 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        int absn = Math.abs(n);
-        int ten = (int) Math.pow(10, order);
-        int result1 = absn % ten ;
-        int ten2 = (int) Math.pow(10, order-1);
-        return result1 / ten2 ;
+        int absN = Math.abs(n);
+        int result1 = absN % (int) Math.pow(10, order) ;
+        return result1 / (int) Math.pow(10, order-1) ;
     }
 
 
