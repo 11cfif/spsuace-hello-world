@@ -28,7 +28,9 @@ public class IntegerTask {
      * Верните число Integer.MAX_VALUE;
      * Пример: (10, 3, 2) -> 8
      */
-    public static int snake(int height, int top, int bottom) {
+
+
+   public static int snake(int height, int top, int bottom) {
         return 0;
     }
 
@@ -36,10 +38,10 @@ public class IntegerTask {
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
      * Пример: (454355, 3) -> 3
      */
-    public static int kDecimal(int n, int order) {
-        return (int)(Math.abs(n) % Math.pow(10,order)) / (int)(Math.pow(10, order - 1));
-    }
 
+    public static int kDecimal(int n, int order) {
+        return (int) (Math.abs(n) % Math.pow(10, order)) / (int) (Math.pow(10, order - 1));
+    }
 
     /**
      * Выведите факториал от числа n
@@ -47,11 +49,10 @@ public class IntegerTask {
      */
     public static long factorial(byte n) {
         long res = 1;
-        if (n == 1 || n == 0){
+        if (n == 1 || n == 0) {
             return res;
-        }
-        else {
-            for (int i = 1; i <= n; i++)    {
+        } else {
+            for (int i = 1; i <= n; i++) {
                 res = res * i;
             }
             return res;

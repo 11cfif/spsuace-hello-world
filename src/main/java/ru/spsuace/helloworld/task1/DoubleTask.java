@@ -15,6 +15,7 @@ import ru.spsuace.helloworld.Main;
      * Пример: (1, 5, 4) -> "-1.0, -4.0"
      */
     public static String equation(int a, int b, int c) {
+
         double x1;
         double x2;
         double disc = Math.pow(b, 2) - (4 * a * c);
@@ -22,8 +23,7 @@ import ru.spsuace.helloworld.Main;
             x1 = (-b - Math.sqrt(disc)) / (2 * a);
             x2 = (-b + Math.sqrt(disc)) / (2 * a);
             return Math.max(x1, x2) + ", " + Math.min(x1, x2);
-        }
-        else {
+        } else {
             return "Нет корней";
         }
     }
