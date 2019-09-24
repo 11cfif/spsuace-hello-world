@@ -11,14 +11,14 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        int MAX = (int) ((b - a) / delta);
-        double Y = 0;
-        double X = a;
-        for (int i = 0; i < MAX; i++) {
-            Y += function.applyAsDouble(X);
-            X += delta;
+        int n = (int) ((b - a) / delta);
+        double valueOfY = 0;
+        double valueOfX = a;
+        for (int i = 0; i < n; i++) {
+            valueOfY += function.applyAsDouble(valueOfX);
+            valueOfX += delta;
         }
-        return Y * delta;
+        return valueOfY * delta;
     }
 
     /**
@@ -27,14 +27,23 @@ public class HomeworkTask {
      */
     public static byte maxNumber(long a) {
 
-        char chars[] = Long.toString(a).toCharArray();
-        int largest = 0;
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] > chars[largest]) {
-                largest = i;
+        long max = 0;
+        long numberNew = a;
+        long num = a;
+        byte j = 1;
+        byte index = j;
+        int b = Long.toString(a).toCharArray().length;
+        do {
+            if (((num /= Math.pow(10, b -= 1)) >= max) && (num != max)) {
+                max = num;
+                index = j;
             }
-        }
-        return (byte) (largest + 1);
+            numberNew %= Math.pow(10, b);
+            num = numberNew;
+            j++;
+        } while (num != 0);
+
+        return index;
     }
 
 
