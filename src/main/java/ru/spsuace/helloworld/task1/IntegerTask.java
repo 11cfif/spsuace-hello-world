@@ -14,8 +14,9 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        return n * (n + 1) / 2;
     }
+
 
     /**
      * Гусеница поднимается по стене длиной height на высоту top за день, ночью гусеница сползает на bottom.
@@ -27,7 +28,7 @@ public class IntegerTask {
         return 0;
     }
 
-    /**
+ /**
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
      * Пример: (454355, 3) -> 3
      */
@@ -41,6 +42,10 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+        long result=1;
+        for (int i =1; i<=n;i++) {
+            result *=i;
+        }
+            return result;
     }
 }
