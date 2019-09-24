@@ -13,7 +13,7 @@ public class HomeworkTask {
         double integral = 0;
         double x = a + delta / 2;
         while (x < b) {
-            integral = function.applyAsDouble( x - delta / 2) + 4 * function.applyAsDouble(x)
+            integral = function.applyAsDouble(x - delta / 2) + 4 * function.applyAsDouble(x)
                     + function.applyAsDouble(x + delta / 2) + integral;
             x = x + delta;
         }
