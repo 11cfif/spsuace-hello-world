@@ -19,12 +19,12 @@ public class DoubleTaskTest {
 
     private double[] parse(String str) {
         String[] arr = str.split(", ");
-        return new double[] {Double.valueOf(arr[0]), Double.valueOf(arr[1])};
+        return new double[]{Double.valueOf(arr[0]), Double.valueOf(arr[1])};
     }
 
     private void assertX(double[] x12, double expectedX1, double expectedX2) {
-        assertEquals(x12[0], expectedX1, 1e-10);
-        assertEquals(x12[1], expectedX2, 1e-10);
+        assertEquals(expectedX1, x12[0], 1e-10);
+        assertEquals(expectedX2, x12[1], 1e-10);
     }
 
     @Test
