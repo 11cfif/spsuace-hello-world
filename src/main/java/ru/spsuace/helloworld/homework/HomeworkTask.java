@@ -27,16 +27,16 @@ public class HomeworkTask {
         int counter = 1;
         int maxIndex = 0;
         long maxNumber = 0;
-        long insteadOfA = a;
+        long currentA = a;
         do {
-            numberToCompare = insteadOfA % 10;
-            insteadOfA /= 10;
+            numberToCompare = currentA % 10;
+            currentA /= 10;
             counter++;
             if (numberToCompare >= maxNumber) {
                 maxNumber = numberToCompare;
                 maxIndex = counter;
             }
-        } while (insteadOfA != 0);
+        } while (currentA != 0);
         return (byte) (counter - maxIndex + 1);
     }
 
