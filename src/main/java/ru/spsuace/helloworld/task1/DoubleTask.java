@@ -19,10 +19,10 @@ public class DoubleTask {
         double x1 = 0;
         double x2 = 0;
         double temp = 0;
-        double D = (double) Math.pow(b, 2) - (4 * a * c);
-        if (D >= 0) {
-            x1 = (double) (-b + Math.sqrt(D)) / (2 * a);
-            x2 = (double) (-b - Math.sqrt(D)) / (2 * a);
+        double d = (double) Math.pow(b, 2) - (4 * a * c);
+        if (d >= 0) {
+            x1 = (double) (-b + Math.sqrt(d)) / (2 * a);
+            x2 = (double) (-b - Math.sqrt(d)) / (2 * a);
             if (x1 < x2) {
                 temp = x1;
                 x1 = x2;
