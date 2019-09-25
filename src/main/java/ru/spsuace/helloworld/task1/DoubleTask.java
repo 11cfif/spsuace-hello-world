@@ -18,7 +18,10 @@ public class DoubleTask {
     public static String equation(int a, int b, int c) {
         double x1 = 0;
         double x2 = 0;
-        return x1 + ", " + x2;
+
+            return x1 + ", " + x2;
+
+
     }
 
     /**
