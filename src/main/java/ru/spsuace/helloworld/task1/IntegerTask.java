@@ -30,23 +30,21 @@ public class IntegerTask {
      */
     public static int snake(int height, int top, int bottom) {
 
-        int a = 0, f = 0;
-
-        for (int i = 1; ;i++) {
-
-            a = a + top;
-
-            if (a >= height) {
-                f = i;
+        int track = 0;
+        int answer = 0;
+        if ((top == bottom && top < height) || (bottom > top) && (top < height)) {
+            System.out.println("thats not good");
+            return Integer.MAX_VALUE;
+        }
+        for (int i = 1; ; i++) {
+            track = track + top;
+            if (track >= height) {
+                answer = i;
                 break;
             }
-
-            a = a - bottom;
-            if (i >= 1000) {
-               return Integer.MAX_VALUE;
-            }
+            track = track - bottom;
         }
-        return f;
+        return answer;
     }
 
     /**
@@ -55,13 +53,13 @@ public class IntegerTask {
      */
     public static int kDecimal(int n, int order) {
 
-        int f = 0;
-        n = Math.abs(n);
+        int answer = 0;
+        int current = Math.abs(n);
         for (int i = 0; i < order; i++) {
-            f = n % 10;
-            n = n / 10;
+            answer = current % 10;
+            current = current / 10;
         }
-        return f;
+        return answer;
     }
 
 
@@ -71,10 +69,10 @@ public class IntegerTask {
      */
     public static long factorial(byte n) {
 
-        long f = 1;
+        long factorial = 1;
         for (int i = 1; i <= n; i++) {
-            f = f * i;
+            factorial = factorial * i;
         }
-        return f;
+        return factorial;
     }
 }

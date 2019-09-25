@@ -1,4 +1,4 @@
-﻿package ru.spsuace.helloworld.homework;
+package ru.spsuace.helloworld.homework;
 
 import java.util.function.ToDoubleFunction;
 
@@ -11,16 +11,14 @@ public class HomeworkTask {
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
 
-        int n = 0;
-        double f = 0;
-        double m = 0;
-        n = (int) ((b - a)/delta);
+        int step = (int) ( (b - a) / delta );
+        double funcIntegarl = 0;
 
-        for (int i = 0; i <= n; i++) {
-            f = f + function.applyAsDouble(a + delta * i) ;
+        for (int i = 0; i <= step; i++) {
+            funcIntegarl = funcIntegarl + function.applyAsDouble(a + delta * i) ;
         }
-        f = f * delta ;
-        return f;
+        funcIntegarl = funcIntegarl * delta ;
+        return funcIntegarl;
     }
 
     /**
@@ -28,25 +26,25 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        long f = 0;
-        long max_top = 0;
-        String dc = Long.toString(a);
-        a = Math.abs(a);
+        long biggest = 0;
+        long maxTop = 0;
+        String aString = Long.toString(a);
+        long current =  Math.abs(a);
 
-        for (int i = 0; ; i++) {
-            f = a % 10;
-            a = a / 10;
-            if (max_top < f) {
-                max_top = f;
+        for (int i = 0 ; ; i++) {
+            biggest = current % 10;
+            current = current / 10;
+            if (maxTop < biggest) {
+                maxTop = biggest;
             }
             if (a == 0) {
                 break;
             }
         }
-        String ef = Long.toString(max_top);
-        byte t  = (byte)(dc.indexOf(ef) + 1);
-        //dc.indexOf(ef)
-        return t;
+        String ef = Long.toString(maxTop);
+        byte signIndex  = (byte)(aString.indexOf(ef) + 1);
+
+        return signIndex;
     }
 
 
@@ -56,12 +54,11 @@ public class HomeworkTask {
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
 
-        double a, b, y3;
-        a = (double)(y2-y1)/(x2-x1);
+        double a;
+        double b;
+        a = (double) (y2 - y1) / (x2 - x1);
         b = y1 - a * x1;
-        y3 = a * x3 + b;
-
-        return y3;
+        return a * x3 + b;
     }
 
     /**
@@ -72,5 +69,4 @@ public class HomeworkTask {
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
         return 0;
     }
-
 }
