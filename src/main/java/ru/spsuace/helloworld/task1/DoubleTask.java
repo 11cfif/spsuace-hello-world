@@ -23,7 +23,9 @@ public class DoubleTask {
             x1 = (-b - Math.sqrt(d)) / (2 * a);
             x2 = (-b + Math.sqrt(d)) / (2 * a);
         }
-        else { return "Нет корней"; }
+        else {
+            return "Нет корней";
+        }
         return Math.max(x1, x2) + ", " + Math.min(x1, x2);
     }
 
