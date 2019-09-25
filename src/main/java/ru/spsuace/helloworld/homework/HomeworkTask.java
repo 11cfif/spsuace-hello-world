@@ -31,19 +31,19 @@ public class HomeworkTask {
         long numberNew = a;
         long num = a;
         byte j = 1;
-        byte index = j;
+        byte result = j;
         int lengthOfNumber = Long.toString(a).toCharArray().length;
         do {
             if (((num /= Math.pow(10, lengthOfNumber -= 1)) >= max) && (num != max)) {
                 max = num;
-                index = j;
+                result = j;
             }
             numberNew %= Math.pow(10, lengthOfNumber);
             num = numberNew;
             j++;
         } while (num != 0);
 
-        return index;
+        return result;
     }
 
 
