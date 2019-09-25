@@ -18,7 +18,7 @@ public class DoubleTaskTest {
     }
 
     private double[] parse(String str) {
-        String[] arr = str.split(", ");
+        String[] arr = str.split(",");
         return new double[] {Double.valueOf(arr[0]), Double.valueOf(arr[1])};
     }
 
