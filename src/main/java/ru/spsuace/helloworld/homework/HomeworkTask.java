@@ -10,7 +10,11 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        return 0;
+        double area = 0;
+        for (int i = 0; i < (b - a) / delta; i ++) {
+            area += delta * function.applyAsDouble(a + i * delta);
+        }
+        return area;
     }
 
     /**
@@ -18,16 +22,29 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        return 0;
+        long NumberForComparison;
+        long MaxNumber = 0;
+        long SubstituteA = a;
+        int MaxIndex = 0;
+        int NumberCounter = 1;
+        do {
+            NumberForComparison = SubstituteA % 10;
+            SubstituteA /= 10;
+            NumberCounter ++;
+                    if (NumberForComparison >= MaxNumber) {
+                        MaxNumber = NumberForComparison;
+                        MaxIndex = NumberCounter;
+                    }
+        } while (SubstituteA != 0);
+        return (byte) (NumberCounter - MaxIndex + 1);
     }
-
 
     /**
      * Даны две точки в пространстве (x1, y1) и (x2, y2). Вам нужно найти Y координату третьей точки (x3, y3),
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        return 0;
+        return (double) ((x3 - x1) * (y2 - y1) + y1 * (x2 - x1)) / (x2 - x1);
     }
 
     /**
@@ -36,7 +53,6 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        return 0;
+        return Math.abs((double) (x1 * y2) + (x2 * y3) + (x3 * y4) + (x4 * y1) - (x2 * y1) - (x3 * y2) - (x4 * y3) - (x1 * y4)) / 2;
     }
-
 }
