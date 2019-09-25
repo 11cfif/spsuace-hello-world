@@ -42,7 +42,9 @@ public class IntegerTask {
                 nowHeight += top;
                 if (nowHeight < height) {
                     nowHeight -= bottom;
-                } else break;
+                } else {
+                    break;
+                }
             }
             return days;
         }
