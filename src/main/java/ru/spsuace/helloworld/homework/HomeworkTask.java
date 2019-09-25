@@ -26,16 +26,16 @@ public class HomeworkTask {
      */
     public static byte maxNumber(long a) {
         long maxFigure = 0;
-        long original = a;
+        long current = a;
         int totalNumb = 0;
         int maxNumb = 0;
-        while (original != 0) {
+        while (current != 0) {
             totalNumb = (totalNumb + 1);
-            if ((original % 10) >= maxFigure) {
-                maxFigure = (original % 10);
+            if ((current % 10) >= maxFigure) {
+                maxFigure = (current % 10);
                 maxNumb = totalNumb;
             }
-            original = original / 10;
+            current = current / 10;
         }
         return (byte) (totalNumb - maxNumb + 1);
     }
