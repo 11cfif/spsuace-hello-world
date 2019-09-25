@@ -10,7 +10,15 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        return 0;
+        double simpsonInt = 0;
+        double step = a + (delta / 2);
+        do {
+            simpsonInt = simpsonInt + function.applyAsDouble(step + delta / 2)
+                    + (4 * function.applyAsDouble(step))
+                    + function.applyAsDouble(step - delta / 2);
+            step += delta;
+        } while (step < b);
+        return (delta / 6) * simpsonInt;
     }
 
     /**
@@ -42,7 +50,9 @@ public class HomeworkTask {
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        return 0;
+        double y3;
+        y3 = (double) (x3 - x1) / (x2 - x1) * (y2 - y1) + y1;
+        return y3;
     }
 
     /**
@@ -51,7 +61,23 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        return 0;
+        double intervalAB = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow(y2 - y1, 2));
+        double intervalAD = Math.sqrt(Math.pow((x4 - x1), 2) + Math.pow(y4 - y1, 2));
+        double intervalCD = Math.sqrt(Math.pow((x4 - x3), 2) + Math.pow(y4 - y3, 2));
+        double intervalAC = Math.sqrt(Math.pow((x3 - x1), 2) + Math.pow(y3 - y1, 2));
+        double intervalBC = Math.sqrt(Math.pow((x3 - x2), 2) + Math.pow(y3 - y2, 2));
+        double perimeter1;
+        perimeter1 = (intervalAB + intervalAC + intervalBC) / 2;
+        double perimeter2;
+        perimeter2 = (intervalAC + intervalCD + intervalAD) / 2;
+        double area1;
+        area1 = Math.sqrt(perimeter1 * (perimeter1 - intervalAB) *
+                (perimeter1 - intervalAC) * (perimeter1 - intervalBC));
+        double area2;
+        area2 = Math.sqrt(perimeter2 * (perimeter2 - intervalAC) *
+                (perimeter2 - intervalAD) * (perimeter2 - intervalCD));
+
+        return area1 + area2;
     }
 
 }
