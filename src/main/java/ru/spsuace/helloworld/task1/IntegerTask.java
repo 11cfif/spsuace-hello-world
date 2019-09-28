@@ -9,12 +9,19 @@ package ru.spsuace.helloworld.task1;
  */
 public class IntegerTask {
 
+    private static byte factorial;
+
     /**
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        int resual = 0;
+
+        for ( int i = 1; i <= n; i++) {
+            resual += i;
+        }
+        return resual;
     }
 
     /**
@@ -24,23 +31,35 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        int now = 0, days = 0, max = 0;
+        do {
+            if (days != 0) {
+                now = now - bottom;
+            }
+            days++;
+            now = now + top;
+            if (now <= max) {
+                return Integer.MAX_VALUE;
+            } else max = now;
+        } while (now < height);
+        return days;
     }
 
     /**
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
      * Пример: (454355, 3) -> 3
      */
-    public static int kDecimal(int n, int order) {
-        return 0;
-    }
-
+    public static int kDecimal(int n, int order) { return Math.abs(n / (int) Math.pow(10, order - 1) % 10); }
 
     /**
      * Выведите факториал от числа n
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+        if (n == 1 || n == 0) {
+            return 1;
+        }
+        return n * factorial( (((byte)(n - 1))));
     }
 }
+
