@@ -32,8 +32,8 @@ public class IntegerTask {
 
         int track = 0;
         int answer = 0;
-        if ((top == bottom && top < height) || (bottom > top) && (top < height)) {
-            System.out.println("thats not good");
+        if (top <= bottom && top < height) {
+            System.out.println("that's not good");
             return Integer.MAX_VALUE;
         }
         for (int i = 1; ; i++) {

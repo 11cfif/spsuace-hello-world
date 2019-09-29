@@ -11,14 +11,13 @@ public class HomeworkTask {
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
 
-        int step = (int) ( (b - a) / delta );
-        double funcIntegarl = 0;
-
+        int step = (int) ((b - a) / delta);
+        double funcIntegral = 0;
         for (int i = 0; i <= step; i++) {
-            funcIntegarl = funcIntegarl + function.applyAsDouble(a + delta * i) ;
+            funcIntegral = funcIntegral + function.applyAsDouble(a + delta * i);
         }
-        funcIntegarl = funcIntegarl * delta ;
-        return funcIntegarl;
+        funcIntegral = funcIntegral * delta;
+        return funcIntegral;
     }
 
     /**
@@ -26,25 +25,22 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        long biggest = 0;
+        long stepValue = 0;
         long maxTop = 0;
         String aString = Long.toString(a);
         long current =  Math.abs(a);
-
         for (int i = 0 ; ; i++) {
-            biggest = current % 10;
+            stepValue = current % 10;
             current = current / 10;
-            if (maxTop < biggest) {
-                maxTop = biggest;
+            if (maxTop < stepValue) {
+                maxTop = stepValue;
             }
             if (a == 0) {
                 break;
             }
         }
-        String ef = Long.toString(maxTop);
-        byte signIndex  = (byte)(aString.indexOf(ef) + 1);
-
-        return signIndex;
+        String maxTopToString = Long.toString(maxTop);
+        return (byte)(aString.indexOf(maxTopToString) + 1);
     }
 
 
@@ -53,11 +49,8 @@ public class HomeworkTask {
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-
-        double a;
-        double b;
-        a = (double) (y2 - y1) / (x2 - x1);
-        b = y1 - a * x1;
+        double a = (double) (y2 - y1) / (x2 - x1);
+        double b = y1 - a * x1;
         return a * x3 + b;
     }
 

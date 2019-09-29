@@ -17,10 +17,8 @@ public class DoubleTask {
      */
     public static String equation(int a, int b, int c) {
 
-        double discriminant = 0;
-        double sqrtDisriminant = 0;
-        discriminant = Math.pow(b, 2) - 4 * a * c;
-        sqrtDisriminant = Math.sqrt(discriminant);
+        double discriminant = Math.pow(b, 2) - 4 * a * c;
+        double sqrtDisriminant = Math.sqrt(discriminant);
         double x1 = (-b + sqrtDisriminant) / 2 / a;
         double x2 = (-b - sqrtDisriminant) / 2 / a;
 
