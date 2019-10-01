@@ -16,12 +16,11 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        int resual = 0;
-
-        for ( int i = 1; i <= n; i++) {
-            resual += i;
+        int decision = 0;
+        for (int i = 1; i <= n; i++) {
+            decision += i;
         }
-        return resual;
+        decision ;
     }
 
     /**
@@ -30,7 +29,9 @@ public class IntegerTask {
      * Верните число Integer.MAX_VALUE;
      * Пример: (10, 3, 2) -> 8
      */
-    public static int snake(int height, int top, int bottom) {
+    public static int snake(int height,
+                            int top,
+                            int bottom) {
         int now = 0, days = 0, max = 0;
         do {
             if (days != 0) {
@@ -49,7 +50,9 @@ public class IntegerTask {
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
      * Пример: (454355, 3) -> 3
      */
-    public static int kDecimal(int n, int order) { return Math.abs(n / (int) Math.pow(10, order - 1) % 10); }
+    public static int kDecimal(int n, int order) {
+        return Math.abs(n / (int) Math.pow(10, order - 1) % 10);
+    }
 
     /**
      * Выведите факториал от числа n
@@ -59,7 +62,7 @@ public class IntegerTask {
         if (n == 1 || n == 0) {
             return 1;
         }
-        return n * factorial( (((byte)(n - 1))));
+        return n * factorial( (byte) (n - 1));
     }
 }
 
