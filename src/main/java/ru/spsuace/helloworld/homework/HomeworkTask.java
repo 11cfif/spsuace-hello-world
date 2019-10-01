@@ -37,7 +37,9 @@ public class HomeworkTask {
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        return 0;
+        double a = (double) (y2 - y1) / (x2 - x1);
+        double b = y1 - a * x1;
+        return a * x3 + b;
     }
 
     /**
