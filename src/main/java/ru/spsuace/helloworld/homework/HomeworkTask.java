@@ -10,7 +10,20 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        return 0;
+        double s;
+        double x;
+        double h;
+
+        h = (b - a) / delta;
+        s = function.applyAsDouble(a) + function.applyAsDouble(b);
+        for (int i = 1; i <= delta - 1; delta += 2) {
+            x = a + i * h;
+        }
+        for (int i = 2; i <= delta - 2; delta += 2) {
+            x = a + i * h;
+            s = s + 2 * function.applyAsDouble(x);
+        }
+        return (h / 3) * s;
     }
 
     /**
@@ -18,17 +31,30 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        return 0;
+        long a1 = a;
+        long maxNum = 0;
+        long digitNum = 0;
+        long digitMaxNum = 0;
+        long remainder;
+        while (a1 > 0) {
+            remainder = a1 % 10;
+            a1 /= 10;
+            digitNum++;
+            if (remainder >= maxNum) {
+                maxNum = remainder;
+                digitMaxNum = digitNum;
+            }
+        }
+        return (byte) (digitNum - digitMaxNum + 1);
     }
-
 
     /**
      * Даны две точки в пространстве (x1, y1) и (x2, y2). Вам нужно найти Y координату третьей точки (x3, y3),
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        return 0;
-    }
+        return ((double) ((y1 - y2) / (x1 - x2)) * x3 + (double) (y1 - (y1 - y2) / (x1 - x2) * x1));
+}
 
     /**
      * Даны 4 точки в пространстве A(x1, y1), B(x2, y2), C(x3, y3), D(x4, y4). Найдите площадь выпуклого
@@ -36,7 +62,6 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        return 0;
+        return 0.5 * Math.abs(x1 * y2 + x2 * y3 + x3 * y1 - x2 * y1 - x3 * y2 - x4 * y3 - x1 * y4);
     }
-
 }
