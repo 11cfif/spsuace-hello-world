@@ -14,12 +14,12 @@ public class HomeworkTask {
         double result;
 
         result = 0;
-        int n = (int)((b-a)/delta);
+        int n = (int) ((b - a) / delta);
 
-        for (i =0; i<n; i++){
-            result += function.applyAsDouble(a+delta*i);
+        for (i = 0; i < n; i++) {
+            result += function.applyAsDouble(a + delta * i);
         }
-        result *=delta;
+        result *= delta;
         return result;
     }
 
