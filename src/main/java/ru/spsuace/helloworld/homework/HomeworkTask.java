@@ -10,7 +10,18 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        return 0;
+        int i;
+        double result;
+
+        result=0;
+        int n=(int)((b-a)/delta);
+
+        for (i=0;i<n;i++) {
+            result += function.applyAsDouble(  a+delta*i);
+        }
+        result *=delta;
+        return result;
+
     }
 
     /**
