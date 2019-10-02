@@ -26,16 +26,16 @@ public class IntegerTask {
      */
     public static int snake(int height, int top, int bottom) {
 
-        int k = 0;
-        int h = height;
+        int koliter = 0;
+        int podiem = height;
         if ((top > bottom) || (top >= height)) {
-            while (h > 0) {
-                h = h - top;
-                k++;
-                if (h <= 0) {
-                    return k;
+            while (podiem > 0) {
+                podiem = podiem - top;
+                koliter++;
+                if (podiem <= 0) {
+                    return koliter;
                 }
-                h = h + bottom;
+                podiem = podiem + bottom;
             }
         } else {
             return Integer.MAX_VALUE;
