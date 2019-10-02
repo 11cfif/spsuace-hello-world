@@ -10,20 +10,20 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        double s;
+        double area;
         double x;
         double step;
         step = (b - a) / delta;
-        s = function.applyAsDouble(a) + function.applyAsDouble(b);
+        area = function.applyAsDouble(a) + function.applyAsDouble(b);
         for (int variable = 1; variable <= step - 1; variable += 2) {
             x = a + variable * delta;
-            s = s + 4 * function.applyAsDouble(x);
+            area = area + 4 * function.applyAsDouble(x);
         }
         for (int variable = 2; variable <= step - 2; variable += 2) {
             x = a + variable * delta;
-            s = s + 2 * function.applyAsDouble(x);
+            area = area + 2 * function.applyAsDouble(x);
         }
-        return (delta / 3) * s;
+        return (delta / 3) * area;
     }
 
     /**
