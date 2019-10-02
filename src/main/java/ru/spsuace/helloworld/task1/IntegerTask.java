@@ -31,8 +31,23 @@ public class IntegerTask {
 
 
    public static int snake(int height, int top, int bottom) {
-        return 0;
-    }
+       int days = 0;
+       long rise = 0;
+        if (top >= height) {
+            return 1;
+        } else {
+            if (top <= bottom) {
+                return Integer.MAX_VALUE;
+            } else {
+                while (rise < height - bottom) {
+                    days ++;
+                    rise += top;
+                    rise -= bottom;
+                }
+            return days;
+            }
+        }
+   }
 
     /**
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
