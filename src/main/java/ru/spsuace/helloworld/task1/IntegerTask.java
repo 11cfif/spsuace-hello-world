@@ -7,6 +7,8 @@ package ru.spsuace.helloworld.task1;
  * Чтобы увидеть все методы класса Math, достаточно написать Math. и среда вам сама покажет возможные методы.
  * Для просмотра подробной документации по выбранному методу нажмите Ctrl + q
  */
+
+
 public class IntegerTask {
 
     /**
@@ -14,7 +16,7 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        return ( n * ( n + 1 ) / 2 );
     }
 
     /**
@@ -24,15 +26,30 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        int i=0;
+        if ( top > bottom ) {
+            while ( height > top) {
+                height = height - (top - bottom);
+                i++;
+            }
+            return i+1;
+        }
+        else {
+            return Integer.MAX_VALUE;
+        }
     }
+
 
     /**
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
      * Пример: (454355, 3) -> 3
      */
-    public static int kDecimal(int n, int order) {
-        return 0;
+    public static int kDecimal(int n, int order)
+    {
+        int POW=(int)Math.pow(10,order);
+        int remainder=n % POW;
+        int res=remainder/(POW/10);
+        return Math.abs(res);
     }
 
 
@@ -40,7 +57,9 @@ public class IntegerTask {
      * Выведите факториал от числа n
      * Пример: (5) -> 120
      */
-    public static long factorial(byte n) {
-        return 0;
+    public static long factorial(int n)
+    {
+        if (n == 0) return 1;
+        return n * factorial(n-1);
     }
 }
