@@ -12,18 +12,18 @@ public class HomeworkTask {
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
         double s;
         double x;
-        double h;
-
-        h = (b - a) / delta;
+        double step;
+        step = (b - a) / delta;
         s = function.applyAsDouble(a) + function.applyAsDouble(b);
-        for (int i = 1; i <= delta - 1; delta += 2) {
-            x = a + i * h;
+        for (int variable = 1; variable <= step - 1; variable += 2) {
+            x = a + variable * delta;
+            s = s + 4 * function.applyAsDouble(x);
         }
-        for (int i = 2; i <= delta - 2; delta += 2) {
-            x = a + i * h;
+        for (int variable = 2; variable <= step - 2; variable += 2) {
+            x = a + variable * delta;
             s = s + 2 * function.applyAsDouble(x);
         }
-        return (h / 3) * s;
+        return (delta / 3) * s;
     }
 
     /**
@@ -31,7 +31,7 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-         long variable  = a;
+        long variable  = a;
         long maxNum = 0;
         long digitNum = 0;
         long digitMaxNum = 0;
