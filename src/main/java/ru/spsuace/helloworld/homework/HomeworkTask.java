@@ -48,7 +48,16 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        return 0;
+        double a = (double) Math.sqrt(Math.pow(y2 - y1, 2) + Math.pow(x2 - x1, 2));
+        double b = (double) Math.sqrt(Math.pow(y3 - y2, 2) + Math.pow(x3 - x2, 2));
+        double c = (double) Math.sqrt(Math.pow(y4 - y3, 2) + Math.pow(x4 - x3, 2));
+        double d = (double) Math.sqrt(Math.pow(y1 - y4, 2) + Math.pow(x1 - x4, 2));
+        double p = (double) Math.sqrt(Math.pow(y3 - y1, 2) + Math.pow(x3 - x1, 2));
+        double pp1 = (double) (a + b + p) / 2;
+        double pp2 = (double) (c + d + p) / 2;
+        double s1 = (double) Math.sqrt(pp1 * (pp1 - a) * (pp1 - b) * (pp1 - p));
+        double s2 = (double) Math.sqrt(pp2 * (pp2 - c) * (pp2 - d) * (pp2 - p));
+        return s1 + s2;
     }
 
 }
