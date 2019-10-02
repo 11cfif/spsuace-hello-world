@@ -31,14 +31,14 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        long a1 = a;
+         long variable  = a;
         long maxNum = 0;
         long digitNum = 0;
         long digitMaxNum = 0;
         long remainder;
-        while (a1 > 0) {
-            remainder = a1 % 10;
-            a1 /= 10;
+        while (variable > 0) {
+            remainder = variable % 10;
+            variable /= 10;
             digitNum++;
             if (remainder >= maxNum) {
                 maxNum = remainder;
@@ -53,8 +53,8 @@ public class HomeworkTask {
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        return ((double) ((y1 - y2) / (x1 - x2)) * x3 + (double) (y1 - (y1 - y2) / (x1 - x2) * x1));
-}
+        return (((double)(y1 - y2) / (x1 - x2)) * x3 + (y1 -((double)(y1 - y2) / (x1 - x2)) * x1));
+    }
 
     /**
      * Даны 4 точки в пространстве A(x1, y1), B(x2, y2), C(x3, y3), D(x4, y4). Найдите площадь выпуклого
@@ -62,6 +62,6 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        return 0.5 * Math.abs(x1 * y2 + x2 * y3 + x3 * y4 + x4 * y1 - x2 * y1 - x3 * y2 - x4 * y3 - x1*y4);
+        return 0.5 * Math.abs(x1 * y2 + x2 * y3 + x3 * y4 + x4 * y1 - x2 * y1 - x3 * y2 - x4 * y3 - x1 * y4);
     }
 }
