@@ -20,7 +20,7 @@ public class IntegerTask {
         for (int i = 1; i <= n; i++) {
             decision += i;
         }
-        decision ;
+        return decision ;
     }
 
     /**
@@ -41,7 +41,9 @@ public class IntegerTask {
             now = now + top;
             if (now <= max) {
                 return Integer.MAX_VALUE;
-            } else max = now;
+            } else {
+                max = now;
+            }
         } while (now < height);
         return days;
     }
