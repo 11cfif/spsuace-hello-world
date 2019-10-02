@@ -27,16 +27,16 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int k = 0;
-        int h = height;
+        int day = 0;
+        int climb = height;
         if ((top > bottom) || (top >= height)) {
-            while (h > 0) {
-                h = h - top;
-                k++;
-                if (h <= 0) {
-                    return k;
+            while (climb > 0) {
+                climb = climb - top;
+                day++;
+                if (climb <= 0) {
+                    return day;
                 }
-                h = h + bottom;
+                climb = climb + bottom;
             }
         } else {
             return Integer.MAX_VALUE;
