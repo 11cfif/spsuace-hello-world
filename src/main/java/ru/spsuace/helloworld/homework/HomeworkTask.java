@@ -10,9 +10,8 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        int n = (int) ((b - a) / delta);
         double result = 0;
-        for (int i = 0; i <= n; i++) {
+        for (int i = 0; i <= (int) ((b - a) / delta); i++) {
             result = result + function.applyAsDouble(a + delta * i);
         }
         result *= delta;
@@ -26,9 +25,9 @@ public class HomeworkTask {
     public static byte maxNumber(long a) {
         long current = Math.abs(a);
         int length = String.valueOf(current).length();
-        long[] result = new long[length];
+        int[] result = new int[length];
         for (int i = 0; i < length; i++) {
-            long res = current % 10;
+            int res = (int) (current % 10);
             result[length - i - 1] = res;
             current /= 10;
         }
