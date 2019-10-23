@@ -63,7 +63,7 @@ public class HomeworkTask {
         coords.add(new Coord(x3, y3));
         coords.add(new Coord(x4, y4));
 
-        Collections.sort(coords, new Coord(0,0));
+        Collections.sort(coords);
         if ((coords.get(0).X > coords.get(1).X) && (coords.get(2).X < coords.get(3).X)){
             Coord cash = coords.get(0);
             coords.set(0, coords.get(1));
@@ -89,7 +89,7 @@ public class HomeworkTask {
 
 }
 
-class Coord implements Comparator<Coord> {
+class Coord implements Comparable<Coord>{
     public int X;
     public int Y;
 
@@ -98,8 +98,10 @@ class Coord implements Comparator<Coord> {
         Y = y;
     }
 
+
     @Override
-    public int compare(Coord c1, Coord c2) {
+    public int compareTo(Coord c2) {
+        Coord c1 = this;
         int deltaY = c1.Y - c2.Y;
         if (deltaY == 0){
             int deltaX = c1.X - c2.X;
