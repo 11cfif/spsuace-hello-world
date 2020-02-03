@@ -7,6 +7,11 @@ public class Main {
     }
 
     static String hello() {
-        return "Hello world! I am а first program.";
+        System.out.println("111111");
+        return "Hello world! I am а first program";
+    }
+
+    String task1() {
+        return "task1";
     }
 }
