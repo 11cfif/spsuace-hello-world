@@ -8,12 +8,14 @@ package ru.spsuace.helloworld.task1;
  * Для просмотра подробной документации по выбранному методу нажмите Ctrl + q
  */
 public class IntegerTask {
+//
 
     /**
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
+        //int n=in.nextint();
         return 0;
     }
 
