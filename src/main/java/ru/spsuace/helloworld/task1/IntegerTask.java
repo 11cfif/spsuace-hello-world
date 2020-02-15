@@ -15,13 +15,13 @@ public class IntegerTask {
      */
     public static int sum(int n) {
 
-        int sum = 0;
+        int result = 0;
 
         for (int i = 1; i <= n; i++) {
-            sum += i;
+            result += i;
         }
-
-        return sum;
+        System.out.println(result);
+        return result;
 
     }
 
@@ -32,15 +32,25 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int days = 0;
-        int n = 0;
+        int days = 1;
+        int way = 0;
+        if (top >= height) {
+            System.out.println(days);
+            return days;
+        }
         if (bottom >= top) {
             return Integer.MAX_VALUE;
-        } else {
-            n = top - bottom;
-            days = height / n;
         }
-
+        while (way < height){
+            way += top;
+            if (way >= height) {
+                System.out.println(days);
+                return days;
+            }
+            way -= bottom;
+            days++;
+        }
+        System.out.println(days);
         return days;
     }
 
@@ -50,13 +60,8 @@ public class IntegerTask {
      */
     public static int kDecimal(int n, int order) {
 
-        int value;
 
-        for (int i = 1; i < n; i++) {
-            
-        }
-
-        return value;
+        return 0;
 
     }
 
