@@ -9,6 +9,9 @@ import ru.spsuace.helloworld.Main;
  * Для просмотра подробной документации по выбранному методу нажмите Ctrl + q
  */
 public class DoubleTask {
+    public static void main(String[] args) {
+
+    }
 
     /**
      * Вывести два корня квадратного уравнения через запятую: a * x ^ 2 + b * x + c = 0;
