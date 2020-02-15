@@ -20,6 +20,7 @@ public class IntegerTask {
         for (int i = 1; i <= n; i++) {
             result += i;
         }
+
         System.out.println(result);
         return result;
 
@@ -32,15 +33,19 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
+
         int days = 1;
         int way = 0;
+
         if (top >= height) {
             System.out.println(days);
             return days;
         }
+
         if (bottom >= top) {
             return Integer.MAX_VALUE;
         }
+
         while (way < height){
             way += top;
             if (way >= height) {
@@ -50,6 +55,7 @@ public class IntegerTask {
             way -= bottom;
             days++;
         }
+
         System.out.println(days);
         return days;
     }
@@ -60,9 +66,61 @@ public class IntegerTask {
      */
     public static int kDecimal(int n, int order) {
 
+        int count = 0;
+        int result = 1;
+        double value = 1;
+        int j = n;
 
-        return 0;
+        while (j >= 1){
+            count++;
+            j /= 10;
+        }
 
+        if (order > count) {
+            return Integer.MAX_VALUE;
+        }
+
+        for (int i = 1; i <= order; i++) {
+            result *= 10;
+        }
+
+        value = (double) n / result;
+        int res1 = (int)value;
+
+        if (value == 1 && order < count) {
+            return 0;
+        }
+
+        if (res1 != 0) {
+            double res2 = value - res1;
+
+            if (res2 <= 0) {
+                while (true) {
+                    value *= 10;
+                    if ((int) value != 0) {
+                        System.out.println(value);
+                        return (int) value;
+                    }
+                }
+            }
+
+            result = result / 10;
+            res2 = res2 / result;
+
+            value = (int) res2;
+
+            System.out.println(value);
+            return (int) value;
+        } else {
+
+            while (true) {
+                value *= 10;
+                if ((int) value != 0) {
+                    System.out.println((int)value);
+                    return (int) value;
+                }
+            }
+        }
     }
 
 
@@ -71,6 +129,13 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+        long result = 1L;
+
+        for (int i = 1; i <= n; i++) {
+            result *= i;
+        }
+
+        System.out.println(result);
+        return result;
     }
 }

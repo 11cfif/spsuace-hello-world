@@ -16,8 +16,26 @@ public class DoubleTask {
      * Пример: (1, 5, 4) -> "-1.0, -4.0"
      */
     public static String equation(int a, int b, int c) {
+
         double x1 = 0;
         double x2 = 0;
+
+        double d = (double) (b*b) - (4*a*c);
+
+        if (d == 0 ) {
+            x1 = (double) (-b) / (2*a);
+            x2 = x1;
+        }
+        if (d < 0) {
+            System.out.println("Корней нет");
+            return "Нет корней";
+        }
+        if (d > 0) {
+            x1 = (double) ((-b) + Math.sqrt(b*b - (4*a*c)))/(2*a);
+            x2 = (double) ((-b) - Math.sqrt(b*b - (4*a*c)))/(2*a);
+        }
+
+        System.out.println("x1: " + x1 + "  x2: " + x2);
         return x1 + ", " + x2;
     }
 
