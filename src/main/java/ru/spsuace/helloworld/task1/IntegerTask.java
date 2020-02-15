@@ -15,11 +15,10 @@ public class IntegerTask {
      */
     public static int sum(int n) {
       int sum = 0;
-      for(int i =1;i <= n;i++) {
-          sum += i
+      for(int i = 1;i <= n;i++) {
+          sum += i;
       }
-
-
+        System.out.println(sum);
         return sum;
     }
 
@@ -33,12 +32,12 @@ public class IntegerTask {
         int ds = 0;
         int x = 0;
         if(bottom >= top) {
-            return Integer.MAX.VALUE;
+            return Integer.MAX_VALUE;
         }   else {
             x = top - bottom;
-            ds = height / x;
+            ds = ((height / x) - bottom);
         }
-        return ds
+        return ds;
     }
 
     /**
@@ -46,17 +45,22 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        int x;
-        for(int i = 1;i < n; i++)
+        for (int i = 1; i < n; i++) {
+
+        }
         return 0;
     }
-
 
     /**
      * Выведите факториал от числа n
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+        long s = 1;
+        for(int i = 1;i <= n;i++) {
+            s *= i;
+        }
+
+        return s;
     }
 }
