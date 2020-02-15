@@ -19,6 +19,7 @@ public class DoubleTask {
 
         double x1 = 0;
         double x2 = 0;
+        double x = 0;
 
         double d = (double) (b*b) - (4*a*c);
 
@@ -33,6 +34,11 @@ public class DoubleTask {
         if (d > 0) {
             x1 = (double) ((-b) + Math.sqrt(b*b - (4*a*c)))/(2*a);
             x2 = (double) ((-b) - Math.sqrt(b*b - (4*a*c)))/(2*a);
+            if (x2 > x1) {
+                x = x1;
+                x1 = x2;
+                x2 = x;
+            }
         }
 
         System.out.println("x1: " + x1 + "  x2: " + x2);
