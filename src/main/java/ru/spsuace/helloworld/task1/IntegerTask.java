@@ -1,6 +1,8 @@
 package ru.spsuace.helloworld.task1;
 
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
  * Math.sqrt(1.44)
@@ -14,7 +16,11 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        int sum = 0;
+        for (int i = 0; i < n; i += 1) {
+            sum = sum + i + 1;
+        }
+        return sum;
     }
 
     /**
@@ -24,7 +30,11 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        int snake = 0;
+        if (height)
+
+
+        return Integer.MAX_VALUE;
     }
 
     /**
