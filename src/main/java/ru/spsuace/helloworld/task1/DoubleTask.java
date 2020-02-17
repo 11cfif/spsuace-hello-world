@@ -16,8 +16,12 @@ public class DoubleTask {
      * Пример: (1, 5, 4) -> "-1.0, -4.0"
      */
     public static String equation(int a, int b, int c) {
-        double x1 = 0;
-        double x2 = 0;
+        //double x1 = 0;
+        //double x2 = 0;
+
+       double d = Math.pow(b, 2) - (4 * a * c);
+            double x1 = -b - Math.sqrt(d);
+            double x2 = -b + Math.sqrt(d);
         return x1 + ", " + x2;
     }
 

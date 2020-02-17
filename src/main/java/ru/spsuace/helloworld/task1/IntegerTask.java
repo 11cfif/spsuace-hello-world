@@ -14,6 +14,8 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
+
+        for (n=1; )
         return 0;
     }
 
