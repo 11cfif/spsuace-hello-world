@@ -28,11 +28,28 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int propolzla = 0;
-        int days = 0;
-        
+        int days = 0; //сколько дней уже ползет
+        int progress = 0; //пройденное расстояние
 
-        return Integer.Max_value;
+     if (top >= height) {
+         return 1;
+        }
+     if (top <= bottom) {
+         return Integer.MAX_VALUE;
+     }
+     if (top > bottom) {
+
+         for(days = 1; progress <= height; ) {
+             progress = progress + top;
+
+             if (progress < height) {
+                 days += 1;
+                 progress = progress - bottom;
+             }
+         }
+            return days;
+     }
+     return 0;
     }
 
     /**
