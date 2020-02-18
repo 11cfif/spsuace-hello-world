@@ -48,6 +48,18 @@ public class DoubleTask {
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
-        return 0;
+
+        double pow1;
+        double pow2;
+        double sqrt1;
+
+        pow1 = (x2 - x1) * (x2 - x1);
+        System.out.println(pow1);
+        pow2 = (y2 - y1) * (y2 - y1);
+        System.out.println(pow2);
+        sqrt1 = (float) Math.sqrt(pow1 + pow2);
+
+        System.out.println("Расстояние = " + sqrt1);
+        return (float) sqrt1;
     }
 }
