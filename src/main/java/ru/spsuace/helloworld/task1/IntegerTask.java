@@ -57,7 +57,18 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return 0;
+        int k = 0;
+        int temp = order;
+        int temp2;
+        for(k = 1; temp <= 0; k += 1) { //поиск кол-ва цифр числа n
+            temp = temp % 10;
+        } // 6              2
+        temp2 = n % (10 ^ order); //454         1
+        temp2 = temp2 * (10 ^ order); //454000  10
+        //454455 - 454000 = 355     10 - 10 = 0
+        temp2 = n - temp2;          //
+        temp2 = n % (10 ^ (order - 1)); // 355 /100 = 3
+        return temp2;
     }
 
 
