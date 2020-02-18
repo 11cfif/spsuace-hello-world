@@ -1,5 +1,7 @@
-package ru.spsuace.helloworld.task1;
+package ru.spsuace.helloworld.homework.task1;
 
+
+import static java.lang.String.*;
 
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
@@ -46,7 +48,7 @@ public class IntegerTask {
             return Integer.MAX_VALUE;
         }
 
-        while (way < height){
+        while (way < height) {
             way += top;
             if (way >= height) {
                 System.out.println(days);
@@ -65,61 +67,36 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-
-        int count = 0;
-        int result = 1;
-        double value = 1;
-        int j = n;
-
-        while (j >= 1){
-            count++;
-            j /= 10;
+        if (n < 0) {
+            n *= -1;
         }
+        String str1 = valueOf(n);
+        int count = str1.length();
 
-        if (order > count) {
-            return Integer.MAX_VALUE;
-        }
-
-        for (int i = 1; i <= order; i++) {
-            result *= 10;
-        }
-
-        value = (double) n / result;
-        int res1 = (int)value;
-
-        if (value == 1 && order < count) {
-            return 0;
-        }
-
-        if (res1 != 0) {
-            double res2 = value - res1;
-
-            if (res2 <= 0) {
-                while (true) {
-                    value *= 10;
-                    if ((int) value != 0) {
-                        System.out.println(value);
-                        return (int) value;
-                    }
-                }
+        StringBuilder str = new StringBuilder(str1);
+        str.reverse();
+        if (str1.equals("2147483647")) {
+            long longN = Long.parseLong(valueOf(str));
+            if (order > count) {
+                return 0;
             }
 
-            result = result / 10;
-            res2 = res2 / result;
+            int num1 = (int) Math.pow(10, count - order);
 
-            value = (int) res2;
+            Long result = (longN / num1) % 10;
 
-            System.out.println(value);
-            return (int) value;
+            return Integer.parseInt(valueOf(result));
         } else {
-
-            while (true) {
-                value *= 10;
-                if ((int) value != 0) {
-                    System.out.println((int)value);
-                    return (int) value;
-                }
+            n = Integer.parseInt(valueOf(str));
+            if (order > count) {
+                return 0;
             }
+
+            int num1 = (int) Math.pow(10, count - order);
+            int result = (n / num1) % 10;
+
+            System.out.println("результат" + result);
+            return result;
         }
     }
 

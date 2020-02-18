@@ -1,4 +1,4 @@
-package ru.spsuace.helloworld.task1;
+package ru.spsuace.helloworld.homework.task1;
 
 import org.junit.Test;
 

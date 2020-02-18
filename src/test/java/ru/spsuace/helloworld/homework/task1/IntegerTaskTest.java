@@ -1,4 +1,4 @@
-package ru.spsuace.helloworld.task1;
+package ru.spsuace.helloworld.homework.task1;
 
 import org.junit.Test;
 
@@ -34,7 +34,7 @@ public class IntegerTaskTest {
         assertEquals(8, IntegerTask.kDecimal(Integer.MAX_VALUE, 5));
         assertEquals(3, IntegerTask.kDecimal(23472373, 3));
         assertEquals(7, IntegerTask.kDecimal(-23472373, 2));
-    }
+    }   // int <= 2147483647
 
     @Test
     public void factorial() {
