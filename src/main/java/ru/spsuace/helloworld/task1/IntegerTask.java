@@ -69,6 +69,7 @@ public class IntegerTask {
         temp2 = n - temp2;          //
         temp2 = n % (10 ^ (order - 1)); // 355 /100 = 3
         return temp2;
+        //
     }
 
 
