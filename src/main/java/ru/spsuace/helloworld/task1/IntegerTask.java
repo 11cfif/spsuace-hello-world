@@ -1,6 +1,8 @@
 package ru.spsuace.helloworld.task1;
 
 
+import java.util.Scanner;
+
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
  * Math.sqrt(1.44)
@@ -8,15 +10,17 @@ package ru.spsuace.helloworld.task1;
  * Для просмотра подробной документации по выбранному методу нажмите Ctrl + q
  */
 public class IntegerTask {
-//
 
     /**
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        //int n=in.nextint();
-        return 0;
+        int summa = 0;
+        for (int i = 1; i <= n; i++) {
+            summa += i;
+        }
+        return summa;
     }
 
     /**
@@ -26,7 +30,24 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        int i = 0;
+        if (top >= height) {
+            return (1);
+        }
+        if (top - bottom <= 0) {
+            return (Integer.MAX_VALUE);
+        } else {
+            while (height > 0) {
+                i++;
+                height -= top;
+                if (height <= 0) {
+                    return (i);
+                } else {
+                    height += bottom;
+                }
+            }
+            return (i);
+        }
     }
 
     /**
@@ -34,7 +55,12 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return 0;
+        int num = 0;
+        for (int i = 0; i != order; i++) {
+            num = Math.abs(n % 10);
+            n = n / 10;
+        }
+        return (num);
     }
 
 
@@ -43,6 +69,13 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+        if (n==0){
+            return(1);
+        }
+        long fact=1;
+        for(int i=2;i<=n;++i){
+            fact*=i;
+        }
+        return (fact);
     }
 }
