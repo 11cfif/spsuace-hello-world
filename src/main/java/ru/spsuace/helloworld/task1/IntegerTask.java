@@ -15,7 +15,7 @@ public class IntegerTask {
      */
     public static int sum(int n) {
         int sum = 0;
-        for (int i = 0; i < n; i +=1){
+        for (int i = 0; i < n; i += 1) {
             sum = sum + i + 1;
         }
         return sum;
@@ -28,24 +28,22 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int snake = 0;
         int day = 0;
-        for (int i = 0; snake < height; day = day + 1) {
+        for (int snake = 0; snake > height; day++) {
             if (top > bottom) {
-                snake = snake + top;
-                continue;
-            }
-                else if (top < bottom) {
-                snake = Integer.MAX_VALUE;
+                snake += top;
+                if (snake < height) {
+                    snake = snake - bottom;
+                    continue;
+                } else {
                     break;
-
                 }
+            } else {
+                day = Integer.MAX_VALUE;
+                break;
             }
-        return snake;
-
-
-
-
+        }
+        return day;
     }
 
     /**
