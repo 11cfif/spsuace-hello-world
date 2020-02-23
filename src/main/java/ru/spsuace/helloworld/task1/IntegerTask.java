@@ -13,9 +13,9 @@ public class IntegerTask {
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
-    //public static int sum(int n) {
-      //  return 0;
-    //}
+    public static int sum(int n) {
+        return n * (n + 1) / 2;
+    }
 
     /**
      * Гусеница поднимается по стене длиной height на высоту top за день, ночью гусеница сползает на bottom.
@@ -24,49 +24,47 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int DefHT = height - top;
-        int DayRun = top - bottom;
-        int SumDays = 1;
-                if (height == 0){
-                    return Integer.MAX_VALUE;
-                }
-                if (top == 0){
-                    return Integer.MAX_VALUE;
-                }
-                if (DefHT < 0){
-                    return SumDays = 1;
-                }
-                if (DayRun < 0){
-                    return Integer.MAX_VALUE;
-                }
-                return SumDays = 1 + (DefHT / DayRun);
-
-
-   }
+        int distance = (height - bottom - 1);
+        int dayRun = (top - bottom);
+        if (height == 0) {
+            return Integer.MAX_VALUE;
+        } else if (top == 0) {
+            return Integer.MAX_VALUE;
+        } else if (distance <= 0) {
+            return 1;
+        } else if (dayRun <= 0) {
+            return Integer.MAX_VALUE;
+        } else {
+            return 1 + (distance / dayRun);
+        }
+    }
 
     /**
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
      * Пример: (454355, 3) -> 3
      */
-    //public static int kDecimal(int n, int order) {
-        //return 0;
-    //}
-
+    public static int kDecimal(int n, int order) {
+        int digit = 0;
+        for (int i = 0; i != order; i++) {
+            digit = Math.abs(n % 10);
+            n = n / 10;
+        }
+        return digit;
+    }
 
     /**
      * Выведите факториал от числа n
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        //byte result = 1;
-        // (byte i = 1; i <= n; i ++){
-            //result = (byte) (result * i);
-        //}
-        //return result;
         if (n == 0) return 1;
         return n * factorial((byte) (n - 1));
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         System.out.println(factorial((byte) 12));
+        System.out.println(kDecimal(454355, 3));
+        System.out.println(sum(5));
+        System.out.println(snake(100,10,2));
     }
 }
