@@ -25,7 +25,6 @@ public class DoubleTask {
         x2 = (-b - Math.sqrt(D)) / (2 * a);
 
         if (x1 < x2) {
-
             i = x1;
             x1 = x2;
             x2 = i;

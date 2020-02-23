@@ -26,6 +26,7 @@ public class IntegerTask {
     public static int snake(int height, int top, int bottom) {
         int distance = (height - bottom - 1);
         int dayRun = (top - bottom);
+
         if (height == 0) {
             return Integer.MAX_VALUE;
         } else if (top == 0) {
@@ -45,6 +46,7 @@ public class IntegerTask {
      */
     public static int kDecimal(int n, int order) {
         int digit = 0;
+
         for (int i = 0; i != order; i++) {
             digit = Math.abs(n % 10);
             n = n / 10;
@@ -65,6 +67,6 @@ public class IntegerTask {
         System.out.println(factorial((byte) 12));
         System.out.println(kDecimal(454355, 3));
         System.out.println(sum(5));
-        System.out.println(snake(100,10,2));
+        System.out.println(snake(100, 10, 2));
     }
 }
