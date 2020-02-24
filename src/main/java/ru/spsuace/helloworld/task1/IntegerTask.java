@@ -28,22 +28,29 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int day = 0;
-        for (int snake = 0; snake > height; day++) {
+        int day = 1;
+        int snake = 0;
+        for (day = 1; ; day = day + 1) {
             if (top > bottom) {
-                snake += top;
+                snake = snake + top;
                 if (snake < height) {
                     snake = snake - bottom;
                     continue;
                 } else {
+                    snake = day;
                     break;
                 }
             } else {
-                day = Integer.MAX_VALUE;
-                break;
+                if (top < height) {
+                    snake = Integer.MAX_VALUE;
+                    break;
+                } else {
+                    snake = 1;
+                    break;
+                }
             }
         }
-        return day;
+        return snake;
     }
 
     /**
@@ -51,6 +58,7 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
+
         return 0;
     }
 
