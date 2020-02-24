@@ -16,11 +16,11 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        int summa = 0;
+        int total = 0;
         for (int i = 1; i <= n; i++) {
-            summa += i;
+            total += i;
         }
-        return summa;
+        return total;
     }
 
     /**
@@ -32,22 +32,22 @@ public class IntegerTask {
     public static int snake(int height, int top, int bottom) {
         int i = 0;
         if (top >= height) {
-            return (1);
+            return 1;
         }
-        if (top - bottom <= 0) {
-            return (Integer.MAX_VALUE);
-        } else {
+        if (top <= bottom) {
+            return Integer.MAX_VALUE;
+        }
             while (height > 0) {
                 i++;
                 height -= top;
                 if (height <= 0) {
-                    return (i);
-                } else {
+                    return i;
+                }
+                 else {
                     height += bottom;
                 }
             }
-            return (i);
-        }
+            return i;
     }
 
     /**
@@ -60,7 +60,7 @@ public class IntegerTask {
             num = Math.abs(n % 10);
             n = n / 10;
         }
-        return (num);
+        return num;
     }
 
 
@@ -70,12 +70,12 @@ public class IntegerTask {
      */
     public static long factorial(byte n) {
         if (n == 0) {
-            return (1);
+            return 1;
         }
         long fact = 1;
         for (int i = 2; i <= n; ++i) {
             fact *= i;
         }
-        return (fact);
+        return fact;
     }
 }
