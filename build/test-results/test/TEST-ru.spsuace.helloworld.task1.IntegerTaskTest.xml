@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.spsuace.helloworld.task1.IntegerTaskTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-24T15:02:04" hostname="DESKTOP-C7694EM" time="0.008">
+  <properties/>
+  <testcase name="factorial" classname="ru.spsuace.helloworld.task1.IntegerTaskTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
