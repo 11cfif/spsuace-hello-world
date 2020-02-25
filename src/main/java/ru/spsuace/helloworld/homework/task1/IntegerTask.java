@@ -24,8 +24,7 @@ public class IntegerTask {
      * Гусеница поднимается по стене длиной height на высоту top за день, ночью гусеница сползает на bottom.
      * Сколько дней понадобится гусенице, чтобы доползти до потолка. Если она этого никогда не сможет сделать,
      * Верните число Integer.MAX_VALUE;
-     * Пример: (10, 3, 2) -> 8
-     */
+     * Пример: (10, 3, 2) -> 8 */
     public static int snake(int height, int top, int bottom) {
         int days = 1;
         int way = 0;
