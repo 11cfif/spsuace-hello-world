@@ -14,32 +14,23 @@ public class DoubleTask {
      * Пример: (1, 5, 4) -> "-1.0, -4.0"
      */
     public static String equation(int a, int b, int c) {
-
-        double x1 = 0;
-        double x2 = 0;
-        double x = 0;
-
+        double x1;
+        double x2;
         double d = (double) (b * b) - (4 * a * c);
-
         if (d == 0) {
-            x1 = (double) (-b) / (2 * a);
+            x1 = (double) -b / (2 * a);
             x2 = x1;
-        }
-        if (d < 0) {
-            System.out.println("Корней нет");
+        } else if (d < 0) {
             return "Нет корней";
-        }
-        if (d > 0) {
-            x1 = (double) ((-b) + Math.sqrt(b * b - (4 * a * c))) / (2 * a);
-            x2 = (double) ((-b) - Math.sqrt(b * b - (4 * a * c))) / (2 * a);
+        } else {
+            x1 = (-b + Math.sqrt(d)) / (2 * a);
+            x2 = (-b - Math.sqrt(d)) / (2 * a);
             if (x2 > x1) {
-                x = x1;
+                double changeVariable = x1;
                 x1 = x2;
-                x2 = x;
+                x2 = changeVariable;
             }
         }
-
-        System.out.println("x1: " + x1 + "  x2: " + x2);
         return x1 + ", " + x2;
     }
 
@@ -48,18 +39,13 @@ public class DoubleTask {
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
+        float pow1;
+        float pow2;
+        float sqrt1;
 
-        double pow1;
-        double pow2;
-        double sqrt1;
-
-        pow1 = (x2 - x1) * (x2 - x1);
-        System.out.println(pow1);
-        pow2 = (y2 - y1) * (y2 - y1);
-        System.out.println(pow2);
+        pow1 = (float) ((x2 - x1) * (x2 - x1));
+        pow2 = (float) ((y2 - y1) * (y2 - y1));
         sqrt1 = (float) Math.sqrt(pow1 + pow2);
-
-        System.out.println("Расстояние = " + sqrt1);
-        return (float) sqrt1;
+        return sqrt1;
     }
 }
