@@ -12,7 +12,7 @@ public class HomeworkTask {
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
         double sum=0;
         for (double i = a; i< b;i = i + delta){
-         sum+=function.applyAsDouble(i);
+            sum+=function.applyAsDouble(i);
         }
         return delta*sum;
     }
@@ -55,20 +55,7 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        int x12=x2-x1;
-        int y12=y2-y1;
-        int x23=x3-x2;
-        int y23=y3-y2;
-        int x34=x4-x3;
-        int y34=y4-y3;
-        int x41=x4-x1;
-        int y41=y4-y1;
-        double firstSide=Math.sqrt(Math.pow(x12,2)+Math.pow(y12,2));
-        double secondSide=Math.sqrt(Math.pow(x23,2)+Math.pow(y23,2));
-        double thirdSide=Math.sqrt(Math.pow(x34,2)+Math.pow(y34,2));
-        double fourthSide=Math.sqrt(Math.pow(x41,2)+Math.pow(y41,2));
-        double halfPerimeter=(firstSide+secondSide+thirdSide+fourthSide)/2;
-        return Math.sqrt((halfPerimeter-firstSide)*(halfPerimeter-secondSide)*(halfPerimeter-thirdSide)*(halfPerimeter-fourthSide));
+       return (Math.abs(x1*y2+x2*y3+x3*y4+x4*y1-x2*y1-x3*y2-x4*y3-x1*y4))/2;
     }
 
 }
