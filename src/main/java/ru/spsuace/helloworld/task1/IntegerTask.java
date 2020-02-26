@@ -24,19 +24,17 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int distance = (height - bottom - 1);
-        int dayRun = (top - bottom);
+        int distance = Math.abs(height - bottom - 1);
+        int dailyRun = (top - bottom);
 
         if (height == 0) {
-            return Integer.MAX_VALUE;
-        } else if (top == 0) {
-            return Integer.MAX_VALUE;
-        } else if (distance <= 0) {
+            return 0;
+        } else if (height <= top) {
             return 1;
-        } else if (dayRun <= 0) {
+        } else if (dailyRun <= 0) {
             return Integer.MAX_VALUE;
         } else {
-            return 1 + (distance / dayRun);
+            return 1 + (distance / dailyRun);
         }
     }
 
@@ -59,14 +57,9 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        if (n == 0) return 1;
+        if (n == 0) {
+            return 1;
+        }
         return n * factorial((byte) (n - 1));
-    }
-
-    public static void main(String[] args) {
-        System.out.println(factorial((byte) 12));
-        System.out.println(kDecimal(454355, 3));
-        System.out.println(sum(5));
-        System.out.println(snake(100, 10, 2));
     }
 }
