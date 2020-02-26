@@ -15,9 +15,7 @@ public class IntegerTask {
      */
     public static int sum(int n) {
         int sum = 0;
-        for (int i = 0; i < n; i++) {
-            sum = sum + i + 1;
-        }
+        for (int i = 0; i < n; i++) sum = sum + i + 1;
         return sum;
     }
 
@@ -39,8 +37,8 @@ public class IntegerTask {
                 }
             }
         }
-        if (top == height) {
-            return (1);
+        if (top >= height) {
+            return 1;
         }
         if (top <= bottom && top < height) {
             return (Integer.MAX_VALUE);
@@ -57,11 +55,9 @@ public class IntegerTask {
         if (n < 0) {
             n = n * (-1);
         }
-        int kDecimal = (int) ((n % Math.pow(10, order) - n % Math.pow(10, order - 1)) / Math.pow(10, order - 1));
-
-        {
-            return kDecimal;
-        }
+        int kDecimal;
+        kDecimal = (int) ((n % Math.pow(10, order) - n % Math.pow(10, order - 1)) / Math.pow(10, order - 1));
+        return kDecimal;
     }
 
     /**
@@ -70,9 +66,7 @@ public class IntegerTask {
      */
     public static long factorial(byte n) {
         long factorial = 1;
-        for (int i = 1; i <= n; i++) {
-            factorial = factorial*i;
-        }
+        for (int i = 1; i <= n; i++) factorial = factorial * i;
         return factorial;
     }
 }
