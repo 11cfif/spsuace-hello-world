@@ -22,13 +22,13 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        int max=0;
+        int maximum=0;
         int maxNum=0;
         int numeral=0;
         for(int i =  String.valueOf(Math.abs(a)).length();i>0;--i) {
             numeral= (int) Math.abs(a % 10);
-            if (numeral>=max){
-                max=numeral;
+            if (numeral>=maximum){
+                maximum=numeral;
                 maxNum=i;
             }
             a=a/10;
