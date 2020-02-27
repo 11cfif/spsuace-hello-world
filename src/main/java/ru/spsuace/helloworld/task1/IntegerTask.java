@@ -37,17 +37,16 @@ public class IntegerTask {
         if (top <= bottom) {
             return Integer.MAX_VALUE;
         }
-            while (height > 0) {
-                i++;
-                height -= top;
-                if (height <= 0) {
-                    return i;
-                }
-                 else {
-                    height += bottom;
-                }
+        while (height > 0) {
+            i++;
+            height -= top;
+            if (height <= 0) {
+                return i;
+            } else {
+                height += bottom;
             }
-            return i;
+        }
+        return i;
     }
 
     /**
