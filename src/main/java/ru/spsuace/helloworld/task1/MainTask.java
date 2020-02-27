@@ -8,7 +8,7 @@ public class MainTask {
      *
      * @param argsa
      */
-    private static void main(String[] args) {
+    private static void maintask(String[] args) {
         System.out.println(maintask());
     }
 

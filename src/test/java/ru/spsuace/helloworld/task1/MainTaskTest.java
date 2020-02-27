@@ -7,6 +7,6 @@ public class MainTaskTest {
 
     @Test
     public void maintask() {
-        Assert.assertEquals("It is work.", );
+        Assert.assertEquals("It is work.", MainTask.maintask());
     }
 }
