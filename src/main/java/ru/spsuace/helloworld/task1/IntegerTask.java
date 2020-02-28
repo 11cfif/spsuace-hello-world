@@ -13,7 +13,13 @@ public class IntegerTask {
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
-    public static int sum(int n) {
+    public static int sum(int a) {
+        int s = 0;
+        while (a > 0) {
+            s = s + a % 10;
+            a = a/10;
+        }
+        System.out.println("Сумма цифр в числе: " + s + " = ");
         return 0;
     }
 
@@ -24,6 +30,8 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
+        double s = height/(top-bottom);
+        System.out.println("Количество дней: " + s + " = ");
         return 0;
     }
 
@@ -32,6 +40,7 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
+
         return 0;
     }
 
@@ -40,7 +49,13 @@ public class IntegerTask {
      * Выведите факториал от числа n
      * Пример: (5) -> 120
      */
-    public static long factorial(byte n) {
+    public static long factorial(byte res, byte n) {
+        if (n == 0) {
+            res = 1;
+        } else if (n > 0){
+            res = n * factorial(n-1);
+         }
+        System.out.println("Ответ: " + res);
         return 0;
     }
 }
