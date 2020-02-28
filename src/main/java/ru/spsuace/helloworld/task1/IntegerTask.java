@@ -1,6 +1,8 @@
 package ru.spsuace.helloworld.task1;
 
 
+import java.beans.PropertyEditorManager;
+
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
  * Math.sqrt(1.44)
@@ -37,20 +39,19 @@ public class IntegerTask {
                     snake = snake - bottom;
                     continue;
                 } else {
-                    snake = day;
                     break;
                 }
             } else {
                 if (top < height) {
-                    snake = Integer.MAX_VALUE;
+                    day = Integer.MAX_VALUE;
                     break;
                 } else {
-                    snake = 1;
+                    day = 1;
                     break;
                 }
             }
         }
-        return snake;
+        return day;
     }
 
     /**
@@ -58,8 +59,15 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
+        int i = 1;
+        for (i = 1; i >= order; i++) {
+            n /= 10;
+        }
 
-        return 0;
+
+
+        int z = (n % 10) * 10;
+        return z;
     }
 
 
@@ -68,6 +76,10 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+        long factorial = 1;
+        for (int i = 2; i < n + 1; i += 1) {
+            factorial *= i;
+        }
+        return factorial;
     }
 }
