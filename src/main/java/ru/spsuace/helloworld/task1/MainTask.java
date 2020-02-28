@@ -6,13 +6,14 @@ public class MainTask {
      * Сделать так, чтобы класс компилировался, при раскомментировании метода ниже
      * Так же, надо сделать так, что бы при запуске этого класса печаталась строка "It is work."
      *
-     * @param argsa
+     * @param args
      */
     private static void maintask(String[] args) {
         System.out.println(maintask());
     }
 
     static String maintask() {
+        System.out.println("It is work.");
         return "It is work.";
     }
 }
