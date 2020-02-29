@@ -14,8 +14,12 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        int sum = 0;
+        sum = n * (n + 1) / 2;
+        return sum;
+
     }
+
 
     /**
      * Гусеница поднимается по стене длиной height на высоту top за день, ночью гусеница сползает на bottom.
@@ -24,7 +28,17 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        int t = 0;
+        t = height / (top - bottom);
+        int z = top;
+        int x = bottom;
+        if ((z - x) == 0) {
+            t = Integer.MAX_VALUE;
+        }
+        if ((z - x) < 0) {
+            t = Integer.MAX_VALUE;
+        }
+        return t;
     }
 
     /**
