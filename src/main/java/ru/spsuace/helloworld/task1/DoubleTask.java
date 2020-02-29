@@ -2,6 +2,8 @@ package ru.spsuace.helloworld.task1;
 
 import ru.spsuace.helloworld.Main;
 
+import java.util.Scanner;
+
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
  * Math.sqrt(1.44)
@@ -16,19 +18,22 @@ public class DoubleTask {
      * Пример: (1, 5, 4) -> "-1.0, -4.0"
      */
     public static String equation(int a, int b, int c) {
+
+//        double a, b, c;
+        double D = 0;
+        System.out.println("Введите a, b, c");
+
+        D = b * b - 4 * a * c;
         double x1 = 0;
         double x2 = 0;
-        int a = 5;
-        int b = 2;
-        int c = -15
-        x1=(-b + Math.sqrt((b^2)-4*a*c)/2*a;
-        x2=(-b - Math.sqrt((b^2)-4*a*c)/2*a;
-
-
+        if (D > 0) {
+            x1 = (-b + Math.sqrt(D)) / (2 * a);
+            x2 = (-b - Math.sqrt(D)) / (2 * a);
+        } else if (D == 0) {
+            x1 = x2= -b / (2 * a);
+        }
         return x1 + ", " + x2;
-
     }
-}
 
 
     /**
@@ -36,6 +41,9 @@ public class DoubleTask {
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
-        return 0;
+       double s = 0;
+       s = Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+
     }
+    return s;
 }
