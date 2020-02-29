@@ -14,7 +14,14 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        int result = 0;
+
+        int value = 0;
+        for (int i = 1; i <= value; i++) {
+            result += i;
+        }
+
+        return result;
     }
 
     /**
@@ -24,8 +31,19 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        int day = 0;
+        for (int i = 0; ; day++) {
+            i = i + top;
+            if (i >= height) {
+                return day;
+            }
+            if (i <= 0) {
+                return Integer.MAX_VALUE;
+            }
+
+        }
     }
+
 
     /**
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
@@ -41,6 +59,12 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+        int result = 1;
+        for (int i = 1; i <= n; i++) {
+            result = result * i;
+        }
+        return result;
     }
+
+
 }
