@@ -8,13 +8,8 @@ public class MainTask {
      *
      * @param args
      */
-    private static void maintask(String[] args) {
-        System.out.println(maintask());
-    }
 
-    static String maintask() {
+    private static void main(String[] args) {
         System.out.println("It is work.");
-        return "It is work.";
     }
 }
-

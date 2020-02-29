@@ -1,7 +1,5 @@
 package ru.spsuace.helloworld.task1;
 
-import ru.spsuace.helloworld.Main;
-
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
  * Math.sqrt(1.44)
@@ -18,14 +16,12 @@ public class DoubleTask {
         double d = Math.sqrt(Math.pow(b, 2) - 4 * a * c);
         double x1 = (-b + d) / (2 * a);
         double x2 = (-b - d) / (2 * a);
-
         if (x2 > x1) {
             double v = x1;
             x1 = x2;
             x2 = v;
         }
         return x1 + ", " + x2;
-
     }
 
     /**
@@ -33,9 +29,6 @@ public class DoubleTask {
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
-
-        float d = (float) Math.sqrt(Math.pow(x2 - x1,2) + Math.pow(y2 - y1,2));
-
-        return d;
+        return (float) Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     }
 }
