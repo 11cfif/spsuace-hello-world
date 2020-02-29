@@ -39,13 +39,8 @@ public class DoubleTask {
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
-        float pow1;
-        float pow2;
-        float sqrt1;
-
-        pow1 = (float) ((x2 - x1) * (x2 - x1));
-        pow2 = (float) ((y2 - y1) * (y2 - y1));
-        sqrt1 = (float) Math.sqrt(pow1 + pow2);
-        return sqrt1;
+        double pow1 = ((x2 - x1) * (x2 - x1));
+        double pow2 = ((y2 - y1) * (y2 - y1));
+        return (float) Math.sqrt(pow1 + pow2);
     }
 }
