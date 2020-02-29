@@ -18,8 +18,8 @@ public class IntegerTask {
      */
     public static int sum(int n) {
         int sum = 0;
-        for (int i = 0; i < n; i += 1) {
-            sum = sum + i + 1;
+        for (int i = 1; i <= n; i++) {
+            sum = sum + i;
         }
         return sum;
     }
@@ -31,28 +31,26 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int snace = 0;
-        int days = 0;
+        int day = 0;
 
         if (top >= height) {
             return 1;
         }
 
-        if (bottom >= top) {
+        if (top <= bottom) {
             return Integer.MAX_VALUE;
         }
-        if (top > bottom) {
-            for (days = 1; snace <= height; ) {
-                snace = snace + top;
 
-                if (snace < height) {
-                    days += 1;
-                    snace = snace - bottom;
-                }
+        while (height > 0) {
+            day++;
+            height = height - top;
+            if (height <= 0) {
+                return day;
+            } else {
+                height = height + bottom;
             }
-            return days;
         }
-        return 0;
+        return day;
     }
 
     /**
@@ -60,8 +58,12 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        int modul = Math.abs(n);
-        int result = (int)(modul % Math.pow(10,order) / Math.pow(10,order - 1));
+        int result = 0;
+
+        for (int i = 0; i != order; i++) {
+            result = Math.abs(n % 10);
+            n = n / 10;
+        }
         return result;
     }
 
@@ -72,7 +74,7 @@ public class IntegerTask {
      */
     public static long factorial(byte n) {
         long factorial = 1;
-        for(int i = 1; i <= n; i += 1){
+        for(int i = 1; i <= n; i++){
             factorial = factorial * i;
         }
         return factorial;
