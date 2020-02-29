@@ -9,4 +9,5 @@ public class MainTest {
     public void hello() {
         Assert.assertEquals("Hello world! I am a first program", Main.hello());
     }
+
 }
