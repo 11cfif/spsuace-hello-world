@@ -1,7 +1,5 @@
 package ru.spsuace.helloworld.task1;
 
-import ru.spsuace.helloworld.Main;
-
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
  * Math.sqrt(1.44)
@@ -9,34 +7,21 @@ import ru.spsuace.helloworld.Main;
  * Для просмотра подробной документации по выбранному методу нажмите Ctrl + q
  */
 public class DoubleTask {
-
     /**
      * Вывести два корня квадратного уравнения через запятую: a * x ^ 2 + b * x + c = 0;
      * Вывод менять не нужно, надо только посчитать x1 и x2, где x1 > x2
      * Пример: (1, 5, 4) -> "-1.0, -4.0"
      */
-    public static String equation(int a, int b, int c, double D) {
-
-System.out.println("Решение квадратного уравнения ax^2+bx+c=0. Введите a,b,c: ");
-        a = in.nextInteger();
-        b = in.nextInteger();
-        c = in.nextInteger();
-D = b*b-4*a*c;
-if (D>0) {
-    double x1 = 0;
-    double x2 = 0;
-    x1 = (-b - Math.sqrt(D)) / (2 * a);
-    x2 = (-b + Math.sqrt(D)) / (2 * a);
-    System.out.println("Корни уравнения: x1 = " + x1 + ", x2 = " + x2);
-}
-else if (D == 0) {
-    double x;
-    x = -b/(2*a);
-    System.out.println("Единственный корень: x = " + x);
-}
-else {
-    System.out.println("Действительных корней нет");
-}
+    public static String equation(int a, int b, int c) {
+        double D = b * b - 4 * a * c;
+        double x1 = (-b + Math.sqrt(D)) / (2 * a);
+        double x2 = (-b - Math.sqrt(D)) / (2 * a);
+        if (x1 < x2) {
+            double i = x1;
+            x1 = x2;
+            x2 = i;
+        }
+        return x1 + ", " + x2;
     }
 
     /**
@@ -44,7 +29,7 @@ else {
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
-        double d = Math.sqrt((x2 - x1)*(x2-x1)+(y2-y1)*(y2-y1));
-        return 0;
+        double d = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        return (float) d;
     }
 }

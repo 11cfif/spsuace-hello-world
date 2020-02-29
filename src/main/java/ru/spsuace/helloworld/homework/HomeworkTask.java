@@ -27,7 +27,7 @@ public class HomeworkTask {
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        System.out.println("Введите x1,x2,y1,y2: ");
+        
         return 0;
     }
 
