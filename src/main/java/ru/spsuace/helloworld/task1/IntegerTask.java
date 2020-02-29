@@ -29,14 +29,15 @@ public class IntegerTask {
      */
     public static int snake(int height, int top, int bottom) {
         int day = 0;
-        for (int v = 0; ; ) {
+        for (int Up = 0; ; ) {
             day++;
-            v = v + top;
-            if (v >= height) {
+            Up = Up + top;
+            if (Up >= height) {
                 return day;
             }
-            v = v - bottom;
-            if (v <= 0) {
+            Up = Up - bottom;
+            //придумать что-нибудь ещё
+            if (Up <= 0) {
                 return Integer.MAX_VALUE;
             }
         }
@@ -48,13 +49,16 @@ public class IntegerTask {
      */
     public static int kDecimal(int n, int order) {
         int res = 0;
+        double a = 0;
+        double b = 0;
+        double remains = 0;
         if (n < 0) {
             n = -n;
         }
         for (int degree = 1; degree <= order; degree++) {
-            double a = n / Math.pow(10, degree);
-            double b = Math.floor(a);
-            double remains = (a - b);
+            a = n / Math.pow(10, degree);
+            b = Math.floor(a);
+            remains = (a - b);
             remains = remains + 0.00001;
             remains = remains * 10;
             res = (int) Math.floor(remains);
@@ -71,10 +75,10 @@ public class IntegerTask {
         if (n == 0) {
             return 1;
         }
-        long c = n;
+        long res = n;
         for (int i = n - 1; i > 0; --i) {
-            c = c * i;
+            res = res * i;
         }
-        return c;
+        return res;
     }
 }
