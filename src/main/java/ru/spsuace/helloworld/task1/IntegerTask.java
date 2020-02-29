@@ -9,19 +9,15 @@ package ru.spsuace.helloworld.task1;
  */
 public class IntegerTask {
 
+    public IntegerTask() {
+    }
+
     /**
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
-    public static int sum(int n) {
-        int result = 0;
-
-        int value = 0;
-        for (int i = 1; i <= value; i++) {
-            result += i;
-        }
-
-        return result;
+    public static int sum(int n){
+        return n * (n+1)/2;
     }
 
     /**
@@ -32,17 +28,24 @@ public class IntegerTask {
      */
     public static int snake(int height, int top, int bottom) {
         int day = 0;
-        for (int i = 0; ; day++) {
-            i = i + top;
-            if (i >= height) {
-                return day;
+        if (height<= top) {
+            day = 1;
+        } else if (height > top) {
+            if (top<=bottom) {
+                day = Integer.MAX_VALUE;
+            } else if (bottom < top) {
+                while (height > 0) {
+                    day = day + 1;
+                    height = height - top;
+                    if (height <= 0) {
+                        break;
+                    } else height = height + bottom;
+                }
             }
-            if (i <= 0) {
-                return Integer.MAX_VALUE;
-            }
-
         }
+        return day;
     }
+
 
 
     /**
@@ -50,7 +53,19 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return 0;
+        int count = 0;
+        int h = 0;
+        int g = 0;
+        int s;
+        int pop = n;
+        while (pop != 0) {
+        count++;
+        s = pop % 10;
+        if (count == order) {
+            h = Math.abs(s);
+        }
+        pop /= 10;
+           } return h;
     }
 
 
@@ -59,11 +74,10 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        int result = 1;
-        for (int i = 1; i <= n; i++) {
-            result = result * i;
-        }
-        return result;
+        long result = 1;
+        for (byte  i = 1; i <= n; i++) {
+            result = (long)(result * i);
+        }return result;
     }
 
 

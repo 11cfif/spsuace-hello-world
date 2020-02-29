@@ -18,18 +18,16 @@ public class DoubleTask {
 
             double x1;
             double x2;
-            double D = Math.pow(b, 2) - 4 * a * c;
+            double D = Math.pow(b, 2) - (4 * a * c);
 
-            x1 = (-b + Math.sqrt(D)) / (2 * 4);
-            x2 = (-b + Math.sqrt(D)) / (2 * 4);
+            x1 = (-b + Math.sqrt(D)) / (2 * a);
+            x2 = (-b - Math.sqrt(D)) / (2 * a);
 
             if (x1 < x2) {
                 double r = x1;
                 x1 = x2;
                 x2 = r;
             }
-
-
             return x1 + ", " + x2;
         }
 

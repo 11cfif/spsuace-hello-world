@@ -10,4 +10,7 @@ public class MainTask {
 //    private static main(String args) {
 //        System.out.println("It is work.");
 //    }
+    public static void main (String[] args) {
+        System.out.println("It is work.");
+    }
 }
