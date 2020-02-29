@@ -27,22 +27,15 @@ public class HomeworkTask {
         int count = 0;
         long numeralAll = a;
         while (numeralAll > 0) {
-            ++count;
-            numeralAll /= 10;
-        }
-        numeralAll = a;
-        if (count == 0) {
-            return 1;
-        }
-        for (int i = count; i > 0; --i) {
             int numeral = (int) Math.abs(numeralAll % 10);
+            ++count;
             if (numeral >= maximum) {
                 maximum = numeral;
-                maxNum = i;
+                maxNum = count;
             }
-            numeralAll = numeralAll / 10;
+            numeralAll /= 10;
         }
-        return (byte) maxNum;
+        return (byte) (count - maxNum + 1);
     }
 
 
