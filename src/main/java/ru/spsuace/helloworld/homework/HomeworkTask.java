@@ -24,18 +24,17 @@ public class HomeworkTask {
     public static byte maxNumber(long a) {
         long maximum = 0;
         int maxNum = 0;
-        int j = 0;
+        int count = 0;
         long numeralAll = a;
         while (numeralAll > 0) {
-            ++j;
+            ++count;
             numeralAll /= 10;
         }
         numeralAll = a;
-        if (j == 0) {
+        if (count == 0) {
             return 1;
         }
-        System.out.println(j);
-        for (int i = j; i > 0; --i) {
+        for (int i = count; i > 0; --i) {
             int numeral = (int) Math.abs(numeralAll % 10);
             if (numeral >= maximum) {
                 maximum = numeral;
@@ -65,7 +64,8 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        return (Math.abs(x1 * y2 + x2 * y3 + x3 * y4 + x4 * y1 - x2 * y1 - x3 * y2 - x4 * y3 - x1 * y4)) / 2;
+        double s = (Math.abs(x1 * y2 + x2 * y3 + x3 * y4 + x4 * y1 - x2 * y1 - x3 * y2 - x4 * y3 - x1 * y4));
+        return s / 2;
     }
 
 }

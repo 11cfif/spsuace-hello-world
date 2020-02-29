@@ -30,7 +30,7 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int i = 0;
+        int day = 0;
         if (top >= height) {
             return 1;
         }
@@ -38,15 +38,15 @@ public class IntegerTask {
             return Integer.MAX_VALUE;
         }
         while (height > 0) {
-            i++;
+            day++;
             height -= top;
             if (height <= 0) {
-                return i;
+                return day;
             } else {
                 height += bottom;
             }
         }
-        return i;
+        return day;
     }
 
     /**
