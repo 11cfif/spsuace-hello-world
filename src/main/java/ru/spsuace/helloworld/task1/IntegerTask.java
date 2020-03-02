@@ -27,20 +27,20 @@ public class IntegerTask {
         int days = 0;
         int progress = 0;
 
-         if (top >= height) {
-             return 1;
-         }
-         if (top <= bottom) {
-             return Integer.MAX_VALUE;
-         }
-         for(days = 1; progress <= height; ) {
-             progress = progress + top;
-             if (progress < height) {
-                 days += 1;
-                 progress = progress - bottom;
-             }
-         }
-         return days;
+        if (top >= height) {
+            return 1;
+        }
+        if (top <= bottom) {
+            return Integer.MAX_VALUE;
+        }
+        for(days = 1; progress <= height; ) {
+            progress = progress + top;
+            if (progress < height) {
+                days += 1;
+                progress = progress - bottom;
+            }
+        }
+        return days;
     }
 
     /**
