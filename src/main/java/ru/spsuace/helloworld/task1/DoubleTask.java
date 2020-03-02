@@ -18,15 +18,15 @@ public class DoubleTask {
     public static String equation(int a, int b, int c) {
         double x1 = 0;
         double x2 = 0;
-        double Descrim = Math.pow(b, 2) - 4 * a * c;
+        double descrim = Math.pow(b, 2) - 4 * a * c;
 
-        x1 = (-b + Math.sqrt(Descrim)) / (2 * a);
-        x2 = (-b - Math.sqrt(Descrim)) / (2 * a);
+        x1 = (-b + Math.sqrt(descrim)) / (2 * a);
+        x2 = (-b - Math.sqrt(descrim)) / (2 * a);
 
         if (x1 < x2) {
-            double Koren = x1;
+            double xx1 = x1; //меняем местами иксы
             x1 = x2;
-            x2 = Koren;
+            x2 = xx1;
         }
         return x1 + ", " + x2;
     }
