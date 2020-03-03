@@ -19,14 +19,13 @@ public class DoubleTask {
         double x1 = 0;
         double x2 = 0;
         double descrim = Math.pow(b, 2) - 4 * a * c;
-
         x1 = (-b + Math.sqrt(descrim)) / (2 * a);
         x2 = (-b - Math.sqrt(descrim)) / (2 * a);
 
         if (x1 < x2) {
-            double xx1 = x1; //меняем местами иксы
+            double temp = x1;
             x1 = x2;
-            x2 = xx1;
+            x2 = temp;
         }
         return x1 + ", " + x2;
     }

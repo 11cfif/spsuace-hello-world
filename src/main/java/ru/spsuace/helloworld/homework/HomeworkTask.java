@@ -15,8 +15,7 @@ public class HomeworkTask {
         for (int i = 0; i <= uslovie ; i++) {
             result = result + function.applyAsDouble(a + delta * i);
         }
-        result = result * delta;
-        return result;
+        return result * delta;
     }
 
     /**
@@ -24,24 +23,24 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        long modul = Math.abs(a);
-        long max = -1;
-        int length = String.valueOf(modul).length();
-        int[] massiv = new int[length];
-        int result = 0;
-
-        for (int i = 0; i < length; i++) {
-            int res = (int) (modul % 10);
-            massiv[length - i - 1] = res;
-            modul /= 10;
+        int count = 0;
+        long temp = a;
+        while (a != 0) {
+            count++;
+            a /= 10;
         }
-        for (int j = 0; j < length; j++) {
-            if (massiv[j] > max) {
-                max = massiv[j];
-                result = j + 1;
+        int[] massiv = new int[count];
+        for (int i = count - 1; i >= 0; i--) {
+            massiv[i] = (int) (temp % 10);
+            temp = temp / 10;
+        }
+        int index = 0;
+        for (int i = 0; i < massiv.length; i++) {
+            if (massiv[i] > massiv[index]) {
+                index = i;
             }
         }
-        return (byte) result;
+        return (byte) (index + 1);
     }
 
 
