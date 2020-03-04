@@ -21,9 +21,9 @@ public class DoubleTask {
         double x2 = (-b - descrim) / (2 * a);
 
         if (x1 < x2) {
-            double result = x1;
+            double koren = x1;
             x1 = x2;
-            x2 = result;
+            x2 = koren;
         }
 
         return x1 + ", " + x2;
