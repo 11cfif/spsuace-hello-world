@@ -31,7 +31,7 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int day = 0;
+        int snake = 0;
 
         if (top >= height) {
             return 1;
@@ -42,15 +42,15 @@ public class IntegerTask {
         }
 
         while (height > 0) {
-            day++;
+            snake++;
             height = height - top;
             if (height <= 0) {
-                return day;
+                return snake;
             } else {
                 height = height + bottom;
             }
         }
-        return day;
+        return snake;
     }
 
     /**
@@ -58,13 +58,13 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        int result = 0;
+        int kDemical = 0;
 
         for (int i = 0; i != order; i++) {
-            result = Math.abs(n % 10);
+            kDemical = Math.abs(n % 10);
             n = n / 10;
         }
-        return result;
+        return kDemical;
     }
 
 
