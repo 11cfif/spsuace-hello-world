@@ -28,22 +28,22 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int Up = 0;
+        int up = 0;
         int day = 1;
-        Up = Up + top;
-        if (Up >= height) {
+        up = up + top;
+        if (up >= height) {
             return day;
         }
-        Up = Up - bottom;
-        if (Up <= 0) {
+        up = up - bottom;
+        if (up <= 0) {
             return Integer.MAX_VALUE;
         }
         for (day = 2; ; day++) {
-            Up = Up + top;
-            if (Up >= height) {
+            up = up + top;
+            if (up >= height) {
                 return day;
             }
-            Up = Up - bottom;
+            up = up - bottom;
         }
     }
 
@@ -52,24 +52,8 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        int res = 0;
-        double a = 0;
-        double b = 0;
-        double remains = 0;
-        if (n < 0) {
-            n = -n;
-        }
-        for (int degree = 1; degree <= order; degree++) {
-            a = n / Math.pow(10, degree);
-            b = Math.floor(a);
-            remains = (a - b);
-            remains = remains + 0.00001;
-            remains = remains * 10;
-            res = (int) Math.floor(remains);
-        }
-        return res;
+        return (int) (Math.abs(n) % Math.pow(10, order) / Math.pow(10, order - 1));
     }
-
 
     /**
      * Выведите факториал от числа n
