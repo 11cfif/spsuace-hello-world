@@ -14,7 +14,12 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += 1;
+        }
+        return sum;
     }
 
     /**
@@ -24,23 +29,41 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
-    }
+      int s=1;
+      if (top>bottom) {
+          for(int i=top;i<height;i=i+top){
+              s++;
+              i = i - bottom;
+          }
+      }
+      if (top==height){
+          return(1);
 
-    /**
-     * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
-     * Пример: (454355, 3) -> 3
-     */
-    public static int kDecimal(int n, int order) {
-        return 0;
-    }
+      }
+      if(top<=bottom && top<height){
+      return s;
+
+      }
 
 
-    /**
-     * Выведите факториал от числа n
-     * Пример: (5) -> 120
-     */
-    public static long factorial(byte n) {
-        return 0;
+      /**
+         * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
+         * Пример: (454355, 3) -> 3
+         */
+        public static int kDecimal(int n, int order) {
+        }
+
+
+        /**
+         * Выведите факториал от числа n
+         * Пример: (5) -> 120
+         */
+        public static long factorial ( byte n) {
+           long s=1;
+           for (int=1;i<=n;i++){
+               s*=1
+           }
+           return s;
+        }
     }
 }

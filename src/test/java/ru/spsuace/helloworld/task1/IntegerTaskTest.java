@@ -28,7 +28,7 @@ public class IntegerTaskTest {
 
     @Test
     public void kDecimal() {
-        assertEquals(0, IntegerTask.kDecimal(10, 1));
+        assertEquals(0, IntegerTask.kDecimal(10,1));
         assertEquals(1, IntegerTask.kDecimal(10, 2));
         assertEquals(1, IntegerTask.kDecimal(1010, 2));
         assertEquals(8, IntegerTask.kDecimal(Integer.MAX_VALUE, 5));
