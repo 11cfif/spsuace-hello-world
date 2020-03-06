@@ -10,7 +10,13 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        return 0;
+       double n = (b-a)/delta;
+       double i = n;
+       double q = 0;
+       for (i = 0; i<=n; i++) {
+           q = q + function.applyAsDouble(a+i*delta);
+           }
+        return q*delta;
     }
 
     /**
@@ -18,7 +24,16 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        return 0;
+        double max = 0;
+        long numb = a;
+        double p = 0;
+        while (numb != 0) {
+            p = numb % 10;
+            if (p > numb) {
+                max = p;
+            }
+        }
+        return (byte) max;
     }
 
 
@@ -27,8 +42,8 @@ public class HomeworkTask {
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        
-        return 0;
+        double y3 = (y2-y1)*(x3-x1)/(x2-x1)+y1;
+        return y3;
     }
 
     /**
@@ -37,7 +52,17 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        return 0;
+        double AB = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        double BC = Math.sqrt((x3 - x2) * (x3 - x2) + (y3 - y2) * (y3 - y2));
+        double CD = Math.sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
+        double DA = Math.sqrt((x4 - x1) * (x4 - x1) + (y4 - y1) * (y4 - y1));
+        double AC = Math.sqrt((x3 - x1) * (x3 - x1) + (y3 - y1) * (y3 - y1));
+
+        double p1 = (AB+BC+AC)/2;
+        double S1 = Math.sqrt(p1*(p1-AB)*(p1-BC)*(p1-AC));
+        double p2 = (AC+CD+DA)/2;
+        double S2 = Math.sqrt(p2*(p2-AC)*(p2-CD)*(p2-DA));
+        return S1+S2;
     }
 
 }
