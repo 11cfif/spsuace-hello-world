@@ -34,13 +34,13 @@ public class HomeworkTask {
         byte i = 1;
         for (; a - Math.pow(10, n) < 0; n++) {
         }
-        n=15;
+        n = 15;
         for (; i == n; i++) {
             if ((byte) (a % Math.pow(10, i) / Math.pow(10, i - 1)) > number) {
                 number = (byte) (a % Math.pow(10, i) / Math.pow(10, i - 1));
             }
         }
-       i = 1;
+        i = 1;
         for (; i == n; n--) {
             if ((byte) (a % Math.pow(10, n) / Math.pow(10, n - 1)) == number) {
                 break;
@@ -56,7 +56,7 @@ public class HomeworkTask {
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        return (double)(x3-x1)*(y2-y1)/(x2-x1)+y1;
+        return (double) (x3 - x1) * (y2 - y1) / (x2 - x1) + y1;
     }
 
     /**
@@ -66,8 +66,8 @@ public class HomeworkTask {
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
         //Площадь любого многоугольника определяется по формуле: Area= |((x1y2-y1x2)+ (x2y3-y2x3)...+ (xny1-ynx1) ) / 2|
-        double s=(x1*y2-y1*x1)+(x2*y3-y2*x3)+(x3*y4-y3*x4)+(x4*y1-y4*x1);
-        return Math.abs(s)/2;
+        double s = (x1 * y2 - y1 * x1) + (x2 * y3 - y2 * x3) + (x3 * y4 - y3 * x4) + (x4 * y1 - y4 * x1);
+        return Math.abs(s) / 2;
     }
 
 }
