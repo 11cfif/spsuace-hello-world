@@ -50,9 +50,9 @@ public class HomeworkTask {
         double a=x3-x2;
         double b= x2-x1;
         double c =y2-y1;
-        double y3=((a*c)/b)+y2;
+        double y=((a*c)/b)+y2;
         //double y3=((x3-x2)*(y2-y1) /(x2-x1))+y2;
-        return y3;
+        return y;
     }
 
     /**
