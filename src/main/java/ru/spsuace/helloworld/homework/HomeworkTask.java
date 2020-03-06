@@ -1,8 +1,15 @@
 package ru.spsuace.helloworld.homework;
 
+
+
 import java.util.function.ToDoubleFunction;
 
-public class HomeworkTask {
+public class Main {
+    public static void main(String[]args){
+    System.out.println("hello World");
+    }}
+
+
 
     /**
      * Нужно численно посчитать интеграл от a до b с шагом delta от функции function
@@ -18,8 +25,7 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        return 0;
-    }
+        return 0; }
 
 
     /**
