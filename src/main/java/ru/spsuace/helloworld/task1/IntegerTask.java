@@ -29,29 +29,35 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-      int s=1;
-      if (top>bottom) {
-          for(int i=top;i<height;i=i+top){
-              s++;
-              i = i - bottom;
-          }
-      }
-      if (top==height){
-          return(1);
+        int s = 1;
+        if (top > bottom) {
+            for (int i = top; i < height; i = i + top) {
+                s++;
+                i = i - bottom;
+            }
+        }
+        if (top == height) {
+            return (1);
 
-      }
-      if(top<=bottom && top<height){
-      return s;
+        }
+        if (top <= bottom && top < height) {
+            return s;
 
-      }
+        }
+    }
 
 
-      /**
+        /**
          * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
          * Пример: (454355, 3) -> 3
          */
-        public static int kDecimal(int n, int order) {
+        public static int kDecimal ( int n, int order){
         }
+        int m = Math.abs(n);
+        int res = (int) (m % Math.pow(10, order) / Math.pow(10, order - 1));
+        return res;
+    }
+
 
 
         /**
