@@ -7,8 +7,8 @@ public class MainTask {
      * Так же, надо сделать так, что бы при запуске этого класса печаталась строка "It is work."
      * @param args
      */
-    public void main(String args) {
-    System.out.println("It is work.");
-  }
+    //private static main(String args) {
+    //   System.out.println("It is work.");
+  //}
 }
 //just a test
