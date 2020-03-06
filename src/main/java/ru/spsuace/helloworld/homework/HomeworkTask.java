@@ -11,8 +11,7 @@ public class HomeworkTask {
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
         double result = 0;
-        int uslovie = (int) ((b - a) / delta);
-        for (int i = 0; i <= uslovie ; i++) {
+        for (int i = 0; i <= (int) ((b - a) / delta) ; i++) {
             result = result + function.applyAsDouble(a + delta * i);
         }
         return result * delta;
