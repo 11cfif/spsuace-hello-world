@@ -31,24 +31,22 @@ public class IntegerTask {
     public static int snake(int height, int top, int bottom) {
         int days = 0;
         int level = height;
-        int peak = top;
-        int underside = bottom;
 
-        if (peak >= level) {
+        if (top >= level) {
             return 1;
         }
 
-        if (peak <= underside) {
+        if (top <= bottom) {
             return Integer.MAX_VALUE;
         }
 
         while (level > 0) {
             days++;
-            level = level - peak;
+            level = level - top;
             if (level <= 0) {
                 return days;
             } else {
-                level = level + underside;
+                level = level + bottom;
             }
         }
         return days;
@@ -60,10 +58,10 @@ public class IntegerTask {
      */
     public static int kDecimal(int n, int order) {
         int kDemical = 0;
-        int number = n;
+        int numeric = n;
         for (int i = 0; i != order; i++) {
-            kDemical = Math.abs(number % 10);
-            number = number / 10;
+            kDemical = Math.abs(numeric % 10);
+            numeric = numeric / 10;
         }
         return kDemical;
     }
