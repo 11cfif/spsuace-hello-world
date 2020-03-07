@@ -15,8 +15,8 @@ public class IntegerTask {
      */
     public static int sum(int n) {
         int sum = 0;
-        for (int i = 0; n > i; i++) {
-            sum += i + 1;
+        for (int i=0; n >= i; i++) {
+            sum += i;
         }
         return sum;
     }

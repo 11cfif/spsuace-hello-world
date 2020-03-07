@@ -24,9 +24,9 @@ public class DoubleTask {
         x2 = (-b - Math.sqrt(D)) / (2 * a);
 
         if (x1 < x2) {
-            double koren = x1;
+            double k = x1;
             x1 = x2;
-            x2 = koren;
+            x2 = k;
         }
         return x1 + ", " + x2;
     }
