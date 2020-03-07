@@ -24,18 +24,19 @@ public class HomeworkTask {
     public static byte maxNumber(long a) {
         int count = 0;
         long temp = a;
-        while (a != 0) {
+        long temp2 = a;
+        while (temp2 != 0) {
             count++;
-            a /= 10;
+            temp2 /= 10;
         }
-        int[] massiv = new int[count];
+        int[] digits = new int[count];
         for (int i = count - 1; i >= 0; i--) {
-            massiv[i] = (int) (temp % 10);
+            digits[i] = (int) (temp % 10);
             temp = temp / 10;
         }
         int index = 0;
-        for (int i = 0; i < massiv.length; i++) {
-            if (massiv[i] > massiv[index]) {
+        for (int i = 0; i < digits.length; i++) {
+            if (digits[i] > digits[index]) {
                 index = i;
             }
         }
