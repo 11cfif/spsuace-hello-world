@@ -1,8 +1,6 @@
 package ru.spsuace.helloworld.task1;
 
-
-import javax.swing.*;
-import javax.swing.plaf.synth.SynthOptionPaneUI;
+import ru.spsuace.helloworld.Main;
 
 /**
  * Возможно вам понадобится класс Math с его методами. Например, чтобы вычислить квадратный корень, достаточно написать
@@ -31,26 +29,29 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int snake = 0;
+        int days = 0;
+        int level = height;
+        int peak = top;
+        int underside = bottom;
 
-        if (top >= height) {
+        if (peak >= level) {
             return 1;
         }
 
-        if (top <= bottom) {
+        if (peak <= underside) {
             return Integer.MAX_VALUE;
         }
 
-        while (height > 0) {
-            snake++;
-            height = height - top;
-            if (height <= 0) {
-                return snake;
+        while (level > 0) {
+            days++;
+            level = level - peak;
+            if (level <= 0) {
+                return days;
             } else {
-                height = height + bottom;
+                level = level + underside;
             }
         }
-        return snake;
+        return days;
     }
 
     /**
@@ -59,10 +60,10 @@ public class IntegerTask {
      */
     public static int kDecimal(int n, int order) {
         int kDemical = 0;
-
+        int number = n;
         for (int i = 0; i != order; i++) {
-            kDemical = Math.abs(n % 10);
-            n = n / 10;
+            kDemical = Math.abs(number % 10);
+            number = number / 10;
         }
         return kDemical;
     }
