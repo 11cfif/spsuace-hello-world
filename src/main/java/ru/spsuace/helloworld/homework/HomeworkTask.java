@@ -1,6 +1,6 @@
 package ru.spsuace.helloworld.homework;
 
-import java.util.function.ToDoubleFunction;
+        import java.util.function.ToDoubleFunction;
 
 public class HomeworkTask {
 
