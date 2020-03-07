@@ -33,7 +33,7 @@ public class IntegerTask {
         if (top <= bottom) {
             return Integer.MAX_VALUE;
         }
-        for (days = 1; progress <= height;) {
+        for (days = 1; progress <= height; ) {
             progress = progress + top;
             if (progress < height) {
                 days += 1;
@@ -48,7 +48,7 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return (int) (Math.abs(n) % Math.pow(10,order) / Math.pow(10,order - 1));
+        return (int) (Math.abs(n) % Math.pow(10, order) / Math.pow(10, order - 1));
     }
 
 
@@ -59,7 +59,7 @@ public class IntegerTask {
     public static long factorial(byte n) {
         long factorial = 1;
 
-        for (int i = 1; i <= n; i ++){
+        for (int i = 1; i <= n; i++) {
             factorial = factorial * i;
         }
         return factorial;

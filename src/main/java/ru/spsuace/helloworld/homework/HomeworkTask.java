@@ -11,7 +11,7 @@ public class HomeworkTask {
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
         double result = 0;
-        for (int i = 0; i <= (int) ((b - a) / delta) ; i++) {
+        for (int i = 0; i <= (int) ((b - a) / delta); i++) {
             result = result + function.applyAsDouble(a + delta * i);
         }
         return result * delta;
@@ -44,7 +44,8 @@ public class HomeworkTask {
     }
 
 
-    /**a
+    /**
+     * a
      * Даны две точки в пространстве (x1, y1) и (x2, y2). Вам нужно найти Y координату третьей точки (x3, y3),
      * которая находится на той же прямой что и первые две.
      */
