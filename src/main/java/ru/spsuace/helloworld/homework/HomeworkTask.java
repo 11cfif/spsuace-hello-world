@@ -11,8 +11,8 @@ public class HomeworkTask {
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
         double res = 0;
-        double lowLimit = a;
-        for (lowLimit =+ delta; lowLimit <= b; lowLimit += delta) {
+        double lowLimit = a+delta;
+        for (; lowLimit <= b; lowLimit += delta) {
             res += function.applyAsDouble(lowLimit) * delta;
         }
         return res;
