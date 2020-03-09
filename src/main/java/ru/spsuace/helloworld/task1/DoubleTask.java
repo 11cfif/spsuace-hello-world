@@ -10,6 +10,7 @@ import ru.spsuace.helloworld.Main;
  */
 public class DoubleTask {
 
+
     /**
      * Вывести два корня квадратного уравнения через запятую: a * x ^ 2 + b * x + c = 0;
      * Вывод менять не нужно, надо только посчитать x1 и x2, где x1 > x2
