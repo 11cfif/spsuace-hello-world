@@ -11,8 +11,8 @@ public class HomeworkTask {
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
         double result = 0;
-        for (double i = a; i < b; i = i + delta) {
-            result += function.applyAsDouble(i);
+        for (double z = a; z < b; z = z + delta) {
+            result += function.applyAsDouble(z);
         }
         return result * delta;
     }
@@ -38,26 +38,17 @@ public class HomeworkTask {
         }
         value = a;
         byte maxValue = 0;
-        for (int i = 1; i <= count; i++) {
-            if (value % 10 > maxValue) {
-                maxValue = (byte) (value % 10);
-            }
-            value /= 10;
-        }
-        value = a;
         byte[] byteArray = new byte[count];
+        int n = 0;
         for (int i = count - 1; i >= 0; i--) {
             byteArray[i] = (byte) (value % 10);
+            if(byteArray[i] >= maxValue) {
+                maxValue = byteArray[i];
+                n = i;
+            }
             value /= 10;
         }
-        byte result = 0;
-        for (int i = 0; i < count; i++) {
-            if (byteArray[i] == maxValue) {
-                result = (byte) (i + 1);
-                break;
-            }
-        }
-        return result;
+        return (byte) (n + 1);
     }
 
 
@@ -66,13 +57,11 @@ public class HomeworkTask {
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        double result;
         int x12 = x2 - x1;
         int y12 = y2 - y1;
         double x13 = x3 - x1;
         double k = x13 / x12;
-        result = k * y12 + y1;
-        return result;
+        return k * y12 + y1;
     }
 
     /**
