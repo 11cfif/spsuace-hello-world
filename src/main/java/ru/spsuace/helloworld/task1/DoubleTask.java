@@ -17,42 +17,39 @@ public class DoubleTask {
      */
     public static String equation(int a, int b, int c) {
         double x1 = 0;
-        double x2  = 0;
+        double x2 = 0;
         double x;
         double D = (b * b) - (4 * a * c);
-        if(D == 0) {
+        if (D == 0) {
             x1 = (double) -b / (2 * a);
             x2 = x1;
-            System.out.println(x1+ ","+x2);
             return x1 + ", " + x2;
         } else {
-            if(D < 0) {
+            if (D < 0) {
                 System.out.println("Корней нет");
             } else {
-                x1 =  (double) ((-b + Math.sqrt(D)) / (2 * a));
-                x2 = (double) ((-b - Math.sqrt(D)) / (2 * a));
-                if(x1 < x2) {
+                x1 = (-b + Math.sqrt(D)) / (2 * a);
+                x2 = (-b - Math.sqrt(D)) / (2 * a);
+                if (x1 < x2) {
                     x = x1;
                     x1 = x2;
                     x2 = x;
                 }
-                System.out.println(x1+ ","+x2);
                 return x1 + ", " + x2;
             }
 
         }
 
-        System.out.println(x1+ ","+x2);
-            return x1 + ", " + x2;
+        return x1 + ", " + x2;
 
     }
+
     /**
      * Нужно посчитать расстояние, между двумя точками (x1, y1) и (x2, y2)
      * Пример: (0, 0, 3, 4) -> 5.0
      */
     public static float length(double x1, double y1, double x2, double y2) {
 
-        double r = Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
-        return (float) r;
+        return (float) Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     }
 }

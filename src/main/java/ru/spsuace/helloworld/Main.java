@@ -9,4 +9,9 @@ public class Main {
     static String maintask() {
         return "It is work.";
     }
-}
+
+    public static String hello() {
+        return "It is work.";
+    }
+    }
+
