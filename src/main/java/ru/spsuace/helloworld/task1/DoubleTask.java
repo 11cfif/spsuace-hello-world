@@ -22,9 +22,17 @@ public class DoubleTask {
         D = b * b - 4 * a * c;
         double x1 = 0;
         double x2 = 0;
-
-        x1 = (-b + Math.sqrt(D)) / (2 * a);
-        x2 = (-b - Math.sqrt(D)) / (2 * a);
+        if (D==0){
+            x1 = (-b ) / (2 * a);
+            x2=x1;
+        }else{
+            if (D<0){
+                System.out.println("Корней нет");
+            }else{
+                x1 = (-b + Math.sqrt(D)) / (2 * a);
+                x2 = (-b - Math.sqrt(D)) / (2 * a);
+            }
+        }
         if (x1 < x2) {
             double r = 0;
             x1 = x2;
