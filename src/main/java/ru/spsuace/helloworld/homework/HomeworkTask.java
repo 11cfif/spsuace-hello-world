@@ -12,10 +12,9 @@ public class HomeworkTask {
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
         double result = 0;
         for (int i = 0; i <= (int) ((b - a) / delta); i++) {
-            result = result + function.applyAsDouble(a + delta * i);
+            result +=  function.applyAsDouble(a + delta * i)* delta;
         }
-        result = result * delta;
-        return result;
+        return result ;
     }
 
 
@@ -24,24 +23,19 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        long modul = Math.abs(a);
-        long max = -1;
-        int length = String.valueOf(modul).length();
-        int[] massiv = new int[length];
-        int result = 0;
-
-        for (int i = 0; i < length; i++) {
-            int res = (int) (modul % 10);
-            massiv[length - i - 1] = res;
-            modul /= 10;
-        }
-        for (int j = 0; j < length; j++) {
-            if (massiv[j] > max) {
-                max = massiv[j];
-                result = j + 1;
+        long modul = 0;
+        long varian = a;
+        byte numb = 0;
+        byte maxnumb = 0;
+        while (varian > 0) {
+            numb += 1;
+            if ((varian % 10) >= modul) {
+                modul = varian % 10;
+                maxnumb = numb;
             }
+            varian = varian / 10;
         }
-        return (byte) result;
+        return (byte) (numb - maxnumb + 1);
     }
 
 

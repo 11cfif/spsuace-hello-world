@@ -16,8 +16,8 @@ public class IntegerTask {
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
-    public static int sum(int n){
-        return n * (n+1)/2;
+    public static int sum(int n) {
+        return n * (n + 1) / 2;
     }
 
     /**
@@ -27,26 +27,25 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int day = 0;
-        if (height<= top) {
-            day = 1;
-        } else if (height > top) {
-            if (top<=bottom) {
-                day = Integer.MAX_VALUE;
-            } else if (bottom < top) {
-                while (height > 0) {
-                    day = day + 1;
-                    height = height - top;
-                    if (height <= 0) {
-                        break;
-                    } else height = height + bottom;
-                }
+
+        if (height <= top)
+        return 1 ;{
+        }
+        if (top <= bottom) {
+            return Integer.MAX_VALUE;
+        }
+        int position = 0;
+        int day = 1;
+        for (; position < height; day++) {
+            position += top;
+            if (position >= height) {
+                return day;
             }
+
+            position -= bottom;
         }
         return day;
     }
-
-
 
     /**
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
@@ -57,15 +56,16 @@ public class IntegerTask {
         int h = 0;
         int g = 0;
         int s;
-        int pop = n;
-        while (pop != 0) {
-        count++;
-        s = pop % 10;
-        if (count == order) {
-            h = Math.abs(s);
+        int numer = n;
+        while (numer != 0) {
+            count++;
+            s = numer % 10;
+            if (count == order) {
+                h = Math.abs(s);
+            }
+            numer /= 10;
         }
-        pop /= 10;
-           } return h;
+        return h;
     }
 
 
@@ -75,9 +75,10 @@ public class IntegerTask {
      */
     public static long factorial(byte n) {
         long result = 1;
-        for (byte  i = 1; i <= n; i++) {
-            result = (long)(result * i);
-        }return result;
+        for (byte i = 1; i <= n; i++) {
+            result = (long) (result * i);
+        }
+        return result;
     }
 
 
