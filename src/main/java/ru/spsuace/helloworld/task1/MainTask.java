@@ -9,6 +9,6 @@ public class MainTask {
      */
     //private static main(String args) {
     //   System.out.println("It is work.");
-  //}
+    //}
 }
 //just a test

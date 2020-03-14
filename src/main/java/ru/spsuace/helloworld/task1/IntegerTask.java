@@ -14,7 +14,7 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return (n*(n+1))/2;
+        return (n * (n + 1)) / 2;
     }
 
     /**
@@ -24,24 +24,22 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        int a=0;
-        if(height<=top){
-            a=1;
-        }
-        else if(height>top){
-            if(top<=bottom){
-                a= Integer.MAX_VALUE;
-            }else if(top>bottom){
-                while (height>0){
-                    a=a+1;
-                    height=height-top;
-                    if (height<=0){
+        int a = 0;
+        if (height <= top) {
+            a = 1;
+        } else if (height > top) {
+            if (top <= bottom) {
+                a = Integer.MAX_VALUE;
+            } else if (top > bottom) {
+                while (height > 0) {
+                    a = a + 1;
+                    height = height - top;
+                    if (height <= 0) {
                         break;
-                    }else height=height+bottom;
+                    } else height = height + bottom;
                 }
             }
-        }
-        return a;
+        }return a;
 
     }
 
@@ -50,17 +48,17 @@ public class IntegerTask {
      * Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        int count=0;
-        int a=0;
-        int b ;
-        int number= n;
-        while (number!=0){
+        int count = 0;
+        int a = 0;
+        int b;
+        int number = n;
+        while (number != 0) {
             count++;
-            b=number%10;
-            if (count == order){
-                a=Math.abs(b);
-            } number/=10;
-        } return a;
+            b = number % 10;
+            if (count == order) {
+                a = Math.abs(b);
+            }number /= 10;
+        }return a;
 
     }
 
@@ -70,10 +68,10 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        long fact=1;
-        for(byte i =1; i<=n; i++){
-            fact= (long) (fact*i);
-        } return fact;
+        long fact = 1;
+        for (byte i = 1; i <= n; i++) {
+            fact = (long) (fact * i);
+        }return fact;
 
 
     }
