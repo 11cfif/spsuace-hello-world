@@ -14,29 +14,24 @@ public class DoubleTask {
      * Пример: (1, 5, 4) -> "-1.0, -4.0"
      */
     public static String equation(int a, int b, int c) {
-
-//        double a, b, c;
-        double D = 0;
-        System.out.println("Введите a, b, c");
-
-        D = b * b - 4 * a * c;
         double x1 = 0;
         double x2 = 0;
-        if (D==0){
-            x1 = (-b ) / (2 * a);
-            x2=x1;
-        }else{
-            if (D<0){
+        double D = b * b - 4 * a * c;
+        if (D == 0) {
+            x1 = (-b) / (2 * a);
+            x2 = x1;
+        } else {
+            if (D < 0) {
                 System.out.println("Корней нет");
-            }else{
+            } else {
                 x1 = (-b + Math.sqrt(D)) / (2 * a);
                 x2 = (-b - Math.sqrt(D)) / (2 * a);
             }
         }
         if (x1 < x2) {
-            double r = 0;
+            double zam = 0;
             x1 = x2;
-            x2 = r;
+            x2 = zam;
         }
         return x1 + ", " + x2;
     }
@@ -45,12 +40,12 @@ public class DoubleTask {
     /**
      * Нужно посчитать расстояние, между двумя точками (x1, y1) и (x2, y2)
      * Пример: (0, 0, 3, 4) -> 5.0
+     *
      * @return
      */
-    public static double length(double x1, double y1, double x2, double y2) {
-        double s = 0;
-        s = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-        return s;
+    public static double length(double x1, double y1, double x2, double y2, double s) {
+        return s = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
     }
 }
+
 
