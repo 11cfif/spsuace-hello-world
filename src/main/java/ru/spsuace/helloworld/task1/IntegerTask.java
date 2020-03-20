@@ -27,34 +27,34 @@ public class IntegerTask {
      * Верните число Integer.MAX_VALUE;
      * Пример: (10, 3, 2) -> 8
      */
-    public static int snake(int height, int top, int bottom) {
-        int t = 0;
+    public static int snake(int height, int top, int bottom, int t) {
+
         if (top >= height) {
             t = 1;
-        } else if (height > top ){
-            if (top<= bottom) {
-                t = Integer.MAX_VALUE;
-            } else if (top> bottom){
-                while (height>0){
-                    t= t+1;
-                    height=height-top;
-                    if (height<= 0){
+        } else {
+            if (top <= bottom) {
+                return  t = Integer.MAX_VALUE;
+            } else {
+                while (height > 0) {
+                    t = t + 1;
+                    height = height - top;
+                    if (height <= 0) {
                         break;
-                    }else height=height+bottom;
+                    } else {
+                        height = height + bottom;
+                    }
                 }
             }
         }
         return t;
     }
-
-    /**
-     * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
-     * Пример: (454355, 3) -> 3
-     */
-    public static int kDecimal(int n, int order) {
+            /**
+             * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
+             * Пример: (454355, 3) -> 3
+             */
+    public static int kDecimal(int n, int order, int result) {
         int m = Math.abs(n);
-        int res = (int)(m % Math.pow(10,order)/Math.pow(10, order - 1));
-        return res;
+        return  result = (int)( m % Math .pow ( 10, order ) / Math .pow ( 10, order - 1 ) );
     }
 
 
