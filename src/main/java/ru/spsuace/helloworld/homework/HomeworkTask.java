@@ -36,7 +36,15 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        return 0;
+        double square = 0;
+        double AB = Math.hypot(x2 - x1, y2 - y1);
+        double BC = Math.hypot(x3 - x2, y3 - y2);
+        double CD = Math.hypot(x4 - x3, y4 - y3);
+        double DA = Math.hypot(x1 - x4, y1 - y4);
+        double BD = Math.hypot(x4 - x2, y4 - y2);
+        double square1 = Math .abs ((x2 - x1)*(y4 - y1) - (x4 - x1)*(y2 - y1)) / 2;
+        double square2 = Math .abs ((x2 - x3)*(y4 - y3) - (x4 - x3)*(y2 - y3)) / 2;
+        return square = square1 + square2 ;
     }
 
 }
