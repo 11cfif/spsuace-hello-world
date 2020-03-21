@@ -29,9 +29,9 @@ public class DoubleTask {
             }
         }
         if (x1 < x2) {
-            double zam = 0;
+            double xr = 0;
             x1 = x2;
-            x2 = zam;
+            x2 = xr;
         }
         return x1 + ", " + x2;
     }
