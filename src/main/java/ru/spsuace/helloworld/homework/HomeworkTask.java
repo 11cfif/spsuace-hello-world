@@ -10,7 +10,13 @@ public class HomeworkTask {
      * Считаем, что функция определена на всем пространстве от a до b
      */
     public static double calcIntegral(double a, double b, ToDoubleFunction<Double> function, double delta) {
-        return 0;
+        double result = 0;
+        int uslovie = (int) ((b - a) / delta);
+        for (int i = 0; i <= uslovie; i++) {
+            result = result + function.applyAsDouble(a + delta * i);
+        }
+        result = result * delta;
+        return result;
     }
 
     /**
@@ -18,16 +24,32 @@ public class HomeworkTask {
      * выводим номер первой максимальной цифры (если их несколько)
      */
     public static byte maxNumber(long a) {
-        return 0;
-    }
+        long modul = Math.abs(a);
+        long max = -1;
+        int length = String.valueOf(modul).length();
+        int[] massiv = new int[length];
+        int result = 0;
 
+        for (int i = 0; i < length; i++) {
+            int res = (int) (modul % 10);
+            massiv[length - i - 1] = res;
+            modul /= 10;
+        }
+        for (int j = 0; j < length; j++) {
+            if (massiv[j] > max) {
+                max = massiv[j];
+                result = j + 1;
+            }
+        }
+        return (byte) result;
+    }
 
     /**
      * Даны две точки в пространстве (x1, y1) и (x2, y2). Вам нужно найти Y координату третьей точки (x3, y3),
      * которая находится на той же прямой что и первые две.
      */
     public static double lineFunction(int x1, int y1, int x2, int y2, int x3) {
-        return 0;
+        return (double) ((x3 - x1) * (y2 - y1)) / (x2 - x1) + y1;
     }
 
     /**
@@ -36,7 +58,10 @@ public class HomeworkTask {
      * Это дополнительное задание, необязательное для выполнения
      */
     public static double square(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        return 0;
+        return (double) Math.abs((x1 * y2 - x2 * y1) + (x2 * y3 - x3 * y2) + (x3 * y4 - x4 * y3) + (x4 * y1 - x1 * y4)) / 2;
     }
 
 }
+
+
+

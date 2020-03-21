@@ -14,8 +14,9 @@ public class IntegerTask {
      * Пример: (5) -> 15
      */
     public static int sum(int n) {
-        return 0;
+        return n * (n + 1) / 2;
     }
+
 
     /**
      * Гусеница поднимается по стене длиной height на высоту top за день, ночью гусеница сползает на bottom.
@@ -24,15 +25,31 @@ public class IntegerTask {
      * Пример: (10, 3, 2) -> 8
      */
     public static int snake(int height, int top, int bottom) {
-        return 0;
+        int days = 0;
+        int progress = 0;
+
+        if (top >= height) {
+            return 1;
+        }
+        if (top <= bottom) {
+            return Integer.MAX_VALUE;
+        }
+        for (days = 1; progress <= height; ) {
+            progress = progress + top;
+            if (progress < height) {
+                days += 1;
+                progress = progress - bottom;
+            }
+        }
+        return days;
     }
 
-    /**
-     * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
-     * Пример: (454355, 3) -> 3
+
+    /// * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
+    /* Пример: (454355, 3) -> 3
      */
     public static int kDecimal(int n, int order) {
-        return 0;
+        return (int) (Math.abs(n) % Math.pow(10, order) / Math.pow(10, order - 1));
     }
 
 
@@ -41,6 +58,11 @@ public class IntegerTask {
      * Пример: (5) -> 120
      */
     public static long factorial(byte n) {
-        return 0;
+        long factorial = 1;
+
+        for (int i = 1; i <= n; i++) {
+            factorial = factorial * i;
+        }
+        return factorial;
     }
 }
