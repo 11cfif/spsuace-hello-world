@@ -5,3 +5,4 @@
 .gradle/
 out/
 spsuace-hello-world.iml
+build/
