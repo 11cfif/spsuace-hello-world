@@ -29,22 +29,19 @@ public class IntegerTask {
      */
     public static int snake(int height, int top, int bottom) {
         int day = 0;
-        int progress = 0;
-
         if (top >= height) {
             return 1;
         }
         if (top <= bottom) {
             return Integer.MAX_VALUE;
         }
-
-
-        for (day = 1; progress <= height; ) {
-            progress = progress + top;
-
-            if (progress < height) {
-                day += 1;
-                progress = progress - bottom;
+        while (height > 0) {
+            day++;
+            height -= top;
+            if (height <= 0) {
+                return day;
+            } else {
+                height += bottom;
             }
         }
         return day;

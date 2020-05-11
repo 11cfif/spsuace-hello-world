@@ -16,15 +16,11 @@ public class DoubleTask {
      * Пример: (1, 5, 4) -> "-1.0, -4.0"
      */
     public static String equation(int a, int b, int c) {
-        double x1 = 0;
-        double x2 = 0;
-        double D = Math.pow(b, 2) - 4 * a * c;
-
-        x1 = (-b + Math.sqrt(D)) / (2 * a);
-        x2 = (-b - Math.sqrt(D)) / (2 * a);
-
+        double discriminant = Math.sqrt((Math.pow(b, 2) - 4 * a * c));
+        double x1 = (-b + discriminant) / (2 * a);
+        double x2 = (-b - discriminant) / (2 * a);
         if (x1 < x2) {
-            double k = x1;
+            double k= x1;
             x1 = x2;
             x2 = k;
         }
